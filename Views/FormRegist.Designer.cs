@@ -38,7 +38,6 @@
             panel2 = new Panel();
             label5 = new Label();
             label4 = new Label();
-            label3 = new Label();
             label2 = new Label();
             label1 = new Label();
             btnDaftar = new Button();
@@ -48,9 +47,6 @@
             panel7 = new Panel();
             pictureBox8 = new PictureBox();
             textBox4 = new TextBox();
-            panel6 = new Panel();
-            pictureBox7 = new PictureBox();
-            textBox3 = new TextBox();
             panel5 = new Panel();
             pictureBox6 = new PictureBox();
             textBox2 = new TextBox();
@@ -68,8 +64,6 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox9).BeginInit();
             panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
-            panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
             panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
             panel4.SuspendLayout();
@@ -136,7 +130,7 @@
             // 
             pictureBox1.BackgroundImageLayout = ImageLayout.Center;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(805, 110);
+            pictureBox1.Location = new Point(805, 116);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(386, 22);
             pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
@@ -146,21 +140,19 @@
             // panel2
             // 
             panel2.BackgroundImage = (Image)resources.GetObject("panel2.BackgroundImage");
-            panel2.BackgroundImageLayout = ImageLayout.Zoom;
+            panel2.BackgroundImageLayout = ImageLayout.Stretch;
             panel2.Controls.Add(label5);
             panel2.Controls.Add(label4);
-            panel2.Controls.Add(label3);
             panel2.Controls.Add(label2);
             panel2.Controls.Add(label1);
             panel2.Controls.Add(btnDaftar);
             panel2.Controls.Add(panel8);
             panel2.Controls.Add(panel7);
-            panel2.Controls.Add(panel6);
             panel2.Controls.Add(panel5);
             panel2.Controls.Add(panel4);
-            panel2.Location = new Point(805, 141);
+            panel2.Location = new Point(805, 155);
             panel2.Name = "panel2";
-            panel2.Size = new Size(386, 512);
+            panel2.Size = new Size(386, 455);
             panel2.TabIndex = 0;
             // 
             // label5
@@ -169,7 +161,7 @@
             label5.BackColor = Color.Transparent;
             label5.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label5.ForeColor = Color.White;
-            label5.Location = new Point(37, 354);
+            label5.Location = new Point(37, 270);
             label5.Name = "label5";
             label5.Size = new Size(202, 20);
             label5.TabIndex = 11;
@@ -181,23 +173,12 @@
             label4.BackColor = Color.Transparent;
             label4.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label4.ForeColor = Color.White;
-            label4.Location = new Point(37, 271);
+            label4.Location = new Point(37, 185);
             label4.Name = "label4";
             label4.Size = new Size(76, 20);
             label4.TabIndex = 10;
             label4.Text = "Password";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.BackColor = Color.Transparent;
-            label3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.ForeColor = Color.White;
-            label3.Location = new Point(37, 188);
-            label3.Name = "label3";
-            label3.Size = new Size(47, 20);
-            label3.TabIndex = 9;
-            label3.Text = "Email";
+            label4.Click += label4_Click;
             // 
             // label2
             // 
@@ -228,7 +209,7 @@
             btnDaftar.BackColor = Color.FromArgb(103, 140, 65);
             btnDaftar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnDaftar.ForeColor = Color.White;
-            btnDaftar.Location = new Point(116, 444);
+            btnDaftar.Location = new Point(121, 379);
             btnDaftar.Name = "btnDaftar";
             btnDaftar.Size = new Size(134, 45);
             btnDaftar.TabIndex = 6;
@@ -241,7 +222,7 @@
             panel8.BackColor = Color.White;
             panel8.Controls.Add(pictureBox9);
             panel8.Controls.Add(textBox5);
-            panel8.Location = new Point(37, 377);
+            panel8.Location = new Point(37, 293);
             panel8.Name = "panel8";
             panel8.Size = new Size(331, 47);
             panel8.TabIndex = 5;
@@ -271,7 +252,7 @@
             panel7.BackColor = Color.White;
             panel7.Controls.Add(pictureBox8);
             panel7.Controls.Add(textBox4);
-            panel7.Location = new Point(37, 294);
+            panel7.Location = new Point(37, 208);
             panel7.Name = "panel7";
             panel7.Size = new Size(331, 47);
             panel7.TabIndex = 4;
@@ -295,36 +276,6 @@
             textBox4.Name = "textBox4";
             textBox4.Size = new Size(271, 47);
             textBox4.TabIndex = 0;
-            // 
-            // panel6
-            // 
-            panel6.BackColor = Color.White;
-            panel6.Controls.Add(pictureBox7);
-            panel6.Controls.Add(textBox3);
-            panel6.Location = new Point(37, 211);
-            panel6.Name = "panel6";
-            panel6.Size = new Size(331, 47);
-            panel6.TabIndex = 3;
-            // 
-            // pictureBox7
-            // 
-            pictureBox7.BackColor = Color.White;
-            pictureBox7.Image = (Image)resources.GetObject("pictureBox7.Image");
-            pictureBox7.Location = new Point(13, 11);
-            pictureBox7.Name = "pictureBox7";
-            pictureBox7.Size = new Size(34, 27);
-            pictureBox7.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox7.TabIndex = 2;
-            pictureBox7.TabStop = false;
-            // 
-            // textBox3
-            // 
-            textBox3.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox3.Location = new Point(60, 0);
-            textBox3.Multiline = true;
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(271, 47);
-            textBox3.TabIndex = 0;
             // 
             // panel5
             // 
@@ -393,8 +344,10 @@
             BackColor = Color.FromArgb(255, 255, 235);
             ClientSize = new Size(1318, 721);
             Controls.Add(panel1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FormRegist";
-            Text = "Form1";
+            Text = "Registrasi - TeaSMart";
+            Load += FormRegist_Load;
             panel1.ResumeLayout(false);
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
@@ -410,9 +363,6 @@
             panel7.ResumeLayout(false);
             panel7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
-            panel6.ResumeLayout(false);
-            panel6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
             panel5.ResumeLayout(false);
             panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
@@ -440,15 +390,11 @@
         private TextBox textBox5;
         private Panel panel7;
         private TextBox textBox4;
-        private Panel panel6;
-        private TextBox textBox3;
         private PictureBox pictureBox8;
-        private PictureBox pictureBox7;
         private PictureBox pictureBox5;
         private Button btnDaftar;
         private PictureBox pictureBox9;
         private Label label1;
-        private Label label3;
         private Label label2;
         private Label label5;
         private Label label4;
