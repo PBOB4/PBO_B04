@@ -9,8 +9,10 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Npgsql;
+using PROJEK;
 using TeaSMart_App.App.Context;
 using TeaSMart_App.App.Models;
+using TeaSMart_App.Views;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
@@ -53,6 +55,12 @@ namespace TeaSMart_App
                 FormRegistContext.Register(userBaru);
 
                 MessageBox.Show("Registrasi berhasil!", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                HalamanUtama halUtama = new HalamanUtama();
+                halUtama.Show();
+
+                // Tutup form registrasi
+                this.Hide();
             }
             catch (Exception ex)
             {

@@ -10,10 +10,10 @@ namespace TeaSMart_App
         private void button1_Click(object sender, EventArgs e)
         {
             // Membuat instance dari RegisterForm
-            FormRegist registerForm = new FormRegist();
+            FormRegist formRegist = new FormRegist();
 
             // Menampilkan RegisterForm
-            registerForm.Show();
+            formRegist.Show();
 
             // (Opsional) Menyembunyikan MainForm
             this.Hide();
