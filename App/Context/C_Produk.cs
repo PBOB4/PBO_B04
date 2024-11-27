@@ -11,7 +11,7 @@ using TeaSMart_App.App.Models;
 
 namespace TeaSMart_App.App.Context
 {
-    internal class InventarisProdukContext : DatabaseWrapper
+    internal class C_Produk : DatabaseWrapper
     {
         private static string table = "products";
 

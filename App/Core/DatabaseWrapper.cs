@@ -11,7 +11,7 @@ namespace TeaSMart_App.App.Core
     internal class DatabaseWrapper
     {
         private static readonly string DB_HOST = "localhost";
-        private static readonly string DB_DATABASE = "TeaSMartDB";
+        private static readonly string DB_DATABASE = "TSMDatabase";
         private static readonly string DB_USERNAME = "postgres";
         private static readonly string DB_PASSWORD = "najwaa";
 
@@ -72,5 +72,30 @@ namespace TeaSMart_App.App.Core
                 throw new Exception(e.Message);
             }
         }
+
+        public static object ExecuteScalarQuery(string query, NpgsqlParameter[] parameters = null)
+        {
+            try
+            {
+                openConnection(); // Membuka koneksi
+                command.CommandText = query; // Mengatur query
+                if (parameters != null)
+                {
+                    command.Parameters.AddRange(parameters); // Menambahkan parameter (jika ada)
+                }
+
+                command.Prepare(); // Memastikan query sudah siap dieksekusi
+                object result = command.ExecuteScalar(); // Menjalankan query dan mengambil hasil pertama
+                command.Parameters.Clear(); // Membersihkan parameter untuk query berikutnya
+                closeConnection(); // Menutup koneksi
+
+                return result; // Mengembalikan hasil eksekusi
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
+
     }
 }

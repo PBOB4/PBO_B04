@@ -1,30 +1,30 @@
-﻿using System;
+﻿using Npgsql;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TeaSMart_App.App.Context;
 
 namespace TeaSMart_App.App.Models
 {
     internal class M_Users
     {
         [Key]
-        public int user_id { get; set; }
-        [Required, MinLength(4), MaxLength(20)]
-        public string username { get; set; }
+        public int id_user { get; set; }
         [Required]
         public string nama { get; set; }
         [Required]
+        public string username { get; set; }
+        [Required]
         public string password { get; set; }
         [NotMapped]
-        [Required(ErrorMessage = "Konfirmasi password harus diisi.")]
-        public string konfirmasiPassword { get; set; } // Properti untuk validasi konfirmasi password
-
+        public string konfirmasiPassword { get; set; }
         [Required]
         public string role { get; set; } = "admin";
-        public DateTime created_at { get; set; } = DateTime.Now;
 
         public string HashPassword(string password)
         {
@@ -37,10 +37,18 @@ namespace TeaSMart_App.App.Models
 
         public void Validate()
         {
+            if (string.IsNullOrWhiteSpace(nama))
+                throw new ValidationException("Nama tidak boleh kosong.");
             if (string.IsNullOrWhiteSpace(username))
                 throw new ValidationException("Username tidak boleh kosong.");
-            if (string.IsNullOrWhiteSpace(nama))
-                throw new ValidationException("Nama lengkap tidak boleh kosong.");
+            string usernamePattern = @"^[a-zA-Z0-9_.]+$";
+            if (!System.Text.RegularExpressions.Regex.IsMatch(username, usernamePattern))
+                throw new ValidationException("Username hanya boleh mengandung huruf, angka, '_' atau '.'");
+            if (username.Contains(" "))
+                throw new ValidationException("Username tidak boleh mengandung spasi.");
+            if (!C_User.IsUsernameUnique(username))
+                throw new ValidationException("Username sudah digunakan. Silakan pilih username lain.");
+
             if (string.IsNullOrWhiteSpace(password))
                 throw new ValidationException("Password tidak boleh kosong.");
             if (password.Length < 6)

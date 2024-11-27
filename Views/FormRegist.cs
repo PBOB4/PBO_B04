@@ -39,7 +39,6 @@ namespace TeaSMart_App
         {
             try
             {
-                // Ambil data dari form
                 M_Users userBaru = new M_Users
                 {
                     nama = textBox1.Text.Trim(),
@@ -48,18 +47,13 @@ namespace TeaSMart_App
                     konfirmasiPassword = textBox5.Text.Trim(),
                 };
 
-                userBaru.Validate();
-
-                userBaru.password = userBaru.HashPassword(userBaru.password);
-
-                FormRegistContext.Register(userBaru);
+                C_User.Register(userBaru);
 
                 MessageBox.Show("Registrasi berhasil!", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 HalamanUtama halUtama = new HalamanUtama();
                 halUtama.Show();
 
-                // Tutup form registrasi
                 this.Hide();
             }
             catch (Exception ex)

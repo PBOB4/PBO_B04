@@ -67,8 +67,6 @@ namespace PROJEK
         {
             Inventaris_Owner inventaris_Owner = new Inventaris_Owner();
             inventaris_Owner.Show();
-
-            // Tutup form registrasi
             this.Hide();
         }
 

@@ -51,6 +51,19 @@
             pictureBox5 = new PictureBox();
             button4 = new Button();
             sidebarTimer = new System.Windows.Forms.Timer(components);
+            flykatalogProduk = new FlowLayoutPanel();
+            panel8 = new Panel();
+            button7 = new Button();
+            label3 = new Label();
+            button6 = new Button();
+            label2 = new Label();
+            label1 = new Label();
+            pictureBox9 = new PictureBox();
+            cbKategori = new ComboBox();
+            button5 = new Button();
+            panel7 = new Panel();
+            pictureBox6 = new PictureBox();
+            textBox1 = new TextBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
@@ -66,6 +79,11 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
+            flykatalogProduk.SuspendLayout();
+            panel8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox9).BeginInit();
+            panel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -157,6 +175,7 @@
             btnHalUtama.Text = "              Halaman Utama";
             btnHalUtama.TextAlign = ContentAlignment.MiddleLeft;
             btnHalUtama.UseVisualStyleBackColor = false;
+            btnHalUtama.Click += btnHalUtama_Click;
             // 
             // panel3
             // 
@@ -292,12 +311,152 @@
             // 
             sidebarTimer.Tick += sidebarTimer_Tick;
             // 
+            // flykatalogProduk
+            // 
+            flykatalogProduk.AutoScroll = true;
+            flykatalogProduk.BackColor = Color.Transparent;
+            flykatalogProduk.Controls.Add(panel8);
+            flykatalogProduk.Location = new Point(278, 124);
+            flykatalogProduk.Name = "flykatalogProduk";
+            flykatalogProduk.Size = new Size(1063, 553);
+            flykatalogProduk.TabIndex = 2;
+            flykatalogProduk.Paint += flykatalogProduk_Paint;
+            // 
+            // panel8
+            // 
+            panel8.BackColor = Color.FromArgb(153, 178, 127);
+            panel8.Controls.Add(button7);
+            panel8.Controls.Add(label3);
+            panel8.Controls.Add(button6);
+            panel8.Controls.Add(label2);
+            panel8.Controls.Add(label1);
+            panel8.Controls.Add(pictureBox9);
+            panel8.ForeColor = SystemColors.ControlLightLight;
+            panel8.Location = new Point(3, 3);
+            panel8.Name = "panel8";
+            panel8.Size = new Size(312, 158);
+            panel8.TabIndex = 0;
+            // 
+            // button7
+            // 
+            button7.ForeColor = SystemColors.ActiveCaptionText;
+            button7.Location = new Point(210, 91);
+            button7.Name = "button7";
+            button7.Size = new Size(94, 29);
+            button7.TabIndex = 5;
+            button7.Text = "Detail";
+            button7.UseVisualStyleBackColor = true;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.ForeColor = Color.Maroon;
+            label3.Location = new Point(142, 72);
+            label3.Name = "label3";
+            label3.Size = new Size(61, 20);
+            label3.TabIndex = 4;
+            label3.Text = "Stok: 30";
+            // 
+            // button6
+            // 
+            button6.ForeColor = SystemColors.ActiveCaptionText;
+            button6.Location = new Point(210, 121);
+            button6.Name = "button6";
+            button6.Size = new Size(94, 29);
+            button6.TabIndex = 3;
+            button6.Text = "Edit";
+            button6.UseVisualStyleBackColor = true;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Location = new Point(142, 49);
+            label2.Name = "label2";
+            label2.Size = new Size(95, 20);
+            label2.TabIndex = 2;
+            label2.Text = "Rp 30.000,00";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(137, 21);
+            label1.Name = "label1";
+            label1.Size = new Size(163, 20);
+            label1.TabIndex = 1;
+            label1.Text = "Teh Jasmine Premium";
+            // 
+            // pictureBox9
+            // 
+            pictureBox9.BackColor = Color.FromArgb(255, 255, 235);
+            pictureBox9.Image = Properties.Resources.IMG_20241124_WA0005;
+            pictureBox9.Location = new Point(16, 14);
+            pictureBox9.Name = "pictureBox9";
+            pictureBox9.Size = new Size(115, 126);
+            pictureBox9.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox9.TabIndex = 0;
+            pictureBox9.TabStop = false;
+            pictureBox9.Click += pictureBox9_Click;
+            // 
+            // cbKategori
+            // 
+            cbKategori.FormattingEnabled = true;
+            cbKategori.Items.AddRange(new object[] { "Premium", "Ekonomis", "Limited-edition" });
+            cbKategori.Location = new Point(939, 38);
+            cbKategori.Name = "cbKategori";
+            cbKategori.Size = new Size(297, 28);
+            cbKategori.TabIndex = 3;
+            // 
+            // button5
+            // 
+            button5.Location = new Point(1242, 35);
+            button5.Name = "button5";
+            button5.Size = new Size(94, 55);
+            button5.TabIndex = 4;
+            button5.Text = "Tambah Produk";
+            button5.UseVisualStyleBackColor = true;
+            // 
+            // panel7
+            // 
+            panel7.BackColor = Color.FromArgb(181, 199, 156);
+            panel7.Controls.Add(pictureBox6);
+            panel7.Controls.Add(textBox1);
+            panel7.Location = new Point(278, 27);
+            panel7.Name = "panel7";
+            panel7.Size = new Size(431, 63);
+            panel7.TabIndex = 5;
+            // 
+            // pictureBox6
+            // 
+            pictureBox6.Image = (Image)resources.GetObject("pictureBox6.Image");
+            pictureBox6.Location = new Point(11, 11);
+            pictureBox6.Name = "pictureBox6";
+            pictureBox6.Size = new Size(38, 38);
+            pictureBox6.SizeMode = PictureBoxSizeMode.AutoSize;
+            pictureBox6.TabIndex = 1;
+            pictureBox6.TabStop = false;
+            // 
+            // textBox1
+            // 
+            textBox1.BackColor = Color.FromArgb(157, 181, 132);
+            textBox1.BorderStyle = BorderStyle.None;
+            textBox1.Location = new Point(55, 11);
+            textBox1.Multiline = true;
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(367, 42);
+            textBox1.TabIndex = 0;
+            // 
             // Inventaris_Owner
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(1348, 721);
+            Controls.Add(panel7);
+            Controls.Add(button5);
+            Controls.Add(cbKategori);
+            Controls.Add(flykatalogProduk);
             Controls.Add(sidebar);
             Name = "Inventaris_Owner";
             Text = "Inventaris_Owner";
@@ -322,6 +481,13 @@
             panel6.ResumeLayout(false);
             panel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
+            flykatalogProduk.ResumeLayout(false);
+            panel8.ResumeLayout(false);
+            panel8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox9).EndInit();
+            panel7.ResumeLayout(false);
+            panel7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
             ResumeLayout(false);
         }
 
@@ -348,5 +514,18 @@
         private PictureBox pictureBox5;
         private Button button4;
         private System.Windows.Forms.Timer sidebarTimer;
+        private FlowLayoutPanel flykatalogProduk;
+        private ComboBox cbKategori;
+        private Button button5;
+        private Panel panel7;
+        private TextBox textBox1;
+        private PictureBox pictureBox6;
+        private Panel panel8;
+        private Label label2;
+        private Label label1;
+        private PictureBox pictureBox9;
+        private Button button6;
+        private Label label3;
+        private Button button7;
     }
 }

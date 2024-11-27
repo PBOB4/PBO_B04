@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Npgsql;
+using PROJEK;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -44,6 +46,23 @@ namespace TeaSMart_App.Views
         private void btnMenu_Click(object sender, EventArgs e)
         {
             sidebarTimer.Start();
+        }
+
+        private void flykatalogProduk_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnHalUtama_Click(object sender, EventArgs e)
+        {
+            HalamanUtama halamanUtama = new HalamanUtama();
+            halamanUtama.Show();
+            this.Hide();
+        }
+
+        private void pictureBox9_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
