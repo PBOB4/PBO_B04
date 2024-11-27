@@ -8,21 +8,17 @@ using System.Threading.Tasks;
 
 namespace TeaSMart_App.App.Models
 {
-    internal class M_batchproduk
+    internal class M_batch
     {
         [Key]
         public int batch_id { get; set; }
         [Required]
-        public string batch_code { get; set; }
+        public DateOnly tanggalMasuk { get; set; }
         [Required]
-        public int quantity { get; set; }
+        public int stok { get; set; }
         [Required]
         public DateOnly tanggalProduksi { get; set; }
         [Required]
-        public DateOnly tanggalKadaluarsa { get; set; }
-        [Required]
-        public DateTime created_at { get; set; }
-        [ForeignKey("M_Produk")]
-        public int product_id { get; set; }
+        public DateOnly Kadaluarsa { get; set; }
     }
 }

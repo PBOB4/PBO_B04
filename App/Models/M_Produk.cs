@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,13 +11,19 @@ namespace TeaSMart_App.App.Models
     internal class M_Produk
     {
         [Key]
-        public int product_id { get; set; }
+        public int id_produk { get; set; }
         [Required]
-        public string product_name { get; set; }
+        public string namaProduk { get; set; }
         [Required]
-        public Decimal unit_price { get; set; }
+        public Decimal hargaProduk { get; set; }
+        [ForeignKey ("M_batchproduk")]
+        public int id_batch { get; set; }
+        [ForeignKey("M_jenis")]
+        public int id_jenis { get; set; }
+        [ForeignKey("M_User")]
+        public int id_user { get; set; }
         [Required]
-        public DateTime created_at { get; set; }
+        public string gambar { get; set; }
         [Required]
         public Boolean isActive { get; set; }
     }

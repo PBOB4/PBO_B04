@@ -81,7 +81,7 @@ namespace TeaSMart_App.App.Core
                 command.CommandText = query; // Mengatur query
                 if (parameters != null)
                 {
-                    command.Parameters.AddRange(parameters); // Menambahkan parameter (jika ada)
+                    command.Parameters.AddRange(parameters); 
                 }
 
                 command.Prepare(); // Memastikan query sudah siap dieksekusi

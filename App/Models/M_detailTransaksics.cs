@@ -11,18 +11,14 @@ namespace TeaSMart_App.App.Models
     internal class M_detailTransaksi
     {
         [Key]
-        public int detail_id { get; set; }
+        public int id_detail { get; set; }
         [Required]
-        public int quantity { get; set; }
+        public int qty { get; set; }
         [Required]
-        public Decimal price { get; set; }
-        [Required]
-        public DateTime created_at { get; set; }
+        public Decimal total_harga { get; set; }
         [ForeignKey("M_Produk")]
-        public int product_id { get; set; }
+        public int id_produk { get; set; }
         [ForeignKey("M_transaski")]
-        public int transaction_id { get; set; }
-        [ForeignKey("M_batchproduk")]
-        public int batch_id { get; set; }
+        public int id_tramsaksi { get; set; }
     }
 }

@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace TeaSMart_App.App.Models
 {
-    internal class M_transaksi
+    internal class M_jenis
     {
         [Key]
-        public int id_transaksi { get; set; }
+        public int id_jenis { get; set; }
         [Required]
-        public DateTime tanggalTransaksi { get; set; }
+        public string jenis { get; set; }
     }
 }
