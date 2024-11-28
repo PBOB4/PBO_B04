@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace TeaSMart_App.Views
 {
-    public partial class MelihatDetProduk : Form
+    public partial class AddProduk : Form
     {
-        public MelihatDetProduk()
+        public AddProduk()
         {
             InitializeComponent();
         }

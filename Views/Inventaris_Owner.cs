@@ -64,5 +64,10 @@ namespace TeaSMart_App.Views
         {
 
         }
+
+        private void Inventaris_Owner_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

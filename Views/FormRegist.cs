@@ -20,10 +20,12 @@ namespace TeaSMart_App
 {
     public partial class FormRegist : Form
     {
-
         public FormRegist()
         {
             InitializeComponent();
+
+            textBox4.PasswordChar = '*'; 
+            textBox5.PasswordChar = '*';
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)

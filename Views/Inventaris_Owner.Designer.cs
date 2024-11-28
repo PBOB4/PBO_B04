@@ -390,7 +390,7 @@
             // pictureBox9
             // 
             pictureBox9.BackColor = Color.FromArgb(255, 255, 235);
-            pictureBox9.Image = Properties.Resources.IMG_20241124_WA0005;
+            pictureBox9.Image = Properties.Resources.Teh_Jasmine_Premium;
             pictureBox9.Location = new Point(16, 14);
             pictureBox9.Name = "pictureBox9";
             pictureBox9.Size = new Size(115, 126);
@@ -402,7 +402,7 @@
             // cbKategori
             // 
             cbKategori.FormattingEnabled = true;
-            cbKategori.Items.AddRange(new object[] { "Premium", "Ekonomis", "Limited-edition" });
+            cbKategori.Items.AddRange(new object[] { "All", "Premium", "Ekonomis", "Limited-edition" });
             cbKategori.Location = new Point(939, 38);
             cbKategori.Name = "cbKategori";
             cbKategori.Size = new Size(297, 28);
@@ -410,12 +410,13 @@
             // 
             // button5
             // 
+            button5.BackColor = Color.FromArgb(153, 178, 127);
             button5.Location = new Point(1242, 35);
             button5.Name = "button5";
             button5.Size = new Size(94, 55);
             button5.TabIndex = 4;
             button5.Text = "Tambah Produk";
-            button5.UseVisualStyleBackColor = true;
+            button5.UseVisualStyleBackColor = false;
             // 
             // panel7
             // 
@@ -460,6 +461,7 @@
             Controls.Add(sidebar);
             Name = "Inventaris_Owner";
             Text = "Inventaris_Owner";
+            Load += Inventaris_Owner_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();

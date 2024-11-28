@@ -77,19 +77,19 @@ namespace TeaSMart_App.App.Core
         {
             try
             {
-                openConnection(); // Membuka koneksi
-                command.CommandText = query; // Mengatur query
+                openConnection(); 
+                command.CommandText = query; 
                 if (parameters != null)
                 {
                     command.Parameters.AddRange(parameters); 
                 }
 
-                command.Prepare(); // Memastikan query sudah siap dieksekusi
-                object result = command.ExecuteScalar(); // Menjalankan query dan mengambil hasil pertama
-                command.Parameters.Clear(); // Membersihkan parameter untuk query berikutnya
-                closeConnection(); // Menutup koneksi
+                command.Prepare(); 
+                object result = command.ExecuteScalar(); 
+                command.Parameters.Clear(); 
+                closeConnection(); 
 
-                return result; // Mengembalikan hasil eksekusi
+                return result; 
             }
             catch (Exception e)
             {

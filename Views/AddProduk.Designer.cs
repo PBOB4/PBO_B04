@@ -1,6 +1,6 @@
 ﻿namespace TeaSMart_App.Views
 {
-    partial class MelihatDetProduk
+    partial class AddProduk
     {
         /// <summary>
         /// Required designer variable.
@@ -28,18 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
+            pictureBox1 = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
-            // MelihatDetProduk
+            // pictureBox1
+            // 
+            pictureBox1.Location = new Point(229, 73);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(111, 119);
+            pictureBox1.TabIndex = 0;
+            pictureBox1.TabStop = false;
+            // 
+            // AddProduk
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(819, 490);
-            Name = "MelihatDetProduk";
+            BackColor = Color.FromArgb(181, 199, 156);
+            ClientSize = new Size(587, 546);
+            Controls.Add(pictureBox1);
+            Name = "AddProduk";
             Text = "MelihatDetProduk";
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
+
+        private PictureBox pictureBox1;
     }
 }

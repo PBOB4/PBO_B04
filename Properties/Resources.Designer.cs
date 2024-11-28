@@ -63,9 +63,9 @@ namespace TeaSMart_App.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap IMG_20241124_WA0005 {
+        internal static System.Drawing.Bitmap Teh_Jasmine_Premium {
             get {
-                object obj = ResourceManager.GetObject("IMG-20241124-WA0005", resourceCulture);
+                object obj = ResourceManager.GetObject("Teh Jasmine Premium", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -15,7 +15,7 @@ namespace TeaSMart_App.App.Context
     {
         private static string table = "products";
 
-        public static DataTable AddProducts(int product_id) //JOIN KAH?
+        public static void AddProducts(int product_id)
         {
             string query = @"
                 Select ";
@@ -26,7 +26,6 @@ namespace TeaSMart_App.App.Context
             };
 
             DataTable dataUsers = queryExecutor(query, parameters);
-            return dataUsers;
         }
 
         public static DataTable All(int product_id)
