@@ -261,7 +261,7 @@
             button3.Name = "button3";
             button3.Size = new Size(267, 62);
             button3.TabIndex = 0;
-            button3.Text = "              Rekap Bulanan";
+            button3.Text = "              Settings";
             button3.TextAlign = ContentAlignment.MiddleLeft;
             button3.UseVisualStyleBackColor = false;
             // 

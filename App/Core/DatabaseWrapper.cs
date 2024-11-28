@@ -11,7 +11,7 @@ namespace TeaSMart_App.App.Core
     internal class DatabaseWrapper
     {
         private static readonly string DB_HOST = "localhost";
-        private static readonly string DB_DATABASE = "TSMDatabase";
+        private static readonly string DB_DATABASE = "TeaSMartdb";
         private static readonly string DB_USERNAME = "postgres";
         private static readonly string DB_PASSWORD = "najwaa";
 

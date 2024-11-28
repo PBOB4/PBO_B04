@@ -16,12 +16,12 @@ namespace TeaSMart_App.App.Models
         public string namaProduk { get; set; }
         [Required]
         public Decimal hargaProduk { get; set; }
-        [ForeignKey ("M_batchproduk")]
-        public int id_batch { get; set; }
         [ForeignKey("M_jenis")]
         public int id_jenis { get; set; }
-        [ForeignKey("M_User")]
-        public int id_user { get; set; }
+        [Required]
+        public DateTime Diperbarui { get; set; }
+        [Required]
+        public int Stok { get; set; }
         [Required]
         public string gambar { get; set; }
         [Required]

@@ -30,20 +30,20 @@
         {
             pictureBox1 = new PictureBox();
             label1 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
+            tbNama = new TextBox();
+            tbHarga = new TextBox();
             label2 = new Label();
-            textBox3 = new TextBox();
             label3 = new Label();
             label4 = new Label();
             label5 = new Label();
-            textBox6 = new TextBox();
-            label6 = new Label();
-            dateTimePicker1 = new DateTimePicker();
-            dateTimePicker2 = new DateTimePicker();
+            dtPDiperbarui = new DateTimePicker();
             panel1 = new Panel();
-            button1 = new Button();
-            button2 = new Button();
+            tbFileName = new TextBox();
+            label6 = new Label();
+            tbStok = new TextBox();
+            cbJenis = new ComboBox();
+            btnAddImage = new Button();
+            btnSubmit = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -66,21 +66,21 @@
             label1.TabIndex = 1;
             label1.Text = "Nama";
             // 
-            // textBox1
+            // tbNama
             // 
-            textBox1.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(136, 13);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(244, 30);
-            textBox1.TabIndex = 2;
+            tbNama.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tbNama.Location = new Point(136, 13);
+            tbNama.Name = "tbNama";
+            tbNama.Size = new Size(244, 30);
+            tbNama.TabIndex = 2;
             // 
-            // textBox2
+            // tbHarga
             // 
-            textBox2.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox2.Location = new Point(136, 49);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(244, 30);
-            textBox2.TabIndex = 4;
+            tbHarga.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tbHarga.Location = new Point(136, 49);
+            tbHarga.Name = "tbHarga";
+            tbHarga.Size = new Size(244, 30);
+            tbHarga.TabIndex = 4;
             // 
             // label2
             // 
@@ -91,14 +91,6 @@
             label2.Size = new Size(59, 23);
             label2.TabIndex = 3;
             label2.Text = "Harga";
-            // 
-            // textBox3
-            // 
-            textBox3.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox3.Location = new Point(136, 85);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(244, 30);
-            textBox3.TabIndex = 6;
             // 
             // label3
             // 
@@ -116,9 +108,9 @@
             label4.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label4.Location = new Point(13, 196);
             label4.Name = "label4";
-            label4.Size = new Size(40, 23);
+            label4.Size = new Size(87, 23);
             label4.TabIndex = 11;
-            label4.Text = "EXP";
+            label4.Text = "File name";
             // 
             // label5
             // 
@@ -126,91 +118,100 @@
             label5.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label5.Location = new Point(13, 160);
             label5.Name = "label5";
-            label5.Size = new Size(80, 23);
+            label5.Size = new Size(97, 23);
             label5.TabIndex = 9;
-            label5.Text = "Produksi";
+            label5.Text = "Diperbarui";
             // 
-            // textBox6
+            // dtPDiperbarui
             // 
-            textBox6.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox6.Location = new Point(136, 121);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(244, 30);
-            textBox6.TabIndex = 8;
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.Location = new Point(13, 125);
-            label6.Name = "label6";
-            label6.Size = new Size(55, 23);
-            label6.TabIndex = 7;
-            label6.Text = "Batch";
-            // 
-            // dateTimePicker1
-            // 
-            dateTimePicker1.Location = new Point(136, 160);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(250, 27);
-            dateTimePicker1.TabIndex = 12;
-            // 
-            // dateTimePicker2
-            // 
-            dateTimePicker2.Location = new Point(136, 196);
-            dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.Size = new Size(250, 27);
-            dateTimePicker2.TabIndex = 13;
+            dtPDiperbarui.Location = new Point(136, 160);
+            dtPDiperbarui.Name = "dtPDiperbarui";
+            dtPDiperbarui.Size = new Size(250, 27);
+            dtPDiperbarui.TabIndex = 12;
             // 
             // panel1
             // 
             panel1.AutoSize = true;
-            panel1.Controls.Add(textBox1);
-            panel1.Controls.Add(dateTimePicker2);
+            panel1.Controls.Add(tbFileName);
+            panel1.Controls.Add(label6);
+            panel1.Controls.Add(tbStok);
+            panel1.Controls.Add(cbJenis);
+            panel1.Controls.Add(tbNama);
             panel1.Controls.Add(label1);
-            panel1.Controls.Add(dateTimePicker1);
+            panel1.Controls.Add(dtPDiperbarui);
             panel1.Controls.Add(label2);
             panel1.Controls.Add(label4);
-            panel1.Controls.Add(textBox2);
+            panel1.Controls.Add(tbHarga);
             panel1.Controls.Add(label5);
             panel1.Controls.Add(label3);
-            panel1.Controls.Add(textBox6);
-            panel1.Controls.Add(textBox3);
-            panel1.Controls.Add(label6);
             panel1.Location = new Point(49, 204);
             panel1.Name = "panel1";
             panel1.Size = new Size(416, 235);
             panel1.TabIndex = 14;
             // 
-            // button1
+            // tbFileName
             // 
-            button1.AutoSize = true;
-            button1.BackColor = Color.FromArgb(8, 51, 0);
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(202, 154);
-            button1.Name = "button1";
-            button1.Size = new Size(106, 35);
-            button1.TabIndex = 15;
-            button1.Text = "Add Image";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
+            tbFileName.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tbFileName.Location = new Point(136, 196);
+            tbFileName.Name = "tbFileName";
+            tbFileName.Size = new Size(244, 30);
+            tbFileName.TabIndex = 17;
             // 
-            // button2
+            // label6
             // 
-            button2.AutoSize = true;
-            button2.BackColor = Color.FromArgb(8, 51, 0);
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button2.ForeColor = Color.White;
-            button2.Location = new Point(212, 464);
-            button2.Name = "button2";
-            button2.Size = new Size(94, 35);
-            button2.TabIndex = 16;
-            button2.Text = "Submit";
-            button2.UseVisualStyleBackColor = false;
-            button2.Click += button2_Click;
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label6.Location = new Point(13, 128);
+            label6.Name = "label6";
+            label6.Size = new Size(47, 23);
+            label6.TabIndex = 16;
+            label6.Text = "Stok";
+            // 
+            // tbStok
+            // 
+            tbStok.Location = new Point(139, 127);
+            tbStok.Name = "tbStok";
+            tbStok.Size = new Size(76, 27);
+            tbStok.TabIndex = 15;
+            // 
+            // cbJenis
+            // 
+            cbJenis.FormattingEnabled = true;
+            cbJenis.Items.AddRange(new object[] { "Ekonomis", "Premium", "Limited-Edition" });
+            cbJenis.Location = new Point(136, 88);
+            cbJenis.Name = "cbJenis";
+            cbJenis.Size = new Size(244, 28);
+            cbJenis.TabIndex = 14;
+            // 
+            // btnAddImage
+            // 
+            btnAddImage.AutoSize = true;
+            btnAddImage.BackColor = Color.FromArgb(8, 51, 0);
+            btnAddImage.FlatStyle = FlatStyle.Flat;
+            btnAddImage.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnAddImage.ForeColor = Color.White;
+            btnAddImage.Location = new Point(202, 154);
+            btnAddImage.Name = "btnAddImage";
+            btnAddImage.Size = new Size(106, 35);
+            btnAddImage.TabIndex = 15;
+            btnAddImage.Text = "Add Image";
+            btnAddImage.UseVisualStyleBackColor = false;
+            btnAddImage.Click += btnAddImage_Click;
+            // 
+            // btnSubmit
+            // 
+            btnSubmit.AutoSize = true;
+            btnSubmit.BackColor = Color.FromArgb(8, 51, 0);
+            btnSubmit.FlatStyle = FlatStyle.Flat;
+            btnSubmit.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnSubmit.ForeColor = Color.White;
+            btnSubmit.Location = new Point(212, 464);
+            btnSubmit.Name = "btnSubmit";
+            btnSubmit.Size = new Size(94, 35);
+            btnSubmit.TabIndex = 16;
+            btnSubmit.Text = "Submit";
+            btnSubmit.UseVisualStyleBackColor = false;
+            btnSubmit.Click += btnSubmit_Click;
             // 
             // AddProduk
             // 
@@ -218,12 +219,13 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(181, 199, 156);
             ClientSize = new Size(525, 546);
-            Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(btnSubmit);
+            Controls.Add(btnAddImage);
             Controls.Add(panel1);
             Controls.Add(pictureBox1);
             Name = "AddProduk";
             Text = "MelihatDetProduk";
+            Load += AddProduk_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
@@ -235,19 +237,19 @@
 
         private PictureBox pictureBox1;
         private Label label1;
-        private TextBox textBox1;
-        private TextBox textBox2;
+        private TextBox tbNama;
+        private TextBox tbHarga;
         private Label label2;
-        private TextBox textBox3;
         private Label label3;
         private Label label4;
         private Label label5;
-        private TextBox textBox6;
-        private Label label6;
-        private DateTimePicker dateTimePicker1;
-        private DateTimePicker dateTimePicker2;
+        private DateTimePicker dtPDiperbarui;
         private Panel panel1;
-        private Button button1;
-        private Button button2;
+        private Button btnAddImage;
+        private Button btnSubmit;
+        private ComboBox cbJenis;
+        private Label label6;
+        private TextBox tbStok;
+        private TextBox tbFileName;
     }
 }

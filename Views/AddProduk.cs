@@ -7,25 +7,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TeaSMart_App.App.Context;
+using TeaSMart_App.App.Models;
 
 namespace TeaSMart_App.Views
 {
     public partial class AddProduk : Form
     {
-        public string NamaProduk { get; private set; }
-        public string HargaProduk { get; private set; }
-        public Image gambar { get; private set; }
-        public string Jenis { get; private set; }
-        public string batch { get; private set; }
-        public DateOnly tglProduksi { get; private set; }
-        public DateOnly tglEXP { get; private set; }
+        private C_Produk _CProduk;
 
         public AddProduk()
         {
             InitializeComponent();
+            _CProduk = new C_Produk();
+            LoadCBJenis();
+
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnAddImage_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog
             {
@@ -60,22 +59,71 @@ namespace TeaSMart_App.Views
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+
+
+        private void AddProduk_Load(object sender, EventArgs e)
         {
-            NamaProduk = textBox1.Text;
-            HargaProduk = textBox2.Text; // TextBox untuk harga
-            gambar = pictureBox1.Image;
-            Jenis = textBox3.Text;
-            batch = textBox6.Text;
-
-            if (string.IsNullOrWhiteSpace(NamaProduk) || string.IsNullOrWhiteSpace(HargaProduk))
+            LoadCBJenis();
+        }
+        private void LoadCBJenis()
+        {
+            try
             {
-                MessageBox.Show("Silakan isi semua kolom!", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
+                List<M_jenis> jenisTehList = _CProduk.GetAllJenis();
 
-            this.DialogResult = DialogResult.OK;
-            this.Close();
+                // Mengisi ComboBox dengan data jenis teh
+                cbJenis.DataSource = jenisTehList;
+                cbJenis.DisplayMember = "jenis"; // Menampilkan nama jenis teh
+                cbJenis.ValueMember = "id_jenis";     // Menyimpan ID jenis teh di dalam nilai combo box
+                cbJenis.SelectedIndex = -1;
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Gagal memuat data jenis teh: {ex.Message}");
+            }
+        }
+
+        private void btnSubmit_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (cbJenis.SelectedIndex == -1)
+                {
+                    MessageBox.Show("Pilih jenis teh terlebih dahulu.", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                // Dapatkan nama jenis teh yang dipilih
+                //string selectedJenis = cbJenis.SelectedItem.ToString();
+
+                //int id_jenis = M_jenis.GetIdByNamaJenis(selectedJenis);  // Gunakan M_jenis untuk mendapatkan ID
+
+
+                // Ambil id_jenis berdasarkan nama jenis teh yang dipilih
+                //int id_jenis = _CProduk.GetIdByNamaJenis(selectedJenis);
+
+                int id_jenis = Convert.ToInt32(cbJenis.SelectedValue);
+
+
+                M_Produk produkBaru = new M_Produk
+                {
+                    namaProduk = tbNama.Text.Trim(),
+                    hargaProduk = Convert.ToDecimal(tbHarga.Text.Trim()),
+                    Stok = Convert.ToInt32(tbStok.Text.Trim()),
+                    Diperbarui = dtPDiperbarui.Value,
+                    gambar = tbFileName.Text.Trim(),
+                    isActive= true,
+                    id_jenis= id_jenis
+                };
+                C_Produk.AddProduk(produkBaru);
+                MessageBox.Show("Produk baru berhasil ditambahkan!", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

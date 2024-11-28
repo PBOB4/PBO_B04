@@ -9,23 +9,36 @@ using System.Threading.Tasks;
 using TeaSMart_App.App.Core;
 using TeaSMart_App.App.Models;
 
+
 namespace TeaSMart_App.App.Context
 {
     internal class C_Produk : DatabaseWrapper
     {
-        private static string table = "products";
-
-        public static void AddProducts(int product_id)
+        public List<M_jenis> GetAllJenis()
         {
-            string query = @"
-                Select ";
+            return M_jenis.GetJenisTeh();
+        }
+
+        private static string table = "produk";
+
+        public static void AddProduk(M_Produk produkBaru)
+        {
+            string query = $@"
+                INSERT INTO {table} (namaproduk, hargaproduk, id_jenis, stok, gambar, diperbarui, isactive)
+                VALUES (@namaProduk, @hargaProduk, @id_jenis, @stok, @gambar, @diperbarui, @isActive)";
 
             NpgsqlParameter[] parameters =
             {
-                new NpgsqlParameter("@product_id", NpgsqlTypes.NpgsqlDbType.Integer) { Value = product_id }
+                new NpgsqlParameter("@namaProduk", produkBaru.namaProduk),
+                new NpgsqlParameter("@hargaProduk", produkBaru.hargaProduk),
+                new NpgsqlParameter("@id_jenis", produkBaru.id_jenis),
+                new NpgsqlParameter("@stok", produkBaru.Stok),
+                new NpgsqlParameter("@gambar", produkBaru.gambar),
+                new NpgsqlParameter("@diperbarui", produkBaru.Diperbarui),
+                new NpgsqlParameter("@isActive", produkBaru.isActive)
             };
 
-            DataTable dataUsers = queryExecutor(query, parameters);
+            commandExecutor(query, parameters);
         }
 
         public static DataTable All(int product_id)

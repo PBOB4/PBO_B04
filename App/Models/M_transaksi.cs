@@ -14,5 +14,9 @@ namespace TeaSMart_App.App.Models
         public int id_transaksi { get; set; }
         [Required]
         public DateTime tanggalTransaksi { get; set; }
+        [Required]
+        public Decimal totalBayar { get; set; }
+        [ForeignKey("M_User")]
+        public int id_user { get; set; }
     }
 }

@@ -73,7 +73,7 @@ namespace TeaSMart_App.Views
             AddProduk produkBaru = new AddProduk();
             if (produkBaru.ShowDialog() == DialogResult.OK) // Pastikan validasi di Form3 berhasil
             {
-                TambahPanelProduk(produkBaru.NamaProduk, produkBaru.HargaProduk, produkBaru.gambar, produkBaru.Jenis, produkBaru.batch, produkBaru.tglProduksi, produkBaru.tglEXP);
+                //TambahPanelProduk(produkBaru.NamaProduk, produkBaru.HargaProduk, produkBaru.gambar, produkBaru.Jenis, produkBaru.batch, produkBaru.tglProduksi, produkBaru.tglEXP);
             }
         }
 
