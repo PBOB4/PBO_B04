@@ -41,18 +41,42 @@ namespace TeaSMart_App.App.Context
             commandExecutor(query, parameters);
         }
 
-        public static DataTable All(int product_id)
+        public static List<M_Produk> GetAllProduct()
+        {
+            List<M_Produk> products = new List<M_Produk>();
+
+            // Query untuk mengambil semua produk
+            string query = "SELECT id_produk, namaproduk, hargaproduk, stok, gambar from produk ";
+
+            // Eksekusi query untuk mendapatkan hasil
+            DataTable dataTable = DatabaseWrapper.queryExecutor(query);
+            foreach(DataRow row in dataTable.Rows)
+            {
+                M_Produk produk = new M_Produk
+                {
+                    id_produk = Convert.ToInt32(row["id_produk"]),
+                    namaProduk = row["namaproduk"].ToString(),
+                    hargaProduk = Convert.ToDecimal(row["hargaproduk"]),
+                    Stok = Convert.ToInt32(row["stok"]),
+                    gambar = row["gambar"].ToString()
+                };
+                products.Add(produk);
+            }
+            return products;
+        }
+
+        public static DataTable All(int id_produk)
         {
             string query = @"
-                select product_name, unit_price, image from products ";
+                select namaproduk, hargaproduk, stok, gambar from produk ";
 
             NpgsqlParameter[] parameters =
             {
-                new NpgsqlParameter("@product_id", NpgsqlTypes.NpgsqlDbType.Integer) { Value = product_id }
+                new NpgsqlParameter("@product_id", NpgsqlTypes.NpgsqlDbType.Integer) { Value = id_produk }
             };
 
-            DataTable dataUsers = queryExecutor(query, parameters);
-            return dataUsers;
+            DataTable dataProduk = queryExecutor(query, parameters);
+            return dataProduk;
         }
 
         public static DataTable UpdateProducts(int product_id)

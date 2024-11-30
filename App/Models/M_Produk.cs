@@ -26,5 +26,7 @@ namespace TeaSMart_App.App.Models
         public string gambar { get; set; }
         [Required]
         public Boolean isActive { get; set; }
+
+        
     }
 }

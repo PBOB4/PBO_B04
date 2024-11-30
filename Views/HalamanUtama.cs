@@ -65,7 +65,7 @@ namespace PROJEK
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Inventaris_Owner inventaris_Owner = new Inventaris_Owner();
+            InventarisOwner inventaris_Owner = new InventarisOwner();
             inventaris_Owner.Show();
             this.Hide();
         }

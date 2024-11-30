@@ -346,6 +346,7 @@
             Controls.Add(panel1);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FormRegist";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Registrasi - TeaSMart";
             Load += FormRegist_Load;
             panel1.ResumeLayout(false);

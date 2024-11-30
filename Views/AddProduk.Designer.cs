@@ -224,6 +224,7 @@
             Controls.Add(panel1);
             Controls.Add(pictureBox1);
             Name = "AddProduk";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "MelihatDetProduk";
             Load += AddProduk_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

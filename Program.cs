@@ -15,7 +15,9 @@ namespace TeaSMart_App
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new AddProduk());
+            Application.Run(new HalamanUtama());
         }
     }
 }
+
+// di bagian design, mengatur winform default, jadi posisinya akan tetap ditengah

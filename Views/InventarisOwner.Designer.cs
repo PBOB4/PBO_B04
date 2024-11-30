@@ -1,6 +1,6 @@
 ﻿namespace TeaSMart_App.Views
 {
-    partial class Inventaris_Owner
+    partial class InventarisOwner
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Inventaris_Owner));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InventarisOwner));
             panel1 = new Panel();
             pictureBox8 = new PictureBox();
             pictureBox7 = new PictureBox();
@@ -52,11 +52,33 @@
             button4 = new Button();
             sidebarTimer = new System.Windows.Forms.Timer(components);
             flykatalogProduk = new FlowLayoutPanel();
+            panel8 = new Panel();
+            button7 = new Button();
+            button6 = new Button();
+            label3 = new Label();
+            label2 = new Label();
+            label1 = new Label();
+            pictureBox9 = new PictureBox();
+            panel9 = new Panel();
+            button8 = new Button();
+            button9 = new Button();
+            label4 = new Label();
+            label5 = new Label();
+            label6 = new Label();
+            pictureBox10 = new PictureBox();
+            panel10 = new Panel();
+            button10 = new Button();
+            button11 = new Button();
+            label7 = new Label();
+            label8 = new Label();
+            label9 = new Label();
+            pictureBox11 = new PictureBox();
             cbKategori = new ComboBox();
             button5 = new Button();
             panel7 = new Panel();
             pictureBox6 = new PictureBox();
             textBox1 = new TextBox();
+            panelHalUtama = new Panel();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
@@ -72,8 +94,16 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
+            flykatalogProduk.SuspendLayout();
+            panel8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox9).BeginInit();
+            panel9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox10).BeginInit();
+            panel10.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox11).BeginInit();
             panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
+            panelHalUtama.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -83,7 +113,7 @@
             panel1.Controls.Add(btnMenu);
             panel1.Location = new Point(3, 3);
             panel1.Name = "panel1";
-            panel1.Size = new Size(264, 78);
+            panel1.Size = new Size(276, 78);
             panel1.TabIndex = 0;
             // 
             // pictureBox8
@@ -108,6 +138,7 @@
             // 
             // btnMenu
             // 
+            btnMenu.Cursor = Cursors.Hand;
             btnMenu.Image = (Image)resources.GetObject("btnMenu.Image");
             btnMenu.Location = new Point(21, 22);
             btnMenu.Name = "btnMenu";
@@ -128,11 +159,9 @@
             sidebar.Controls.Add(panel6);
             sidebar.Dock = DockStyle.Left;
             sidebar.Location = new Point(0, 0);
-            sidebar.MaximumSize = new Size(267, 721);
-            sidebar.MinimumSize = new Size(76, 721);
             sidebar.Name = "sidebar";
-            sidebar.Size = new Size(267, 721);
-            sidebar.TabIndex = 1;
+            sidebar.Size = new Size(275, 721);
+            sidebar.TabIndex = 0;
             // 
             // panel2
             // 
@@ -140,7 +169,7 @@
             panel2.Controls.Add(btnHalUtama);
             panel2.Location = new Point(3, 87);
             panel2.Name = "panel2";
-            panel2.Size = new Size(264, 65);
+            panel2.Size = new Size(272, 65);
             panel2.TabIndex = 1;
             // 
             // pictureBox1
@@ -160,7 +189,7 @@
             btnHalUtama.ForeColor = Color.FromArgb(7, 43, 0);
             btnHalUtama.Location = new Point(-3, 0);
             btnHalUtama.Name = "btnHalUtama";
-            btnHalUtama.Size = new Size(267, 62);
+            btnHalUtama.Size = new Size(275, 62);
             btnHalUtama.TabIndex = 0;
             btnHalUtama.Text = "              Halaman Utama";
             btnHalUtama.TextAlign = ContentAlignment.MiddleLeft;
@@ -173,7 +202,7 @@
             panel3.Controls.Add(button1);
             panel3.Location = new Point(3, 158);
             panel3.Name = "panel3";
-            panel3.Size = new Size(264, 65);
+            panel3.Size = new Size(276, 65);
             panel3.TabIndex = 2;
             // 
             // pictureBox2
@@ -195,7 +224,7 @@
             button1.ForeColor = Color.FromArgb(7, 43, 0);
             button1.Location = new Point(-3, 0);
             button1.Name = "button1";
-            button1.Size = new Size(267, 62);
+            button1.Size = new Size(276, 62);
             button1.TabIndex = 0;
             button1.Text = "              Inventaris Produk";
             button1.TextAlign = ContentAlignment.MiddleLeft;
@@ -207,8 +236,9 @@
             panel4.Controls.Add(button2);
             panel4.Location = new Point(3, 229);
             panel4.Name = "panel4";
-            panel4.Size = new Size(264, 65);
+            panel4.Size = new Size(272, 65);
             panel4.TabIndex = 3;
+            panel4.Paint += panel4_Paint;
             // 
             // pictureBox3
             // 
@@ -227,7 +257,7 @@
             button2.ForeColor = Color.FromArgb(7, 43, 0);
             button2.Location = new Point(-3, 0);
             button2.Name = "button2";
-            button2.Size = new Size(267, 62);
+            button2.Size = new Size(275, 62);
             button2.TabIndex = 0;
             button2.Text = "              Transaksi";
             button2.TextAlign = ContentAlignment.MiddleLeft;
@@ -239,7 +269,7 @@
             panel5.Controls.Add(button3);
             panel5.Location = new Point(3, 300);
             panel5.Name = "panel5";
-            panel5.Size = new Size(264, 65);
+            panel5.Size = new Size(272, 65);
             panel5.TabIndex = 4;
             // 
             // pictureBox4
@@ -259,11 +289,12 @@
             button3.ForeColor = Color.FromArgb(7, 43, 0);
             button3.Location = new Point(-3, 0);
             button3.Name = "button3";
-            button3.Size = new Size(267, 62);
+            button3.Size = new Size(275, 62);
             button3.TabIndex = 0;
             button3.Text = "              Settings";
             button3.TextAlign = ContentAlignment.MiddleLeft;
             button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
             // 
             // panel6
             // 
@@ -271,7 +302,7 @@
             panel6.Controls.Add(button4);
             panel6.Location = new Point(3, 371);
             panel6.Name = "panel6";
-            panel6.Size = new Size(264, 65);
+            panel6.Size = new Size(272, 65);
             panel6.TabIndex = 5;
             // 
             // pictureBox5
@@ -291,7 +322,7 @@
             button4.ForeColor = Color.FromArgb(7, 43, 0);
             button4.Location = new Point(-3, 0);
             button4.Name = "button4";
-            button4.Size = new Size(267, 62);
+            button4.Size = new Size(275, 62);
             button4.TabIndex = 0;
             button4.Text = "              Log out";
             button4.TextAlign = ContentAlignment.MiddleLeft;
@@ -303,27 +334,250 @@
             // 
             // flykatalogProduk
             // 
+            flykatalogProduk.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             flykatalogProduk.AutoScroll = true;
+            flykatalogProduk.AutoSize = true;
             flykatalogProduk.BackColor = Color.Transparent;
-            flykatalogProduk.Location = new Point(278, 124);
+            flykatalogProduk.Controls.Add(panel8);
+            flykatalogProduk.Controls.Add(panel9);
+            flykatalogProduk.Controls.Add(panel10);
+            flykatalogProduk.Location = new Point(10, 116);
             flykatalogProduk.Name = "flykatalogProduk";
-            flykatalogProduk.Size = new Size(1063, 553);
+            flykatalogProduk.Size = new Size(1060, 590);
             flykatalogProduk.TabIndex = 2;
             flykatalogProduk.Paint += flykatalogProduk_Paint;
             // 
+            // panel8
+            // 
+            panel8.BackColor = Color.FromArgb(153, 178, 127);
+            panel8.Controls.Add(button7);
+            panel8.Controls.Add(button6);
+            panel8.Controls.Add(label3);
+            panel8.Controls.Add(label2);
+            panel8.Controls.Add(label1);
+            panel8.Controls.Add(pictureBox9);
+            panel8.Location = new Point(3, 3);
+            panel8.Name = "panel8";
+            panel8.Size = new Size(340, 159);
+            panel8.TabIndex = 0;
+            // 
+            // button7
+            // 
+            button7.Location = new Point(145, 120);
+            button7.Name = "button7";
+            button7.Size = new Size(94, 29);
+            button7.TabIndex = 5;
+            button7.Text = "hapus";
+            button7.UseVisualStyleBackColor = true;
+            // 
+            // button6
+            // 
+            button6.Location = new Point(246, 120);
+            button6.Name = "button6";
+            button6.Size = new Size(94, 29);
+            button6.TabIndex = 4;
+            button6.Text = "ubah";
+            button6.UseVisualStyleBackColor = true;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.Location = new Point(145, 66);
+            label3.Name = "label3";
+            label3.Size = new Size(50, 20);
+            label3.TabIndex = 3;
+            label3.Text = "label3";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Location = new Point(145, 46);
+            label2.Name = "label2";
+            label2.Size = new Size(51, 20);
+            label2.TabIndex = 2;
+            label2.Text = "label2";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(145, 23);
+            label1.Name = "label1";
+            label1.Size = new Size(59, 23);
+            label1.TabIndex = 1;
+            label1.Text = "label1";
+            // 
+            // pictureBox9
+            // 
+            pictureBox9.Image = Properties.Resources.default_image;
+            pictureBox9.Location = new Point(18, 18);
+            pictureBox9.Name = "pictureBox9";
+            pictureBox9.Size = new Size(115, 126);
+            pictureBox9.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox9.TabIndex = 0;
+            pictureBox9.TabStop = false;
+            // 
+            // panel9
+            // 
+            panel9.BackColor = Color.FromArgb(153, 178, 127);
+            panel9.Controls.Add(button8);
+            panel9.Controls.Add(button9);
+            panel9.Controls.Add(label4);
+            panel9.Controls.Add(label5);
+            panel9.Controls.Add(label6);
+            panel9.Controls.Add(pictureBox10);
+            panel9.Location = new Point(349, 3);
+            panel9.Name = "panel9";
+            panel9.Size = new Size(340, 159);
+            panel9.TabIndex = 6;
+            // 
+            // button8
+            // 
+            button8.Location = new Point(145, 120);
+            button8.Name = "button8";
+            button8.Size = new Size(94, 29);
+            button8.TabIndex = 5;
+            button8.Text = "hapus";
+            button8.UseVisualStyleBackColor = true;
+            // 
+            // button9
+            // 
+            button9.Location = new Point(246, 120);
+            button9.Name = "button9";
+            button9.Size = new Size(94, 29);
+            button9.TabIndex = 4;
+            button9.Text = "ubah";
+            button9.UseVisualStyleBackColor = true;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.Location = new Point(145, 66);
+            label4.Name = "label4";
+            label4.Size = new Size(51, 20);
+            label4.TabIndex = 3;
+            label4.Text = "label4";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label5.Location = new Point(145, 46);
+            label5.Name = "label5";
+            label5.Size = new Size(51, 20);
+            label5.TabIndex = 2;
+            label5.Text = "label5";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label6.Location = new Point(145, 23);
+            label6.Name = "label6";
+            label6.Size = new Size(59, 23);
+            label6.TabIndex = 1;
+            label6.Text = "label6";
+            // 
+            // pictureBox10
+            // 
+            pictureBox10.Image = Properties.Resources.default_image;
+            pictureBox10.Location = new Point(18, 18);
+            pictureBox10.Name = "pictureBox10";
+            pictureBox10.Size = new Size(115, 126);
+            pictureBox10.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox10.TabIndex = 0;
+            pictureBox10.TabStop = false;
+            // 
+            // panel10
+            // 
+            panel10.BackColor = Color.FromArgb(153, 178, 127);
+            panel10.Controls.Add(button10);
+            panel10.Controls.Add(button11);
+            panel10.Controls.Add(label7);
+            panel10.Controls.Add(label8);
+            panel10.Controls.Add(label9);
+            panel10.Controls.Add(pictureBox11);
+            panel10.Location = new Point(695, 3);
+            panel10.Name = "panel10";
+            panel10.Size = new Size(340, 159);
+            panel10.TabIndex = 6;
+            // 
+            // button10
+            // 
+            button10.Location = new Point(145, 120);
+            button10.Name = "button10";
+            button10.Size = new Size(94, 29);
+            button10.TabIndex = 5;
+            button10.Text = "hapus";
+            button10.UseVisualStyleBackColor = true;
+            // 
+            // button11
+            // 
+            button11.Location = new Point(246, 120);
+            button11.Name = "button11";
+            button11.Size = new Size(94, 29);
+            button11.TabIndex = 4;
+            button11.Text = "ubah";
+            button11.UseVisualStyleBackColor = true;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label7.Location = new Point(145, 66);
+            label7.Name = "label7";
+            label7.Size = new Size(50, 20);
+            label7.TabIndex = 3;
+            label7.Text = "label7";
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label8.Location = new Point(145, 46);
+            label8.Name = "label8";
+            label8.Size = new Size(51, 20);
+            label8.TabIndex = 2;
+            label8.Text = "label8";
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label9.Location = new Point(145, 23);
+            label9.Name = "label9";
+            label9.Size = new Size(59, 23);
+            label9.TabIndex = 1;
+            label9.Text = "label9";
+            // 
+            // pictureBox11
+            // 
+            pictureBox11.Image = Properties.Resources.default_image;
+            pictureBox11.Location = new Point(18, 18);
+            pictureBox11.Name = "pictureBox11";
+            pictureBox11.Size = new Size(115, 126);
+            pictureBox11.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox11.TabIndex = 0;
+            pictureBox11.TabStop = false;
+            // 
             // cbKategori
             // 
+            cbKategori.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             cbKategori.FormattingEnabled = true;
             cbKategori.Items.AddRange(new object[] { "All", "Premium", "Ekonomis", "Limited-edition" });
-            cbKategori.Location = new Point(939, 38);
+            cbKategori.Location = new Point(643, 35);
             cbKategori.Name = "cbKategori";
             cbKategori.Size = new Size(297, 28);
             cbKategori.TabIndex = 3;
             // 
             // button5
             // 
+            button5.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             button5.BackColor = Color.FromArgb(153, 178, 127);
-            button5.Location = new Point(1242, 35);
+            button5.Location = new Point(946, 33);
             button5.Name = "button5";
             button5.Size = new Size(94, 55);
             button5.TabIndex = 4;
@@ -336,9 +590,9 @@
             panel7.BackColor = Color.FromArgb(181, 199, 156);
             panel7.Controls.Add(pictureBox6);
             panel7.Controls.Add(textBox1);
-            panel7.Location = new Point(278, 27);
+            panel7.Location = new Point(10, 22);
             panel7.Name = "panel7";
-            panel7.Size = new Size(431, 63);
+            panel7.Size = new Size(436, 63);
             panel7.TabIndex = 5;
             // 
             // pictureBox6
@@ -353,6 +607,7 @@
             // 
             // textBox1
             // 
+            textBox1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             textBox1.BackColor = Color.FromArgb(157, 181, 132);
             textBox1.BorderStyle = BorderStyle.None;
             textBox1.Location = new Point(55, 11);
@@ -361,20 +616,32 @@
             textBox1.Size = new Size(367, 42);
             textBox1.TabIndex = 0;
             // 
-            // Inventaris_Owner
+            // panelHalUtama
+            // 
+            panelHalUtama.AutoScroll = true;
+            panelHalUtama.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            panelHalUtama.BackgroundImage = (Image)resources.GetObject("panelHalUtama.BackgroundImage");
+            panelHalUtama.Controls.Add(button5);
+            panelHalUtama.Controls.Add(panel7);
+            panelHalUtama.Controls.Add(cbKategori);
+            panelHalUtama.Controls.Add(flykatalogProduk);
+            panelHalUtama.Dock = DockStyle.Fill;
+            panelHalUtama.Location = new Point(275, 0);
+            panelHalUtama.Name = "panelHalUtama";
+            panelHalUtama.Size = new Size(1073, 721);
+            panelHalUtama.TabIndex = 6;
+            // 
+            // InventarisOwner
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(1348, 721);
-            Controls.Add(panel7);
-            Controls.Add(button5);
-            Controls.Add(cbKategori);
-            Controls.Add(flykatalogProduk);
+            Controls.Add(panelHalUtama);
             Controls.Add(sidebar);
-            Name = "Inventaris_Owner";
+            Name = "InventarisOwner";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Inventaris_Owner";
-            Load += Inventaris_Owner_Load;
+            Load += InventarisOwner_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
@@ -396,16 +663,27 @@
             panel6.ResumeLayout(false);
             panel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
+            flykatalogProduk.ResumeLayout(false);
+            panel8.ResumeLayout(false);
+            panel8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox9).EndInit();
+            panel9.ResumeLayout(false);
+            panel9.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox10).EndInit();
+            panel10.ResumeLayout(false);
+            panel10.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox11).EndInit();
             panel7.ResumeLayout(false);
             panel7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
+            panelHalUtama.ResumeLayout(false);
+            panelHalUtama.PerformLayout();
             ResumeLayout(false);
         }
 
         #endregion
 
         private Panel panel1;
-        private FlowLayoutPanel sidebar;
         private Panel panel2;
         private PictureBox pictureBox1;
         private Button btnHalUtama;
@@ -431,5 +709,28 @@
         private Panel panel7;
         private TextBox textBox1;
         private PictureBox pictureBox6;
+        private Panel panel8;
+        private PictureBox pictureBox9;
+        private Button button7;
+        private Button button6;
+        private Label label3;
+        private Label label2;
+        private Label label1;
+        private Panel panelHalUtama;
+        private Panel panel9;
+        private Button button8;
+        private Button button9;
+        private Label label4;
+        private Label label5;
+        private Label label6;
+        private PictureBox pictureBox10;
+        private Panel panel10;
+        private Button button10;
+        private Button button11;
+        private Label label7;
+        private Label label8;
+        private Label label9;
+        private PictureBox pictureBox11;
+        public FlowLayoutPanel sidebar;
     }
 }

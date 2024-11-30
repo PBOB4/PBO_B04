@@ -51,7 +51,6 @@
             pictureBox3 = new PictureBox();
             panel8 = new Panel();
             label1 = new Label();
-            panel10 = new Panel();
             panel9 = new Panel();
             panel15 = new Panel();
             pictureBox6 = new PictureBox();
@@ -64,6 +63,8 @@
             panel12 = new Panel();
             pictureBox7 = new PictureBox();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            panel17 = new Panel();
+            pictureBox8 = new PictureBox();
             sidebar.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -86,6 +87,8 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             panel12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
+            panel17.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
             SuspendLayout();
             // 
             // sidebar
@@ -285,7 +288,7 @@
             panel7.Controls.Add(textBox1);
             panel7.Controls.Add(pictureBox3);
             panel7.Cursor = Cursors.Hand;
-            panel7.Location = new Point(346, 34);
+            panel7.Location = new Point(32, 15);
             panel7.Name = "panel7";
             panel7.Size = new Size(939, 53);
             panel7.TabIndex = 1;
@@ -314,10 +317,10 @@
             // panel8
             // 
             panel8.BackColor = Color.FromArgb(153, 178, 127);
+            panel8.Controls.Add(pictureBox8);
             panel8.Controls.Add(label1);
-            panel8.Controls.Add(panel10);
             panel8.Controls.Add(panel9);
-            panel8.Location = new Point(346, 130);
+            panel8.Location = new Point(32, 71);
             panel8.Name = "panel8";
             panel8.Size = new Size(939, 556);
             panel8.TabIndex = 2;
@@ -333,14 +336,6 @@
             label1.Size = new Size(163, 28);
             label1.TabIndex = 2;
             label1.Text = "HI. BERLIAN!";
-            // 
-            // panel10
-            // 
-            panel10.BackColor = Color.FromArgb(255, 255, 236);
-            panel10.Location = new Point(516, 72);
-            panel10.Name = "panel10";
-            panel10.Size = new Size(377, 235);
-            panel10.TabIndex = 1;
             // 
             // panel9
             // 
@@ -448,6 +443,26 @@
             pictureBox7.TabIndex = 0;
             pictureBox7.TabStop = false;
             // 
+            // panel17
+            // 
+            panel17.Controls.Add(panel7);
+            panel17.Controls.Add(panel8);
+            panel17.Dock = DockStyle.Fill;
+            panel17.Location = new Point(267, 0);
+            panel17.Name = "panel17";
+            panel17.Size = new Size(1081, 721);
+            panel17.TabIndex = 3;
+            // 
+            // pictureBox8
+            // 
+            pictureBox8.Image = TeaSMart_App.Properties.Resources.animation_pbo;
+            pictureBox8.Location = new Point(546, 50);
+            pictureBox8.Name = "pictureBox8";
+            pictureBox8.Size = new Size(334, 217);
+            pictureBox8.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox8.TabIndex = 3;
+            pictureBox8.TabStop = false;
+            // 
             // HalamanUtama
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -456,8 +471,7 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.None;
             ClientSize = new Size(1348, 721);
-            Controls.Add(panel8);
-            Controls.Add(panel7);
+            Controls.Add(panel17);
             Controls.Add(sidebar);
             ForeColor = Color.DarkCyan;
             Name = "HalamanUtama";
@@ -492,6 +506,8 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             panel12.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
+            panel17.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
             ResumeLayout(false);
         }
 
@@ -517,7 +533,6 @@
         private PictureBox pictureBox3;
         private Panel panel8;
         private Panel panel9;
-        private Panel panel10;
         private Panel panel11;
         private Panel panel13;
         private PictureBox pictureBox5;
@@ -531,5 +546,7 @@
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private PictureBox pictureBox7;
         private TextBox textBox1;
+        private Panel panel17;
+        private PictureBox pictureBox8;
     }
 }

@@ -63,9 +63,79 @@ namespace TeaSMart_App.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap animation_pbo {
+            get {
+                object obj = ResourceManager.GetObject("animation pbo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap default_image {
+            get {
+                object obj = ResourceManager.GetObject("default_image", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Teh_Hijau_Ekonomis {
+            get {
+                object obj = ResourceManager.GetObject("Teh Hijau Ekonomis", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] Teh_Hijau_Premium {
+            get {
+                object obj = ResourceManager.GetObject("Teh Hijau Premium", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Teh_Hitam_Ekonomis {
+            get {
+                object obj = ResourceManager.GetObject("Teh Hitam Ekonomis", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Teh_Hitam_Premium {
+            get {
+                object obj = ResourceManager.GetObject("Teh Hitam Premium", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Teh_Jasmine_Premium {
             get {
                 object obj = ResourceManager.GetObject("Teh Jasmine Premium", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Teh_Kurma_Limited_Edition {
+            get {
+                object obj = ResourceManager.GetObject("Teh Kurma Limited Edition", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

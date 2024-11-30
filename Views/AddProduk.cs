@@ -119,6 +119,10 @@ namespace TeaSMart_App.Views
                 };
                 C_Produk.AddProduk(produkBaru);
                 MessageBox.Show("Produk baru berhasil ditambahkan!", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                InventarisOwner inventaris_Owner = new InventarisOwner();
+                inventaris_Owner.Show();
+                this.Close();
             }
             catch (Exception ex)
             {
