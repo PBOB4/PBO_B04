@@ -81,7 +81,7 @@
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1318, 721);
+            panel1.Size = new Size(1348, 721);
             panel1.TabIndex = 0;
             panel1.Paint += panel1_Paint;
             // 
@@ -240,11 +240,10 @@
             // 
             // textBox5
             // 
-            textBox5.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox5.Location = new Point(60, 0);
-            textBox5.Multiline = true;
+            textBox5.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            textBox5.Location = new Point(60, 1);
             textBox5.Name = "textBox5";
-            textBox5.Size = new Size(271, 47);
+            textBox5.Size = new Size(271, 43);
             textBox5.TabIndex = 0;
             // 
             // panel7
@@ -270,11 +269,10 @@
             // 
             // textBox4
             // 
-            textBox4.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox4.Location = new Point(60, 0);
-            textBox4.Multiline = true;
+            textBox4.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            textBox4.Location = new Point(60, 1);
             textBox4.Name = "textBox4";
-            textBox4.Size = new Size(271, 47);
+            textBox4.Size = new Size(271, 43);
             textBox4.TabIndex = 0;
             // 
             // panel5
@@ -297,14 +295,14 @@
             pictureBox6.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox6.TabIndex = 1;
             pictureBox6.TabStop = false;
+            pictureBox6.Click += pictureBox6_Click;
             // 
             // textBox2
             // 
-            textBox2.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox2.Location = new Point(60, 0);
-            textBox2.Multiline = true;
+            textBox2.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            textBox2.Location = new Point(60, 2);
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(271, 47);
+            textBox2.Size = new Size(271, 43);
             textBox2.TabIndex = 0;
             // 
             // panel4
@@ -330,11 +328,10 @@
             // 
             // textBox1
             // 
-            textBox1.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(60, 0);
-            textBox1.Multiline = true;
+            textBox1.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            textBox1.Location = new Point(60, 2);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(271, 47);
+            textBox1.Size = new Size(271, 43);
             textBox1.TabIndex = 0;
             // 
             // FormRegist
@@ -342,7 +339,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(255, 255, 235);
-            ClientSize = new Size(1318, 721);
+            ClientSize = new Size(1348, 721);
             Controls.Add(panel1);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FormRegist";

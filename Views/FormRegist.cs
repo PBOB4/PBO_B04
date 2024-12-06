@@ -24,7 +24,7 @@ namespace TeaSMart_App
         {
             InitializeComponent();
 
-            textBox4.PasswordChar = '*'; 
+            textBox4.PasswordChar = '*';
             textBox5.PasswordChar = '*';
         }
 
@@ -61,7 +61,7 @@ namespace TeaSMart_App
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            } 
+            }
         }
 
         private void FormRegist_Load(object sender, EventArgs e)
@@ -70,6 +70,11 @@ namespace TeaSMart_App
         }
 
         private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox6_Click(object sender, EventArgs e)
         {
 
         }

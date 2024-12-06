@@ -123,33 +123,55 @@ namespace TeaSMart_App.Views
 
                 Label lblPanelNama = new Label
                 {
+                    Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0),
                     Text = produk.namaProduk.ToString(),
+                    Size = new Size(59, 23),
                     AutoSize = true,
                     Location = new Point(145, 23)
                 };
                 Label lblPanelHarga = new Label
                 {
                     Text = $"Rp {produk.hargaProduk:N0}",
+                    Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0),
                     AutoSize = true,
                     Location = new Point(145, 46)
                 };
                 Label lblPanelStok = new Label
                 {
                     Text = produk.Stok.ToString(),
+                    Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0),
                     AutoSize = true,
                     Location = new Point(145, 66)
                 };
                 Button btnPanelEdit = new Button
                 {
-                    Text = "Detail",
+                    Text = "Edit",
                     Size = new Size(60, 30),
                     Location = new Point(246, 120)
+                };
+
+                btnPanelEdit.Click += (s, e) =>
+                {
+                    editProduk editproduk = new editProduk();
+                    editproduk.Show();
+                };
+
+                Button btnPanelHapus = new Button
+                {
+                    Text = "Hapus",
+                    Size = new Size(60, 30),
+                    Location = new Point(176, 120)
+                };
+                btnPanelHapus.Click += (s, e) =>
+                {
+                    
                 };
 
                 produkPanel.Controls.Add(lblPanelNama);
                 produkPanel.Controls.Add(lblPanelHarga);
                 produkPanel.Controls.Add(lblPanelStok);
                 produkPanel.Controls.Add(btnPanelEdit);
+                produkPanel.Controls.Add(btnPanelHapus);
 
                 flykatalogProduk.Controls.Add(produkPanel);
             }

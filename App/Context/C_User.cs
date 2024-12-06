@@ -32,7 +32,7 @@ namespace TeaSMart_App.App.Context
         public static void Register(M_Users userBaru)
         {
             userBaru.Validate();
-            userBaru.password = userBaru.HashPassword(userBaru.password);
+            userBaru.password = userBaru.password;
 
 
             string query = $@"
@@ -49,5 +49,42 @@ namespace TeaSMart_App.App.Context
 
             commandExecutor(query, parameters);
         }
+
+        public static M_Users Login(string username, string password)
+        {
+            // Query untuk mengecek username dan password
+            string query = $@"
+            SELECT nama, username, password, role 
+            FROM {table} 
+            WHERE username = @username AND password = @password";
+
+            NpgsqlParameter[] parameters =
+            {
+                new NpgsqlParameter("@username", username),
+                new NpgsqlParameter("@password", password)
+            };
+
+            // Eksekusi query
+            DataTable result = queryExecutor(query, parameters);
+
+            if (result.Rows.Count > 0)
+            {
+                // Jika user ditemukan, kembalikan objek M_Users
+                DataRow row = result.Rows[0];
+                return new M_Users
+                {
+                    nama = row["nama"].ToString(),
+                    username = row["username"].ToString(),
+                    password = row["password"].ToString(),
+                    role = row["role"].ToString()
+                };
+            }
+            else
+            {
+                // Jika tidak ditemukan, kembalikan null atau throw exception
+                throw new Exception("Username atau password salah.");
+            }
+        }
+
     }
 }

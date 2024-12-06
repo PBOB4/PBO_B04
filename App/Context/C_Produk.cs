@@ -65,19 +65,6 @@ namespace TeaSMart_App.App.Context
             return products;
         }
 
-        public static DataTable All(int id_produk)
-        {
-            string query = @"
-                select namaproduk, hargaproduk, stok, gambar from produk ";
-
-            NpgsqlParameter[] parameters =
-            {
-                new NpgsqlParameter("@product_id", NpgsqlTypes.NpgsqlDbType.Integer) { Value = id_produk }
-            };
-
-            DataTable dataProduk = queryExecutor(query, parameters);
-            return dataProduk;
-        }
 
         public static DataTable UpdateProducts(int product_id)
         {
