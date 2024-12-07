@@ -1,5 +1,4 @@
 ﻿using Npgsql;
-using PROJEK;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -55,8 +54,6 @@ namespace TeaSMart_App.Views
             sidebarTimer.Start();
         }
 
-
-
         private void btnHalUtama_Click(object sender, EventArgs e)
         {
             HalamanUtama halamanUtama = new HalamanUtama();
@@ -74,13 +71,11 @@ namespace TeaSMart_App.Views
 
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void btnAddProduk_Click(object sender, EventArgs e)
         {
             AddProduk produkBaru = new AddProduk();
-            if (produkBaru.ShowDialog() == DialogResult.OK) // Pastikan validasi di Form3 berhasil
-            {
-                //TambahPanelProduk(produkBaru.NamaProduk, produkBaru.HargaProduk, produkBaru.gambar, produkBaru.Jenis, produkBaru.batch, produkBaru.tglProduksi, produkBaru.tglEXP);
-            }
+            produkBaru.Show();
+            ProdukOwner_Load();
         }
 
         private void ProdukOwner_Load()
@@ -91,7 +86,7 @@ namespace TeaSMart_App.Views
             {
                 Panel produkPanel = new Panel
                 {
-                    Size = new Size(340, 159),
+                    Size = new Size(330, 159),
                     BackColor = Color.FromArgb(181, 199, 156),
                     Margin = new Padding(6),
                 };
@@ -102,7 +97,7 @@ namespace TeaSMart_App.Views
                 {
                     var pictureBox = new PictureBox
                     {
-                        Size = new Size(115, 126),
+                        Size = new Size(110, 126),
                         Image = imageResource as System.Drawing.Image,
                         SizeMode = PictureBoxSizeMode.Zoom,
                         Location = new Point(18, 18)
@@ -113,7 +108,7 @@ namespace TeaSMart_App.Views
                 {
                     var pictureBox = new PictureBox
                     {
-                        Size = new Size(115, 126),
+                        Size = new Size(110, 124),
                         Image = Properties.Resources.Teh_Jasmine_Premium,
                         SizeMode = PictureBoxSizeMode.Zoom,
                         Location = new Point(18, 18)
@@ -127,21 +122,21 @@ namespace TeaSMart_App.Views
                     Text = produk.namaProduk.ToString(),
                     Size = new Size(59, 23),
                     AutoSize = true,
-                    Location = new Point(145, 23)
+                    Location = new Point(130, 23)
                 };
                 Label lblPanelHarga = new Label
                 {
                     Text = $"Rp {produk.hargaProduk:N0}",
                     Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0),
                     AutoSize = true,
-                    Location = new Point(145, 46)
+                    Location = new Point(130, 46)
                 };
                 Label lblPanelStok = new Label
                 {
                     Text = produk.Stok.ToString(),
                     Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0),
                     AutoSize = true,
-                    Location = new Point(145, 66)
+                    Location = new Point(130, 66)
                 };
                 Button btnPanelEdit = new Button
                 {
@@ -152,8 +147,9 @@ namespace TeaSMart_App.Views
 
                 btnPanelEdit.Click += (s, e) =>
                 {
-                    editProduk editproduk = new editProduk();
-                    editproduk.Show();
+                    AddProduk editProdukForm = new AddProduk(produk); // Kirim produk ke form AddProduk
+                    editProdukForm.ShowDialog();
+                    ProdukOwner_Load(); // Refresh daftar produk setelah selesai
                 };
 
                 Button btnPanelHapus = new Button
@@ -162,10 +158,7 @@ namespace TeaSMart_App.Views
                     Size = new Size(60, 30),
                     Location = new Point(176, 120)
                 };
-                btnPanelHapus.Click += (s, e) =>
-                {
-                    
-                };
+                btnPanelHapus.Click += BtnDelete_Click;
 
                 produkPanel.Controls.Add(lblPanelNama);
                 produkPanel.Controls.Add(lblPanelHarga);
@@ -176,6 +169,40 @@ namespace TeaSMart_App.Views
                 flykatalogProduk.Controls.Add(produkPanel);
             }
         }
+
+        private void BtnDelete_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Ambil ID produk dari Tag tombol
+                Button btn = sender as Button;
+                int idProduk = Convert.ToInt32(btn.Tag);
+
+                // Konfirmasi penghapusan
+                var confirmResult = MessageBox.Show(
+                    "Apakah Anda yakin ingin menghapus produk ini?",
+                    "Konfirmasi Hapus",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Warning);
+
+                if (confirmResult == DialogResult.Yes)
+                {
+                    // Panggil fungsi delete
+                    C_Produk.DelProduk(idProduk);
+
+                    // Beri notifikasi
+                    MessageBox.Show("Produk berhasil dihapus!", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    // Refresh daftar produk
+                    ProdukOwner_Load();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Terjadi kesalahan: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
 
         private void flykatalogProduk_Paint(object sender, PaintEventArgs e)
         {
@@ -190,6 +217,28 @@ namespace TeaSMart_App.Views
         }
 
         private void panel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnTransaksi_Click(object sender, EventArgs e)
+        {
+            //Settings settings = new Settings();
+            //settings.Show();
+            //this.Hide();
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            // ngapain kak
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel8_Paint(object sender, PaintEventArgs e)
         {
 
         }

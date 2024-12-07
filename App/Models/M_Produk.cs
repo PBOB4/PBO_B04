@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace TeaSMart_App.App.Models
 {
-    internal class M_Produk
+    public class M_Produk
     {
         [Key]
         public int id_produk { get; set; }

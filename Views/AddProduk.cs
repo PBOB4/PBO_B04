@@ -15,13 +15,50 @@ namespace TeaSMart_App.Views
     public partial class AddProduk : Form
     {
         private C_Produk _CProduk;
+        private bool _isEditMode; // Menyimpan informasi apakah dalam mode edit
+        private M_Produk _produkToEdit; // Menyimpan produk yang akan diedit
 
+        // Constructor untuk mode tambah
         public AddProduk()
         {
             InitializeComponent();
             _CProduk = new C_Produk();
+            _isEditMode = false; // Default ke mode tambah
+            LoadCBJenis();
+        }
+
+        // Constructor untuk mode edit
+        public AddProduk(M_Produk produk)
+        {
+            InitializeComponent();
+            _CProduk = new C_Produk();
+            _isEditMode = true; // Aktifkan mode edit
+            _produkToEdit = produk; // Simpan produk yang akan diedit
             LoadCBJenis();
 
+            // Isi form dengan data produk yang akan diedit
+            FillFormWithData(produk);
+        }
+
+        // Fungsi untuk mengisi form dengan data produk
+        private void FillFormWithData(M_Produk produk)
+        {
+            tbNama.Text = produk.namaProduk;
+            tbHarga.Text = produk.hargaProduk.ToString();
+            tbStok.Text = produk.Stok.ToString();
+            dtPDiperbarui.Value = DateTime.Now; // Nilai default
+            tbFileName.Text = produk.gambar;
+            cbJenis.SelectedValue = produk.id_jenis;
+
+            // Jika ada gambar, tampilkan
+            if (!string.IsNullOrEmpty(produk.gambar))
+            {
+                string imgPath = Path.Combine(Application.StartupPath, "Images", produk.gambar);
+                if (File.Exists(imgPath))
+                {
+                    pictureBox1.Image = Image.FromFile(imgPath);
+                }
+            }
         }
 
         private void btnAddImage_Click(object sender, EventArgs e)
@@ -95,39 +132,51 @@ namespace TeaSMart_App.Views
                     return;
                 }
 
-                // Dapatkan nama jenis teh yang dipilih
-                //string selectedJenis = cbJenis.SelectedItem.ToString();
-
-                //int id_jenis = M_jenis.GetIdByNamaJenis(selectedJenis);  // Gunakan M_jenis untuk mendapatkan ID
-
-
-                // Ambil id_jenis berdasarkan nama jenis teh yang dipilih
-                //int id_jenis = _CProduk.GetIdByNamaJenis(selectedJenis);
 
                 int id_jenis = Convert.ToInt32(cbJenis.SelectedValue);
 
 
-                M_Produk produkBaru = new M_Produk
+                if (_isEditMode) // Mode edit
                 {
-                    namaProduk = tbNama.Text.Trim(),
-                    hargaProduk = Convert.ToDecimal(tbHarga.Text.Trim()),
-                    Stok = Convert.ToInt32(tbStok.Text.Trim()),
-                    Diperbarui = dtPDiperbarui.Value,
-                    gambar = tbFileName.Text.Trim(),
-                    isActive= true,
-                    id_jenis= id_jenis
-                };
-                C_Produk.AddProduk(produkBaru);
-                MessageBox.Show("Produk baru berhasil ditambahkan!", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    _produkToEdit.namaProduk = tbNama.Text.Trim();
+                    _produkToEdit.hargaProduk = Convert.ToDecimal(tbHarga.Text.Trim());
+                    _produkToEdit.Stok = Convert.ToInt32(tbStok.Text.Trim());
+                    _produkToEdit.Diperbarui = dtPDiperbarui.Value;
+                    _produkToEdit.gambar = tbFileName.Text.Trim();
+                    _produkToEdit.id_jenis = id_jenis;
+                    _produkToEdit.isActive = true;
 
-                InventarisOwner inventaris_Owner = new InventarisOwner();
-                inventaris_Owner.Show();
+                    C_Produk.UpdateProduk(_produkToEdit); // Panggil metode untuk mengupdate produk
+                    MessageBox.Show("Produk berhasil diperbarui!", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else // Mode tambah
+                {
+                    M_Produk produkBaru = new M_Produk
+                    {
+                        namaProduk = tbNama.Text.Trim(),
+                        hargaProduk = Convert.ToDecimal(tbHarga.Text.Trim()),
+                        Stok = Convert.ToInt32(tbStok.Text.Trim()),
+                        Diperbarui = dtPDiperbarui.Value,
+                        gambar = tbFileName.Text.Trim(),
+                        isActive = true,
+                        id_jenis = id_jenis
+                    };
+                    C_Produk.AddProduk(produkBaru); // Panggil metode untuk menambah produk baru
+                    MessageBox.Show("Produk baru berhasil ditambahkan!", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
                 this.Close();
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Terjadi kesalahan: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            InventarisOwner inventarisOwner = new InventarisOwner();
+            inventarisOwner.Show();
+            this.Close();
         }
     }
 }

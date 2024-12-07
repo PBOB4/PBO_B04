@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddProduk));
             pictureBox1 = new PictureBox();
             label1 = new Label();
             tbNama = new TextBox();
@@ -44,8 +45,10 @@
             cbJenis = new ComboBox();
             btnAddImage = new Button();
             btnSubmit = new Button();
+            btnBack = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)btnBack).BeginInit();
             SuspendLayout();
             // 
             // pictureBox1
@@ -213,12 +216,24 @@
             btnSubmit.UseVisualStyleBackColor = false;
             btnSubmit.Click += btnSubmit_Click;
             // 
+            // btnBack
+            // 
+            btnBack.Image = (Image)resources.GetObject("btnBack.Image");
+            btnBack.Location = new Point(10, 10);
+            btnBack.Name = "btnBack";
+            btnBack.Size = new Size(36, 36);
+            btnBack.SizeMode = PictureBoxSizeMode.AutoSize;
+            btnBack.TabIndex = 17;
+            btnBack.TabStop = false;
+            btnBack.Click += btnBack_Click;
+            // 
             // AddProduk
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(181, 199, 156);
             ClientSize = new Size(525, 546);
+            Controls.Add(btnBack);
             Controls.Add(btnSubmit);
             Controls.Add(btnAddImage);
             Controls.Add(panel1);
@@ -230,6 +245,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)btnBack).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -252,5 +268,6 @@
         private Label label6;
         private TextBox tbStok;
         private TextBox tbFileName;
+        private PictureBox btnBack;
     }
 }

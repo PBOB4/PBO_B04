@@ -1,3 +1,5 @@
+using TeaSMart_App.Views;
+
 namespace TeaSMart_App
 {
     public partial class MainForm : Form
@@ -9,14 +11,11 @@ namespace TeaSMart_App
 
         private void button1_Click(object sender, EventArgs e)
         {
-            // Membuat instance dari RegisterForm
-            FormRegist formRegist = new FormRegist();
+            FormLogin formlogin = new FormLogin();
 
-            // Menampilkan RegisterForm
-            formRegist.Show();
+            formlogin.Show();
 
-            // (Opsional) Menyembunyikan MainForm
-            this.Hide();
+            this.Close();
         }
     }
 }

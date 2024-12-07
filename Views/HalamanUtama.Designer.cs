@@ -1,4 +1,4 @@
-﻿namespace PROJEK
+﻿namespace TeaSMart_App.Views
 {
     partial class HalamanUtama
     {
@@ -46,25 +46,19 @@
             panel6 = new Panel();
             button5 = new Button();
             sidebarTimer = new System.Windows.Forms.Timer(components);
-            panel7 = new Panel();
-            textBox1 = new TextBox();
-            pictureBox3 = new PictureBox();
-            panel8 = new Panel();
-            label1 = new Label();
-            panel9 = new Panel();
-            panel15 = new Panel();
-            pictureBox6 = new PictureBox();
-            panel16 = new Panel();
-            panel13 = new Panel();
-            pictureBox5 = new PictureBox();
-            panel14 = new Panel();
-            panel11 = new Panel();
-            pictureBox4 = new PictureBox();
-            panel12 = new Panel();
-            pictureBox7 = new PictureBox();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            panel17 = new Panel();
-            pictureBox8 = new PictureBox();
+            flowLayoutPanel1 = new FlowLayoutPanel();
+            panel7 = new Panel();
+            label2 = new Label();
+            label1 = new Label();
+            panel8 = new Panel();
+            pictureBox3 = new PictureBox();
+            pictureBox5 = new PictureBox();
+            panel9 = new Panel();
+            panel10 = new Panel();
+            lblQuotes = new Label();
+            label3 = new Label();
+            btnRefresh = new PictureBox();
             sidebar.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -75,20 +69,13 @@
             panel4.SuspendLayout();
             panel5.SuspendLayout();
             panel6.SuspendLayout();
+            flowLayoutPanel1.SuspendLayout();
             panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
-            panel8.SuspendLayout();
-            panel9.SuspendLayout();
-            panel15.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
-            panel13.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
-            panel11.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
-            panel12.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
-            panel17.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
+            panel9.SuspendLayout();
+            panel10.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)btnRefresh).BeginInit();
             SuspendLayout();
             // 
             // sidebar
@@ -227,6 +214,7 @@
             button3.Text = "              Transaksi";
             button3.TextAlign = ContentAlignment.MiddleLeft;
             button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
             // 
             // panel5
             // 
@@ -248,9 +236,10 @@
             button4.Padding = new Padding(30, 0, 0, 0);
             button4.Size = new Size(270, 65);
             button4.TabIndex = 1;
-            button4.Text = "              Rekap Bulanan";
+            button4.Text = "              Pengaturan";
             button4.TextAlign = ContentAlignment.MiddleLeft;
             button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
             // 
             // panel6
             // 
@@ -282,196 +271,148 @@
             sidebarTimer.Interval = 10;
             sidebarTimer.Tick += sidebarTimer_Tick;
             // 
+            // flowLayoutPanel1
+            // 
+            flowLayoutPanel1.AutoScroll = true;
+            flowLayoutPanel1.BackColor = Color.FromArgb(255, 255, 236);
+            flowLayoutPanel1.Controls.Add(panel7);
+            flowLayoutPanel1.Location = new Point(539, 25);
+            flowLayoutPanel1.Name = "flowLayoutPanel1";
+            flowLayoutPanel1.Size = new Size(410, 553);
+            flowLayoutPanel1.TabIndex = 3;
+            // 
             // panel7
             // 
-            panel7.BackColor = Color.Transparent;
-            panel7.Controls.Add(textBox1);
+            panel7.BackColor = Color.FromArgb(153, 178, 127);
+            panel7.Controls.Add(label2);
+            panel7.Controls.Add(label1);
+            panel7.Controls.Add(panel8);
             panel7.Controls.Add(pictureBox3);
-            panel7.Cursor = Cursors.Hand;
-            panel7.Location = new Point(32, 15);
+            panel7.Location = new Point(50, 50);
+            panel7.Margin = new Padding(50);
             panel7.Name = "panel7";
-            panel7.Size = new Size(939, 53);
-            panel7.TabIndex = 1;
-            panel7.Paint += panel7_Paint;
+            panel7.Size = new Size(322, 124);
+            panel7.TabIndex = 0;
+            panel7.Paint += panel7_Paint_1;
             // 
-            // textBox1
+            // label2
             // 
-            textBox1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            textBox1.Font = new Font("Segoe UI", 13.2000008F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(54, 7);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(867, 37);
-            textBox1.TabIndex = 1;
-            textBox1.Text = "Test";
-            // 
-            // pictureBox3
-            // 
-            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(10, 7);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(38, 38);
-            pictureBox3.SizeMode = PictureBoxSizeMode.AutoSize;
-            pictureBox3.TabIndex = 0;
-            pictureBox3.TabStop = false;
-            // 
-            // panel8
-            // 
-            panel8.BackColor = Color.FromArgb(153, 178, 127);
-            panel8.Controls.Add(pictureBox8);
-            panel8.Controls.Add(label1);
-            panel8.Controls.Add(panel9);
-            panel8.Location = new Point(32, 71);
-            panel8.Name = "panel8";
-            panel8.Size = new Size(939, 556);
-            panel8.TabIndex = 2;
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.ForeColor = Color.Blue;
+            label2.Location = new Point(150, 57);
+            label2.Name = "label2";
+            label2.Size = new Size(92, 20);
+            label2.TabIndex = 3;
+            label2.Text = "Rp.40000.00";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.BackColor = Color.Transparent;
-            label1.Font = new Font("Book Antiqua", 13.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Segoe UI", 7.20000029F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.FromArgb(0, 64, 0);
-            label1.Location = new Point(412, 19);
+            label1.Location = new Point(147, 31);
             label1.Name = "label1";
-            label1.Size = new Size(163, 28);
+            label1.Size = new Size(173, 17);
             label1.TabIndex = 2;
-            label1.Text = "HI. BERLIAN!";
+            label1.Text = "Teh Kurma Limited Edition";
+            label1.Click += label1_Click;
             // 
-            // panel9
+            // panel8
             // 
-            panel9.BackColor = Color.FromArgb(255, 255, 236);
-            panel9.Controls.Add(panel15);
-            panel9.Controls.Add(panel13);
-            panel9.Controls.Add(panel11);
-            panel9.Location = new Point(65, 72);
-            panel9.Name = "panel9";
-            panel9.Size = new Size(387, 444);
-            panel9.TabIndex = 0;
+            panel8.BackColor = Color.FromArgb(255, 255, 236);
+            panel8.Location = new Point(43, 13);
+            panel8.Name = "panel8";
+            panel8.Size = new Size(101, 97);
+            panel8.TabIndex = 1;
             // 
-            // panel15
+            // pictureBox3
             // 
-            panel15.BackColor = Color.FromArgb(153, 178, 127);
-            panel15.Controls.Add(pictureBox6);
-            panel15.Controls.Add(panel16);
-            panel15.Location = new Point(48, 305);
-            panel15.Name = "panel15";
-            panel15.Size = new Size(293, 105);
-            panel15.TabIndex = 2;
-            // 
-            // pictureBox6
-            // 
-            pictureBox6.Image = (Image)resources.GetObject("pictureBox6.Image");
-            pictureBox6.Location = new Point(9, 14);
-            pictureBox6.Name = "pictureBox6";
-            pictureBox6.Size = new Size(30, 30);
-            pictureBox6.SizeMode = PictureBoxSizeMode.AutoSize;
-            pictureBox6.TabIndex = 1;
-            pictureBox6.TabStop = false;
-            // 
-            // panel16
-            // 
-            panel16.BackColor = Color.FromArgb(255, 255, 236);
-            panel16.Location = new Point(49, 14);
-            panel16.Name = "panel16";
-            panel16.Size = new Size(92, 83);
-            panel16.TabIndex = 0;
-            // 
-            // panel13
-            // 
-            panel13.BackColor = Color.FromArgb(153, 178, 127);
-            panel13.Controls.Add(pictureBox5);
-            panel13.Controls.Add(panel14);
-            panel13.Location = new Point(48, 171);
-            panel13.Name = "panel13";
-            panel13.Size = new Size(293, 105);
-            panel13.TabIndex = 1;
+            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
+            pictureBox3.Location = new Point(6, 13);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(30, 30);
+            pictureBox3.SizeMode = PictureBoxSizeMode.AutoSize;
+            pictureBox3.TabIndex = 0;
+            pictureBox3.TabStop = false;
             // 
             // pictureBox5
             // 
             pictureBox5.Image = (Image)resources.GetObject("pictureBox5.Image");
-            pictureBox5.Location = new Point(9, 14);
+            pictureBox5.Location = new Point(37, 25);
             pictureBox5.Name = "pictureBox5";
-            pictureBox5.Size = new Size(30, 30);
-            pictureBox5.SizeMode = PictureBoxSizeMode.AutoSize;
-            pictureBox5.TabIndex = 1;
+            pictureBox5.Size = new Size(467, 334);
+            pictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox5.TabIndex = 4;
             pictureBox5.TabStop = false;
             // 
-            // panel14
+            // panel9
             // 
-            panel14.BackColor = Color.FromArgb(255, 255, 236);
-            panel14.Location = new Point(49, 14);
-            panel14.Name = "panel14";
-            panel14.Size = new Size(92, 83);
-            panel14.TabIndex = 0;
+            panel9.BackColor = Color.FromArgb(153, 178, 127);
+            panel9.Controls.Add(panel10);
+            panel9.Controls.Add(pictureBox5);
+            panel9.Controls.Add(flowLayoutPanel1);
+            panel9.Location = new Point(314, 54);
+            panel9.Name = "panel9";
+            panel9.Size = new Size(983, 618);
+            panel9.TabIndex = 5;
             // 
-            // panel11
+            // panel10
             // 
-            panel11.BackColor = Color.FromArgb(153, 178, 127);
-            panel11.Controls.Add(pictureBox4);
-            panel11.Controls.Add(panel12);
-            panel11.Location = new Point(36, 29);
-            panel11.Name = "panel11";
-            panel11.Size = new Size(314, 120);
-            panel11.TabIndex = 0;
+            panel10.BackColor = Color.FromArgb(255, 255, 235);
+            panel10.Controls.Add(lblQuotes);
+            panel10.Controls.Add(label3);
+            panel10.Controls.Add(btnRefresh);
+            panel10.ForeColor = Color.FromArgb(255, 192, 192);
+            panel10.Location = new Point(37, 378);
+            panel10.Name = "panel10";
+            panel10.Size = new Size(467, 200);
+            panel10.TabIndex = 5;
             // 
-            // pictureBox4
+            // lblQuotes
             // 
-            pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
-            pictureBox4.Location = new Point(9, 14);
-            pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(30, 30);
-            pictureBox4.SizeMode = PictureBoxSizeMode.AutoSize;
-            pictureBox4.TabIndex = 1;
-            pictureBox4.TabStop = false;
+            lblQuotes.AllowDrop = true;
+            lblQuotes.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            lblQuotes.ForeColor = Color.FromArgb(0, 64, 0);
+            lblQuotes.Location = new Point(22, 49);
+            lblQuotes.Name = "lblQuotes";
+            lblQuotes.Size = new Size(427, 133);
+            lblQuotes.TabIndex = 2;
+            lblQuotes.Text = "Quotes";
             // 
-            // panel12
+            // label3
             // 
-            panel12.BackColor = Color.FromArgb(255, 255, 236);
-            panel12.Controls.Add(pictureBox7);
-            panel12.Location = new Point(49, 14);
-            panel12.Name = "panel12";
-            panel12.Size = new Size(111, 95);
-            panel12.TabIndex = 0;
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 12F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point, 0);
+            label3.ForeColor = Color.FromArgb(0, 64, 0);
+            label3.Location = new Point(22, 12);
+            label3.Name = "label3";
+            label3.Size = new Size(133, 28);
+            label3.TabIndex = 1;
+            label3.Text = "T'day Quote:";
             // 
-            // pictureBox7
+            // btnRefresh
             // 
-            pictureBox7.Image = (Image)resources.GetObject("pictureBox7.Image");
-            pictureBox7.Location = new Point(-26, -22);
-            pictureBox7.Name = "pictureBox7";
-            pictureBox7.Size = new Size(159, 141);
-            pictureBox7.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox7.TabIndex = 0;
-            pictureBox7.TabStop = false;
-            // 
-            // panel17
-            // 
-            panel17.Controls.Add(panel7);
-            panel17.Controls.Add(panel8);
-            panel17.Dock = DockStyle.Fill;
-            panel17.Location = new Point(267, 0);
-            panel17.Name = "panel17";
-            panel17.Size = new Size(1081, 721);
-            panel17.TabIndex = 3;
-            // 
-            // pictureBox8
-            // 
-            pictureBox8.Image = TeaSMart_App.Properties.Resources.animation_pbo;
-            pictureBox8.Location = new Point(546, 50);
-            pictureBox8.Name = "pictureBox8";
-            pictureBox8.Size = new Size(334, 217);
-            pictureBox8.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox8.TabIndex = 3;
-            pictureBox8.TabStop = false;
+            btnRefresh.Cursor = Cursors.Hand;
+            btnRefresh.Image = (Image)resources.GetObject("btnRefresh.Image");
+            btnRefresh.Location = new Point(425, 12);
+            btnRefresh.Name = "btnRefresh";
+            btnRefresh.Size = new Size(24, 24);
+            btnRefresh.SizeMode = PictureBoxSizeMode.AutoSize;
+            btnRefresh.TabIndex = 0;
+            btnRefresh.TabStop = false;
+            btnRefresh.Click += btnRefresh_Click;
             // 
             // HalamanUtama
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoScroll = true;
             BackColor = SystemColors.Window;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.None;
             ClientSize = new Size(1348, 721);
-            Controls.Add(panel17);
+            Controls.Add(panel9);
             Controls.Add(sidebar);
             ForeColor = Color.DarkCyan;
             Name = "HalamanUtama";
@@ -489,25 +430,15 @@
             panel4.ResumeLayout(false);
             panel5.ResumeLayout(false);
             panel6.ResumeLayout(false);
+            flowLayoutPanel1.ResumeLayout(false);
             panel7.ResumeLayout(false);
             panel7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
-            panel8.ResumeLayout(false);
-            panel8.PerformLayout();
-            panel9.ResumeLayout(false);
-            panel15.ResumeLayout(false);
-            panel15.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
-            panel13.ResumeLayout(false);
-            panel13.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
-            panel11.ResumeLayout(false);
-            panel11.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
-            panel12.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
-            panel17.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
+            panel9.ResumeLayout(false);
+            panel10.ResumeLayout(false);
+            panel10.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)btnRefresh).EndInit();
             ResumeLayout(false);
         }
 
@@ -529,24 +460,18 @@
         private System.Windows.Forms.Timer sidebarTimer;
         private PictureBox pictureBox1;
         private PictureBox pictureBox2;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private FlowLayoutPanel flowLayoutPanel1;
         private Panel panel7;
         private PictureBox pictureBox3;
         private Panel panel8;
-        private Panel panel9;
-        private Panel panel11;
-        private Panel panel13;
-        private PictureBox pictureBox5;
-        private Panel panel14;
-        private PictureBox pictureBox4;
-        private Panel panel12;
         private Label label1;
-        private Panel panel15;
-        private PictureBox pictureBox6;
-        private Panel panel16;
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
-        private PictureBox pictureBox7;
-        private TextBox textBox1;
-        private Panel panel17;
-        private PictureBox pictureBox8;
+        private Label label2;
+        private PictureBox pictureBox5;
+        private Panel panel9;
+        private Panel panel10;
+        private PictureBox btnRefresh;
+        private Label label3;
+        private Label lblQuotes;
     }
 }
