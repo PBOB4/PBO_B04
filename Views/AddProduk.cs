@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TeaSMart_App.App.Context;
 using TeaSMart_App.App.Models;
+using TeaSMart_App.Properties;
 
 namespace TeaSMart_App.Views
 {
@@ -76,6 +77,21 @@ namespace TeaSMart_App.Views
                 {
                     // Memuat gambar ke PictureBox
                     pictureBox1.Image = Image.FromFile(openFileDialog.FileName);
+
+                    string resourcesPath = @"D:\Kuliah semester 3\PBO\PROJECT besar\TeaSMart App\Resources";
+                    if (!Directory.Exists(resourcesPath))
+                    {
+                        Directory.CreateDirectory(resourcesPath);
+                    }
+
+                    // Simpan gambar dengan nama file asli
+                    string fileName = Path.GetFileName(openFileDialog.FileName);
+                    string destinationPath = Path.Combine(resourcesPath, fileName);
+
+                    // Salin file ke folder Resources
+                    File.Copy(openFileDialog.FileName, destinationPath, overwrite: true);
+
+                    tbFileName.Text = fileName;
                 }
                 catch (Exception ex)
                 {
@@ -144,7 +160,6 @@ namespace TeaSMart_App.Views
                     _produkToEdit.Diperbarui = dtPDiperbarui.Value;
                     _produkToEdit.gambar = tbFileName.Text.Trim();
                     _produkToEdit.id_jenis = id_jenis;
-                    _produkToEdit.isActive = true;
 
                     C_Produk.UpdateProduk(_produkToEdit); // Panggil metode untuk mengupdate produk
                     MessageBox.Show("Produk berhasil diperbarui!", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -169,6 +184,19 @@ namespace TeaSMart_App.Views
             catch (Exception ex)
             {
                 MessageBox.Show($"Terjadi kesalahan: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void Form_Load(object sender, EventArgs e)
+        {
+            if (_isEditMode)
+            {
+                tbNama.ReadOnly = true; // Tidak dapat mengedit nama produk
+                tbNama.Text = _produkToEdit.namaProduk; 
+            }
+            else
+            {
+                tbNama.ReadOnly = false; 
             }
         }
 

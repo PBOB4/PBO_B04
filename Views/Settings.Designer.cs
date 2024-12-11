@@ -50,12 +50,15 @@
             pictureBox8 = new PictureBox();
             button5 = new Button();
             panel7 = new Panel();
-            label1 = new Label();
-            label2 = new Label();
+            lblContainUsn = new Label();
+            lblContainNama = new Label();
+            linkUbahPw = new Label();
             label3 = new Label();
-            label4 = new Label();
-            label5 = new Label();
-            label6 = new Label();
+            label2 = new Label();
+            lblHeader = new Label();
+            panel8 = new Panel();
+            label1 = new Label();
+            lblContainLogintime = new Label();
             flowLayoutPanel1.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -72,6 +75,7 @@
             panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
             panel7.SuspendLayout();
+            panel8.SuspendLayout();
             SuspendLayout();
             // 
             // flowLayoutPanel1
@@ -291,72 +295,105 @@
             // 
             // panel7
             // 
-            panel7.Controls.Add(label6);
-            panel7.Controls.Add(label5);
-            panel7.Controls.Add(label4);
+            panel7.BackColor = Color.FromArgb(255, 255, 235);
+            panel7.Controls.Add(lblContainLogintime);
+            panel7.Controls.Add(label1);
+            panel7.Controls.Add(lblContainUsn);
+            panel7.Controls.Add(lblContainNama);
+            panel7.Controls.Add(linkUbahPw);
             panel7.Controls.Add(label3);
             panel7.Controls.Add(label2);
-            panel7.Controls.Add(label1);
             panel7.Location = new Point(553, 105);
             panel7.Name = "panel7";
-            panel7.Size = new Size(531, 291);
+            panel7.Size = new Size(531, 296);
             panel7.TabIndex = 2;
             // 
-            // label1
+            // lblContainUsn
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(23, 21);
-            label1.Name = "label1";
-            label1.Size = new Size(346, 41);
-            label1.TabIndex = 0;
-            label1.Text = "Selamat datang, {user}!";
+            lblContainUsn.AutoSize = true;
+            lblContainUsn.Location = new Point(166, 136);
+            lblContainUsn.Name = "lblContainUsn";
+            lblContainUsn.Size = new Size(92, 20);
+            lblContainUsn.TabIndex = 5;
+            lblContainUsn.Text = "berlianatalia";
             // 
-            // label2
+            // lblContainNama
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(37, 89);
-            label2.Name = "label2";
-            label2.Size = new Size(49, 20);
-            label2.TabIndex = 1;
-            label2.Text = "Nama";
+            lblContainNama.AutoSize = true;
+            lblContainNama.Location = new Point(166, 92);
+            lblContainNama.Name = "lblContainNama";
+            lblContainNama.Size = new Size(63, 20);
+            lblContainNama.TabIndex = 4;
+            lblContainNama.Text = "Berliana";
+            // 
+            // linkUbahPw
+            // 
+            linkUbahPw.AutoSize = true;
+            linkUbahPw.ForeColor = SystemColors.HotTrack;
+            linkUbahPw.Location = new Point(37, 218);
+            linkUbahPw.Name = "linkUbahPw";
+            linkUbahPw.Size = new Size(122, 20);
+            linkUbahPw.TabIndex = 3;
+            linkUbahPw.Text = "Ubah Password ...";
+            linkUbahPw.Click += linkUbahPw_Click;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(37, 127);
+            label3.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.Location = new Point(37, 136);
             label3.Name = "label3";
-            label3.Size = new Size(75, 20);
+            label3.Size = new Size(106, 20);
             label3.TabIndex = 2;
-            label3.Text = "Username";
+            label3.Text = "Username      :";
             // 
-            // label4
+            // label2
             // 
-            label4.AutoSize = true;
-            label4.ForeColor = SystemColors.HotTrack;
-            label4.Location = new Point(37, 168);
-            label4.Name = "label4";
-            label4.Size = new Size(122, 20);
-            label4.TabIndex = 3;
-            label4.Text = "Ubah Password ...";
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Location = new Point(37, 92);
+            label2.Name = "label2";
+            label2.Size = new Size(106, 20);
+            label2.TabIndex = 1;
+            label2.Text = "Nama             :";
             // 
-            // label5
+            // lblHeader
             // 
-            label5.AutoSize = true;
-            label5.Location = new Point(166, 89);
-            label5.Name = "label5";
-            label5.Size = new Size(63, 20);
-            label5.TabIndex = 4;
-            label5.Text = "Berliana";
+            lblHeader.Font = new Font("Palatino Linotype", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblHeader.Location = new Point(16, 13);
+            lblHeader.Name = "lblHeader";
+            lblHeader.Size = new Size(500, 41);
+            lblHeader.TabIndex = 0;
+            lblHeader.Text = "Informasi Akun @username";
+            lblHeader.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // label6
+            // panel8
             // 
-            label6.AutoSize = true;
-            label6.Location = new Point(166, 127);
-            label6.Name = "label6";
-            label6.Size = new Size(92, 20);
-            label6.TabIndex = 5;
-            label6.Text = "berlianatalia";
+            panel8.BackColor = Color.FromArgb(153, 178, 127);
+            panel8.Controls.Add(lblHeader);
+            panel8.Location = new Point(553, 105);
+            panel8.Name = "panel8";
+            panel8.Size = new Size(531, 72);
+            panel8.TabIndex = 6;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(37, 178);
+            label1.Name = "label1";
+            label1.Size = new Size(106, 20);
+            label1.TabIndex = 6;
+            label1.Text = "Waktu Log in :";
+            // 
+            // lblContainLogintime
+            // 
+            lblContainLogintime.AutoSize = true;
+            lblContainLogintime.Location = new Point(167, 181);
+            lblContainLogintime.Name = "lblContainLogintime";
+            lblContainLogintime.Size = new Size(50, 20);
+            lblContainLogintime.TabIndex = 7;
+            lblContainLogintime.Text = "label4";
             // 
             // Settings
             // 
@@ -364,10 +401,12 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(1348, 721);
+            Controls.Add(panel8);
             Controls.Add(panel7);
             Controls.Add(flowLayoutPanel1);
             Name = "Settings";
             Text = "Settings";
+            Load += Settings_Load;
             flowLayoutPanel1.ResumeLayout(false);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
@@ -391,6 +430,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
             panel7.ResumeLayout(false);
             panel7.PerformLayout();
+            panel8.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -417,11 +457,14 @@
         private PictureBox pictureBox8;
         private Button button5;
         private Panel panel7;
-        private Label label6;
-        private Label label5;
-        private Label label4;
+        private Label lblContainUsn;
+        private Label lblContainNama;
+        private Label linkUbahPw;
         private Label label3;
         private Label label2;
+        private Label lblHeader;
+        private Panel panel8;
+        private Label lblContainLogintime;
         private Label label1;
     }
 }

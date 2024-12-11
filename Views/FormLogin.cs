@@ -28,38 +28,31 @@ namespace TeaSMart_App.Views
             this.Hide();
         }
 
+        // Contoh handler login
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            string username = textBox2.Text;
+            string password = textBox4.Text;
+
             try
             {
-                // Ambil username dan password dari TextBox
-                string inputUsername = textBox2.Text.Trim();
-                string inputPassword = textBox4.Text.Trim();
+                // Validasi login dan simpan data pengguna
+                M_Users loggedUser = C_User.Login(username, password);
 
-                // Validasi input (opsional)
-                if (string.IsNullOrEmpty(inputUsername) || string.IsNullOrEmpty(inputPassword))
+                if (loggedUser != null)
                 {
-                    throw new Exception("Username dan password tidak boleh kosong.");
+                    // MessageBox.Show(loggedUser.role.ToString());
+                    // Login berhasil, buka halaman utama
+                    HalamanUtama halamanUtama = new HalamanUtama(loggedUser); // Kirim data pengguna
+                    halamanUtama.Show();
+                    this.Hide();
                 }
-
-                // Login pengguna
-                M_Users loggedInUser = C_User.Login(inputUsername, inputPassword);
-
-                // Jika berhasil, tampilkan pesan dan buka halaman utama
-                MessageBox.Show($"Login berhasil! Selamat datang, {loggedInUser.nama}.",
-                    "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                HalamanUtama halUtama = new HalamanUtama();
-                halUtama.Show();
-
-                this.Hide();
             }
             catch (Exception ex)
             {
-                // Tampilkan pesan error jika login gagal
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "Login Gagal", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
         }
+
     }
 }

@@ -73,11 +73,11 @@
             label8 = new Label();
             label9 = new Label();
             pictureBox11 = new PictureBox();
-            cbKategori = new ComboBox();
             btnAddProduk = new Button();
             panel7 = new Panel();
-            pictureBox6 = new PictureBox();
-            textBox1 = new TextBox();
+            btnSearch = new Button();
+            txtSearch = new TextBox();
+            picSearch = new PictureBox();
             panelHalUtama = new Panel();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
@@ -102,7 +102,7 @@
             panel10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox11).BeginInit();
             panel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)picSearch).BeginInit();
             panelHalUtama.SuspendLayout();
             SuspendLayout();
             // 
@@ -338,7 +338,6 @@
             // 
             flykatalogProduk.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             flykatalogProduk.AutoScroll = true;
-            flykatalogProduk.AutoSize = true;
             flykatalogProduk.BackColor = Color.Transparent;
             flykatalogProduk.Controls.Add(panel8);
             flykatalogProduk.Controls.Add(panel9);
@@ -414,7 +413,7 @@
             // 
             // pictureBox9
             // 
-            pictureBox9.Image = Properties.Resources.default_image;
+            pictureBox9.Image = (Image)resources.GetObject("pictureBox9.Image");
             pictureBox9.Location = new Point(18, 18);
             pictureBox9.Name = "pictureBox9";
             pictureBox9.Size = new Size(115, 126);
@@ -568,16 +567,6 @@
             pictureBox11.TabIndex = 0;
             pictureBox11.TabStop = false;
             // 
-            // cbKategori
-            // 
-            cbKategori.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            cbKategori.FormattingEnabled = true;
-            cbKategori.Items.AddRange(new object[] { "All", "Premium", "Ekonomis", "Limited-edition" });
-            cbKategori.Location = new Point(643, 35);
-            cbKategori.Name = "cbKategori";
-            cbKategori.Size = new Size(297, 28);
-            cbKategori.TabIndex = 3;
-            // 
             // btnAddProduk
             // 
             btnAddProduk.Anchor = AnchorStyles.Top | AnchorStyles.Right;
@@ -592,34 +581,51 @@
             // 
             // panel7
             // 
-            panel7.BackColor = Color.FromArgb(181, 199, 156);
-            panel7.Controls.Add(pictureBox6);
-            panel7.Controls.Add(textBox1);
-            panel7.Location = new Point(10, 22);
+            panel7.BackColor = Color.Transparent;
+            panel7.BackgroundImage = (Image)resources.GetObject("panel7.BackgroundImage");
+            panel7.BackgroundImageLayout = ImageLayout.Stretch;
+            panel7.Controls.Add(btnSearch);
+            panel7.Controls.Add(txtSearch);
+            panel7.Controls.Add(picSearch);
+            panel7.Location = new Point(13, 25);
             panel7.Name = "panel7";
-            panel7.Size = new Size(436, 63);
+            panel7.Size = new Size(486, 63);
             panel7.TabIndex = 5;
             // 
-            // pictureBox6
+            // btnSearch
             // 
-            pictureBox6.Image = (Image)resources.GetObject("pictureBox6.Image");
-            pictureBox6.Location = new Point(11, 11);
-            pictureBox6.Name = "pictureBox6";
-            pictureBox6.Size = new Size(38, 38);
-            pictureBox6.SizeMode = PictureBoxSizeMode.AutoSize;
-            pictureBox6.TabIndex = 1;
-            pictureBox6.TabStop = false;
+            btnSearch.BackColor = Color.FromArgb(157, 181, 132);
+            btnSearch.FlatAppearance.BorderSize = 0;
+            btnSearch.FlatStyle = FlatStyle.Flat;
+            btnSearch.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnSearch.ForeColor = Color.FromArgb(7, 43, 0);
+            btnSearch.Location = new Point(384, 12);
+            btnSearch.Name = "btnSearch";
+            btnSearch.Size = new Size(94, 36);
+            btnSearch.TabIndex = 3;
+            btnSearch.Text = "Search";
+            btnSearch.UseVisualStyleBackColor = false;
+            btnSearch.Click += btnSearch_Click;
             // 
-            // textBox1
+            // txtSearch
             // 
-            textBox1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            textBox1.BackColor = Color.FromArgb(157, 181, 132);
-            textBox1.BorderStyle = BorderStyle.None;
-            textBox1.Location = new Point(55, 11);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(367, 42);
-            textBox1.TabIndex = 0;
+            txtSearch.BackColor = Color.FromArgb(157, 181, 132);
+            txtSearch.BorderStyle = BorderStyle.None;
+            txtSearch.Font = new Font("Segoe UI Semibold", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            txtSearch.Location = new Point(53, 12);
+            txtSearch.Name = "txtSearch";
+            txtSearch.Size = new Size(335, 36);
+            txtSearch.TabIndex = 2;
+            // 
+            // picSearch
+            // 
+            picSearch.Image = (Image)resources.GetObject("picSearch.Image");
+            picSearch.Location = new Point(9, 11);
+            picSearch.Name = "picSearch";
+            picSearch.Size = new Size(38, 38);
+            picSearch.SizeMode = PictureBoxSizeMode.AutoSize;
+            picSearch.TabIndex = 1;
+            picSearch.TabStop = false;
             // 
             // panelHalUtama
             // 
@@ -628,7 +634,6 @@
             panelHalUtama.BackgroundImage = (Image)resources.GetObject("panelHalUtama.BackgroundImage");
             panelHalUtama.Controls.Add(btnAddProduk);
             panelHalUtama.Controls.Add(panel7);
-            panelHalUtama.Controls.Add(cbKategori);
             panelHalUtama.Controls.Add(flykatalogProduk);
             panelHalUtama.Dock = DockStyle.Fill;
             panelHalUtama.Location = new Point(275, 0);
@@ -680,9 +685,8 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox11).EndInit();
             panel7.ResumeLayout(false);
             panel7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
+            ((System.ComponentModel.ISupportInitialize)picSearch).EndInit();
             panelHalUtama.ResumeLayout(false);
-            panelHalUtama.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -709,11 +713,9 @@
         private Button btnLogout;
         private System.Windows.Forms.Timer sidebarTimer;
         private FlowLayoutPanel flykatalogProduk;
-        private ComboBox cbKategori;
         private Button btnAddProduk;
         private Panel panel7;
-        private TextBox textBox1;
-        private PictureBox pictureBox6;
+        private PictureBox picSearch;
         private Panel panel8;
         private PictureBox pictureBox9;
         private Button button7;
@@ -737,5 +739,7 @@
         private Label label9;
         private PictureBox pictureBox11;
         public FlowLayoutPanel sidebar;
+        private TextBox txtSearch;
+        private Button btnSearch;
     }
 }

@@ -20,6 +20,36 @@ namespace TeaSMart_App.App.Context
             return M_jenis.GetJenisTeh();
         }
 
+        public static List<M_Produk> SearchProducts(string searchTerm)
+        {
+            List<M_Produk> filteredProducts = new List<M_Produk>();
+            string query = $@"
+                SELECT id_produk, namaproduk, hargaproduk, stok, gambar
+                FROM {table}
+                WHERE namaproduk ILIKE @searchTerm";
+
+            NpgsqlParameter[] parameters =
+            {
+                new NpgsqlParameter("@searchTerm", $"%{searchTerm}%")
+            };
+
+            // Menggunakan ExecuteQuery untuk hanya mengembalikan data yang diperlukan
+            DataTable dataTable = DatabaseWrapper.queryExecutor(query, parameters);
+            foreach (DataRow row in dataTable.Rows)
+            {
+                M_Produk produk = new M_Produk
+                {
+                    id_produk = Convert.ToInt32(row["id_produk"]),
+                    namaProduk = row["namaproduk"].ToString(),
+                    hargaProduk = Convert.ToDecimal(row["hargaproduk"]),
+                    Stok = Convert.ToInt32(row["stok"]),
+                    gambar = row["gambar"].ToString()
+                };
+                filteredProducts.Add(produk);
+            }
+            return filteredProducts;
+        }
+
         private static string table = "produk";
 
         public static void AddProduk(M_Produk produkBaru)
@@ -67,27 +97,23 @@ namespace TeaSMart_App.App.Context
 
         public static void UpdateProduk(M_Produk produkUpdate)
         {
-                string query = $@"
+            string query = $@"
             UPDATE {table}
-            SET namaproduk = @namaProduk,
-                hargaproduk = @hargaProduk,
+            SET hargaproduk = @hargaProduk,
                 id_jenis = @id_jenis,
                 stok = @stok,
                 gambar = @gambar,
-                diperbarui = @diperbarui,
-                isactive = @isActive
+                diperbarui = @diperbarui
             WHERE id_produk = @id_produk";
 
             NpgsqlParameter[] parameters =
             {
                 new NpgsqlParameter("@id_produk", produkUpdate.id_produk),
-                new NpgsqlParameter("@namaProduk", produkUpdate.namaProduk),
                 new NpgsqlParameter("@hargaProduk", produkUpdate.hargaProduk),
                 new NpgsqlParameter("@id_jenis", produkUpdate.id_jenis),
                 new NpgsqlParameter("@stok", produkUpdate.Stok),
                 new NpgsqlParameter("@gambar", produkUpdate.gambar),
-                new NpgsqlParameter("@diperbarui", produkUpdate.Diperbarui),
-                new NpgsqlParameter("@isActive", produkUpdate.isActive)
+                new NpgsqlParameter("@diperbarui", produkUpdate.Diperbarui)
             };
 
             commandExecutor(query, parameters);
@@ -107,6 +133,24 @@ namespace TeaSMart_App.App.Context
 
             commandExecutor(query, parameters);
         }
+
+        public static List<M_Produk> GetCheckedProduk(List<M_Produk> allProducts, List<(string namaProduk, int qty)> selectedItems)
+        {
+            var selectedProducts = new List<M_Produk>();
+
+            foreach (var item in selectedItems)
+            {
+                var produk = allProducts.FirstOrDefault(p => p.namaProduk == item.namaProduk);
+                if (produk != null)
+                {
+                    produk.SelectedQty = item.qty;  // Mengatur jumlah produk yang dipilih
+                    selectedProducts.Add(produk);
+                }
+            }
+
+            return selectedProducts;
+        }
+
 
         public static List<M_Produk> GetProdukTerlaris()
         {

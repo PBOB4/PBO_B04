@@ -119,7 +119,7 @@
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="Teh Hijau Premium" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Teh Hijau Premium.jpg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\Resources\Teh Hijau Premium2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Teh Hitam Ekonomis" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Teh Hitam Ekonomis1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -127,7 +127,7 @@
   <data name="Teh Kurma Limited Edition" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Teh Kurma Limited Edition1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Teh Hijau Ekonomis" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="Teh Hijau Ekonomis1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Teh Hijau Ekonomis1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Teh Jasmine Premium" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -144,5 +144,35 @@
   </data>
   <data name="pbo background 2 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pbo background 2 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Teh Camomile Ekonomis" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Teh Camomile Ekonomis.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Teh Camomile Premium" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Teh Camomile Premium.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Teh Earl Grey Ekonomis" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Teh Earl Grey Ekonomis.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Teh Earl Grey Premium" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Teh Earl Grey Premium.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Teh Jasmine Ekonomis" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Teh Jasmine Ekonomis1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Teh Oolong Ekonomis" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Teh Oolong Ekonomis1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Teh Oolong Premium" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Teh Oolong Premium.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Teh Papermint Ekonomis" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Teh Papermint Ekonomis.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Teh Papermint Premium" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Teh Papermint Premium.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Teh Rosella Limited Edition" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Teh Rosella Limited Edition.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

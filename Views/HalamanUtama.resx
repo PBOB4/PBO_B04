@@ -35425,7 +35425,7 @@
   <data name="btnRefresh.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DwAACw8BkvkDpQAAAbBJREFUSEvFVdtRwzAQ3B9imS+XkBKMZP7TAXQAHUAHpIR0AB2EDlICJbiElBBm
+        DAAACwwBP0AiyAAAAbBJREFUSEvFVdtRwzAQ3B9imS+XkBKMZP7TAXQAHUAHpIR0AB2EDlICJbiElBBm
         5VMs6SSTMMOwM5pJ9h7SPQ38B8yATeuwaxz2xuGwdKhD3VuHx9yPAh0bh9E4nBqLo7H+t3KaXGDxRX05
         Y/UiCqjU0mDAJpf/hBXtpwedivb+5RZj16PLZRejRycRjQnvb3c4rQY8JIIIxuJNGRYgaU6jaCx2JBPN
         CI3DizdiCiy2xRREaByOrcXuTLQOe4aWaAX06KIixqdaUMoah8+Y8B2RaJHvsfZnwDY4lf+bc0EdnpRd
@@ -35436,7 +35436,7 @@
 </value>
   </data>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>65</value>
+    <value>25</value>
   </metadata>
   <data name="$this.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

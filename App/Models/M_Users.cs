@@ -11,7 +11,7 @@ using TeaSMart_App.App.Context;
 
 namespace TeaSMart_App.App.Models
 {
-    internal class M_Users
+    public class M_Users
     {
         [Key]
         public int id_user { get; set; }
@@ -24,7 +24,9 @@ namespace TeaSMart_App.App.Models
         [NotMapped]
         public string konfirmasiPassword { get; set; }
         [Required]
-        public string role { get; set; } = "admin";
+        public string role { get; set; }
+        [NotMapped]
+        public int loggedUser { get; set; }
 
 
         public void Validate()

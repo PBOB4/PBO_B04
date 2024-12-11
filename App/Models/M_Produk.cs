@@ -27,6 +27,8 @@ namespace TeaSMart_App.App.Models
         [Required]
         public Boolean isActive { get; set; }
 
-        
+        [NotMapped] // Jangan simpan ke database
+        public int SelectedQty { get; set; } = 0;
+
     }
 }

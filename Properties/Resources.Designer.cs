@@ -93,20 +93,60 @@ namespace TeaSMart_App.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Teh_Hijau_Ekonomis {
+        internal static System.Drawing.Bitmap Teh_Camomile_Ekonomis {
             get {
-                object obj = ResourceManager.GetObject("Teh Hijau Ekonomis", resourceCulture);
+                object obj = ResourceManager.GetObject("Teh Camomile Ekonomis", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static byte[] Teh_Hijau_Premium {
+        internal static System.Drawing.Bitmap Teh_Camomile_Premium {
+            get {
+                object obj = ResourceManager.GetObject("Teh Camomile Premium", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Teh_Earl_Grey_Ekonomis {
+            get {
+                object obj = ResourceManager.GetObject("Teh Earl Grey Ekonomis", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Teh_Earl_Grey_Premium {
+            get {
+                object obj = ResourceManager.GetObject("Teh Earl Grey Premium", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Teh_Hijau_Ekonomis1 {
+            get {
+                object obj = ResourceManager.GetObject("Teh Hijau Ekonomis1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Teh_Hijau_Premium {
             get {
                 object obj = ResourceManager.GetObject("Teh Hijau Premium", resourceCulture);
-                return ((byte[])(obj));
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -133,6 +173,16 @@ namespace TeaSMart_App.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Teh_Jasmine_Ekonomis {
+            get {
+                object obj = ResourceManager.GetObject("Teh Jasmine Ekonomis", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Teh_Jasmine_Premium {
             get {
                 object obj = ResourceManager.GetObject("Teh Jasmine Premium", resourceCulture);
@@ -146,6 +196,56 @@ namespace TeaSMart_App.Properties {
         internal static System.Drawing.Bitmap Teh_Kurma_Limited_Edition {
             get {
                 object obj = ResourceManager.GetObject("Teh Kurma Limited Edition", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Teh_Oolong_Ekonomis {
+            get {
+                object obj = ResourceManager.GetObject("Teh Oolong Ekonomis", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Teh_Oolong_Premium {
+            get {
+                object obj = ResourceManager.GetObject("Teh Oolong Premium", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Teh_Papermint_Ekonomis {
+            get {
+                object obj = ResourceManager.GetObject("Teh Papermint Ekonomis", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Teh_Papermint_Premium {
+            get {
+                object obj = ResourceManager.GetObject("Teh Papermint Premium", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Teh_Rosella_Limited_Edition {
+            get {
+                object obj = ResourceManager.GetObject("Teh Rosella Limited Edition", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

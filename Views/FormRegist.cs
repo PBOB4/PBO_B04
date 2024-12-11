@@ -8,6 +8,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.VisualBasic.ApplicationServices;
 using Npgsql;
 using TeaSMart_App.App.Context;
 using TeaSMart_App.App.Models;
@@ -46,13 +47,14 @@ namespace TeaSMart_App
                     username = textBox2.Text.Trim(),
                     password = textBox4.Text.Trim(),
                     konfirmasiPassword = textBox5.Text.Trim(),
+                    role = "Admin"
                 };
 
                 C_User.Register(userBaru);
 
                 MessageBox.Show("Registrasi berhasil!", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                HalamanUtama halUtama = new HalamanUtama();
+                FormLogin halUtama = new FormLogin();
                 halUtama.Show();
 
                 this.Hide();

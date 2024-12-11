@@ -52,39 +52,57 @@ namespace TeaSMart_App.App.Context
 
         public static M_Users Login(string username, string password)
         {
+            if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
+            {
+                throw new ArgumentException("Username dan password tidak boleh kosong.");
+            }
+
+            M_Users user = null;
+
             // Query untuk mengecek username dan password
             string query = $@"
-            SELECT nama, username, password, role 
+            SELECT id_user, nama, username, password, role 
             FROM {table} 
             WHERE username = @username AND password = @password";
 
+            // Parameter untuk mencegah SQL Injection
             NpgsqlParameter[] parameters =
             {
                 new NpgsqlParameter("@username", username),
                 new NpgsqlParameter("@password", password)
             };
 
-            // Eksekusi query
-            DataTable result = queryExecutor(query, parameters);
-
-            if (result.Rows.Count > 0)
+            try
             {
-                // Jika user ditemukan, kembalikan objek M_Users
-                DataRow row = result.Rows[0];
-                return new M_Users
+                // Eksekusi query
+                DataTable result = queryExecutor(query, parameters);
+
+                if (result.Rows.Count > 0)
                 {
-                    nama = row["nama"].ToString(),
-                    username = row["username"].ToString(),
-                    password = row["password"].ToString(),
-                    role = row["role"].ToString()
-                };
+                    // Jika user ditemukan, buat objek M_Users
+                    DataRow row = result.Rows[0];
+                    user = new M_Users
+                    {
+                        id_user = Convert.ToInt32(row["id_user"]), // Sesuaikan nama kolom di sini
+                        nama = row["nama"].ToString(),
+                        username = row["username"].ToString(),
+                        password = row["password"].ToString(),
+                        role = row["role"].ToString()
+                    };
+                }
+                else
+                {
+                    // Jika tidak ditemukan, lempar exception
+                    throw new Exception("Username atau password salah.");
+                }
             }
-            else
+            catch (Exception ex)
             {
-                // Jika tidak ditemukan, kembalikan null atau throw exception
-                throw new Exception("Username atau password salah.");
+                // Tangani error (bisa log atau lempar ulang exception)
+                throw new Exception($"Terjadi kesalahan saat login: {ex.Message}");
             }
-        }
 
+            return user;
+        }
     }
 }

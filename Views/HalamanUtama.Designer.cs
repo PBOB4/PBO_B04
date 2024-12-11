@@ -55,10 +55,12 @@
             pictureBox3 = new PictureBox();
             pictureBox5 = new PictureBox();
             panel9 = new Panel();
+            label4 = new Label();
             panel10 = new Panel();
             lblQuotes = new Label();
             label3 = new Label();
             btnRefresh = new PictureBox();
+            lblWelcome = new Label();
             sidebar.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -276,9 +278,9 @@
             flowLayoutPanel1.AutoScroll = true;
             flowLayoutPanel1.BackColor = Color.FromArgb(255, 255, 236);
             flowLayoutPanel1.Controls.Add(panel7);
-            flowLayoutPanel1.Location = new Point(539, 25);
+            flowLayoutPanel1.Location = new Point(539, 68);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(410, 553);
+            flowLayoutPanel1.Size = new Size(410, 510);
             flowLayoutPanel1.TabIndex = 3;
             // 
             // panel7
@@ -339,9 +341,9 @@
             // pictureBox5
             // 
             pictureBox5.Image = (Image)resources.GetObject("pictureBox5.Image");
-            pictureBox5.Location = new Point(37, 25);
+            pictureBox5.Location = new Point(37, 68);
             pictureBox5.Name = "pictureBox5";
-            pictureBox5.Size = new Size(467, 334);
+            pictureBox5.Size = new Size(467, 291);
             pictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox5.TabIndex = 4;
             pictureBox5.TabStop = false;
@@ -349,13 +351,25 @@
             // panel9
             // 
             panel9.BackColor = Color.FromArgb(153, 178, 127);
+            panel9.Controls.Add(label4);
             panel9.Controls.Add(panel10);
             panel9.Controls.Add(pictureBox5);
             panel9.Controls.Add(flowLayoutPanel1);
-            panel9.Location = new Point(314, 54);
+            panel9.Location = new Point(314, 87);
             panel9.Name = "panel9";
             panel9.Size = new Size(983, 618);
             panel9.TabIndex = 5;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 12F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point, 0);
+            label4.ForeColor = Color.FromArgb(0, 64, 0);
+            label4.Location = new Point(667, 30);
+            label4.Name = "label4";
+            label4.Size = new Size(186, 28);
+            label4.TabIndex = 6;
+            label4.Text = "Customers' Choice";
             // 
             // panel10
             // 
@@ -403,6 +417,18 @@
             btnRefresh.TabStop = false;
             btnRefresh.Click += btnRefresh_Click;
             // 
+            // lblWelcome
+            // 
+            lblWelcome.AutoSize = true;
+            lblWelcome.BackColor = Color.Transparent;
+            lblWelcome.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            lblWelcome.ForeColor = Color.FromArgb(0, 64, 0);
+            lblWelcome.Location = new Point(591, 27);
+            lblWelcome.Name = "lblWelcome";
+            lblWelcome.Size = new Size(411, 38);
+            lblWelcome.TabIndex = 6;
+            lblWelcome.Text = "Have a Joyful Teatime, Users!";
+            // 
             // HalamanUtama
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -412,13 +438,14 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.None;
             ClientSize = new Size(1348, 721);
+            Controls.Add(lblWelcome);
             Controls.Add(panel9);
             Controls.Add(sidebar);
             ForeColor = Color.DarkCyan;
             Name = "HalamanUtama";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
-            Load += Form1_Load;
+            Load += HalamanUtama_Load;
             sidebar.ResumeLayout(false);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
@@ -436,10 +463,12 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             panel9.ResumeLayout(false);
+            panel9.PerformLayout();
             panel10.ResumeLayout(false);
             panel10.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)btnRefresh).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -473,5 +502,7 @@
         private PictureBox btnRefresh;
         private Label label3;
         private Label lblQuotes;
+        private Label label4;
+        private Label lblWelcome;
     }
 }

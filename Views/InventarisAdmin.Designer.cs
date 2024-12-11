@@ -51,10 +51,12 @@
             pictureBox8 = new PictureBox();
             btnLogout = new Button();
             panel7 = new Panel();
+            btnSearch = new Button();
+            txtSearch = new TextBox();
             pictureBox9 = new PictureBox();
-            textBox1 = new TextBox();
             flowLayoutPanel2 = new FlowLayoutPanel();
             panel8 = new Panel();
+            btnCO = new Button();
             sidebartimer = new System.Windows.Forms.Timer(components);
             sidebar.SuspendLayout();
             panel1.SuspendLayout();
@@ -301,12 +303,38 @@
             // 
             panel7.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panel7.BackColor = Color.FromArgb(181, 199, 156);
+            panel7.Controls.Add(btnSearch);
+            panel7.Controls.Add(txtSearch);
             panel7.Controls.Add(pictureBox9);
-            panel7.Controls.Add(textBox1);
             panel7.Location = new Point(15, 21);
             panel7.Name = "panel7";
             panel7.Size = new Size(1049, 63);
             panel7.TabIndex = 6;
+            // 
+            // btnSearch
+            // 
+            btnSearch.BackColor = Color.FromArgb(157, 181, 132);
+            btnSearch.FlatAppearance.BorderSize = 0;
+            btnSearch.FlatStyle = FlatStyle.Flat;
+            btnSearch.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnSearch.ForeColor = Color.FromArgb(7, 43, 0);
+            btnSearch.Location = new Point(939, 12);
+            btnSearch.Name = "btnSearch";
+            btnSearch.Size = new Size(94, 36);
+            btnSearch.TabIndex = 5;
+            btnSearch.Text = "Search";
+            btnSearch.UseVisualStyleBackColor = false;
+            btnSearch.Click += btnSearch_Click;
+            // 
+            // txtSearch
+            // 
+            txtSearch.BackColor = Color.FromArgb(157, 181, 132);
+            txtSearch.BorderStyle = BorderStyle.None;
+            txtSearch.Font = new Font("Segoe UI Semibold", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            txtSearch.Location = new Point(55, 12);
+            txtSearch.Name = "txtSearch";
+            txtSearch.Size = new Size(885, 36);
+            txtSearch.TabIndex = 4;
             // 
             // pictureBox9
             // 
@@ -318,17 +346,6 @@
             pictureBox9.TabIndex = 1;
             pictureBox9.TabStop = false;
             // 
-            // textBox1
-            // 
-            textBox1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            textBox1.BackColor = Color.FromArgb(157, 181, 132);
-            textBox1.BorderStyle = BorderStyle.None;
-            textBox1.Location = new Point(55, 11);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(975, 42);
-            textBox1.TabIndex = 0;
-            // 
             // flowLayoutPanel2
             // 
             flowLayoutPanel2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
@@ -337,7 +354,7 @@
             flowLayoutPanel2.BackColor = Color.Transparent;
             flowLayoutPanel2.Location = new Point(3, 110);
             flowLayoutPanel2.Name = "flowLayoutPanel2";
-            flowLayoutPanel2.Size = new Size(1069, 607);
+            flowLayoutPanel2.Size = new Size(1069, 529);
             flowLayoutPanel2.TabIndex = 7;
             // 
             // panel8
@@ -345,6 +362,7 @@
             panel8.AutoScroll = true;
             panel8.AutoSize = true;
             panel8.BackgroundImage = Properties.Resources.pbo_background_2__1_;
+            panel8.Controls.Add(btnCO);
             panel8.Controls.Add(panel7);
             panel8.Controls.Add(flowLayoutPanel2);
             panel8.Dock = DockStyle.Fill;
@@ -352,6 +370,16 @@
             panel8.Name = "panel8";
             panel8.Size = new Size(1081, 721);
             panel8.TabIndex = 8;
+            // 
+            // btnCO
+            // 
+            btnCO.Location = new Point(909, 663);
+            btnCO.Name = "btnCO";
+            btnCO.Size = new Size(94, 29);
+            btnCO.TabIndex = 8;
+            btnCO.Text = "Check Out";
+            btnCO.UseVisualStyleBackColor = true;
+            btnCO.Click += btnCO_Click;
             // 
             // sidebartimer
             // 
@@ -367,6 +395,7 @@
             ForeColor = Color.FromArgb(7, 43, 0);
             Name = "InventarisAdmin";
             Text = "InventarisAdmin";
+            Load += InventarisAdmin_Load;
             sidebar.ResumeLayout(false);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
@@ -421,9 +450,11 @@
         private Button btnLogout;
         private Panel panel7;
         private PictureBox pictureBox9;
-        private TextBox textBox1;
         private FlowLayoutPanel flowLayoutPanel2;
         private Panel panel8;
         private System.Windows.Forms.Timer sidebartimer;
+        private Button btnSearch;
+        private TextBox txtSearch;
+        private Button btnCO;
     }
 }

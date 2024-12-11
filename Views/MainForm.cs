@@ -11,11 +11,10 @@ namespace TeaSMart_App
 
         private void button1_Click(object sender, EventArgs e)
         {
+            this.Hide();
             FormLogin formlogin = new FormLogin();
 
             formlogin.Show();
-
-            this.Close();
         }
     }
 }

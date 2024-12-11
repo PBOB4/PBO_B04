@@ -12,11 +12,14 @@ namespace TeaSMart_App.Views
     public partial class HalamanUtama : Form
     {
         bool sidebarExpand = true;
+        private M_Users loggedUser;
         private readonly C_HalUtama _controller;
+        private readonly M_Users _loggedUser; // Data pengguna yang login
 
-        public HalamanUtama()
+        public HalamanUtama(M_Users loggedUser)
         {
             InitializeComponent();
+            this.loggedUser = loggedUser;
             RankProduk();
             _controller = new C_HalUtama();
             LoadRandomQuote();
@@ -94,10 +97,6 @@ namespace TeaSMart_App.Views
 
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
@@ -139,9 +138,22 @@ namespace TeaSMart_App.Views
 
         private void button2_Click(object sender, EventArgs e)
         {
-            InventarisOwner inventaris_Owner = new InventarisOwner();
-            inventaris_Owner.Show();
-            this.Close();
+            
+            if (loggedUser.role == "owner")
+            {
+                InventarisOwner inventaris_Owner = new InventarisOwner();
+                inventaris_Owner.Show();
+                this.Hide();
+            } else if (loggedUser.role == "admin")
+            {
+                InventarisAdmin inventaris_Admin = new InventarisAdmin();
+                inventaris_Admin.Show();
+                this.Hide();
+            } else
+            {
+                MessageBox.Show("User not found", e.ToString());
+            }
+            
         }
 
         private void sidebar_Paint(object sender, PaintEventArgs e)
@@ -181,6 +193,11 @@ namespace TeaSMart_App.Views
             setting.Show();
 
             this.Close();
+        }
+
+        private void HalamanUtama_Load(object sender, EventArgs e)
+        {
+            
         }
     }
 }
