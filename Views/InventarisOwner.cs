@@ -57,9 +57,9 @@ namespace TeaSMart_App.Views
 
         private void btnHalUtama_Click(object sender, EventArgs e)
         {
-            //HalamanUtama halamanUtama = new HalamanUtama();
-            //halamanUtama.Show();
-            //this.Hide();
+            HalamanUtama halamanUtama = new HalamanUtama(loggedInUser);
+            halamanUtama.Show();
+            this.Hide();
         }
 
         private void pictureBox9_Click(object sender, EventArgs e)
@@ -76,7 +76,7 @@ namespace TeaSMart_App.Views
         {
             AddProduk produkBaru = new AddProduk();
             produkBaru.Show();
-            ProdukOwner_Load();
+            this.Close();
         }
 
         private void ProdukOwner_Load()

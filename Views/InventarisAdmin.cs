@@ -316,7 +316,6 @@ namespace TeaSMart_App.Views
                     // Kirim data ke halaman checkout Pembayaran
                     Pembayaran pembayaran = new Pembayaran(selectedProducts);
                     pembayaran.Show();
-                    this.Hide();
                 }
                 else
                 {

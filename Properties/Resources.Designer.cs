@@ -93,6 +93,16 @@ namespace TeaSMart_App.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap TeaSMart {
+            get {
+                object obj = ResourceManager.GetObject("TeaSMart", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Teh_Camomile_Ekonomis {
             get {
                 object obj = ResourceManager.GetObject("Teh Camomile Ekonomis", resourceCulture);

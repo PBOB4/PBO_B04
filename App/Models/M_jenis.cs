@@ -25,21 +25,5 @@ namespace TeaSMart_App.App.Models
                 new M_jenis { id_jenis = 3, jenis = "Limited-Edition" }
             };
         }
-
-        // Mendapatkan ID berdasarkan nama jenis teh
-        //public static int GetIdByNamaJenis(string namaJenis)
-        //{
-        //    switch (namaJenis)
-        //    {
-        //        case "Ekonomis":
-        //            return 1;
-        //        case "Premium":
-        //            return 2;
-        //        case "Limited-Edition":
-        //            return 3;
-        //        default:
-        //            throw new ArgumentException("Jenis teh tidak valid");
-        //    }
-        //}
     }
 }
