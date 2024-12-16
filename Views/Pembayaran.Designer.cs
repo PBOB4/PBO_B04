@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Pembayaran));
-            label2 = new Label();
+            lblTotalHarga = new Label();
             label3 = new Label();
-            label4 = new Label();
+            lblKembali = new Label();
             btnSelesai = new Button();
             flyProduk = new FlowLayoutPanel();
             panel1 = new Panel();
@@ -42,11 +42,11 @@
             label9 = new Label();
             pictureBox1 = new PictureBox();
             label10 = new Label();
-            label11 = new Label();
-            label12 = new Label();
-            label13 = new Label();
-            label14 = new Label();
-            label15 = new Label();
+            lblNamaAdm = new Label();
+            lblUsnAdm = new Label();
+            lblIdAdm = new Label();
+            lblTgltransaksi = new Label();
+            lblIdTransaksi = new Label();
             label16 = new Label();
             panel2 = new Panel();
             label1 = new Label();
@@ -54,6 +54,7 @@
             label18 = new Label();
             label19 = new Label();
             btnBack = new PictureBox();
+            tbBayar = new TextBox();
             flyProduk.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -61,55 +62,58 @@
             ((System.ComponentModel.ISupportInitialize)btnBack).BeginInit();
             SuspendLayout();
             // 
-            // label2
+            // lblTotalHarga
             // 
-            label2.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(35, 501);
-            label2.Name = "label2";
-            label2.Size = new Size(487, 23);
-            label2.TabIndex = 1;
-            label2.Text = "Total Harga     :";
+            lblTotalHarga.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblTotalHarga.Location = new Point(32, 502);
+            lblTotalHarga.Name = "lblTotalHarga";
+            lblTotalHarga.Size = new Size(472, 23);
+            lblTotalHarga.TabIndex = 1;
+            lblTotalHarga.Text = "Total Harga     :";
             // 
             // label3
             // 
             label3.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(35, 532);
+            label3.Location = new Point(33, 527);
             label3.Name = "label3";
-            label3.Size = new Size(487, 23);
+            label3.Size = new Size(133, 23);
             label3.TabIndex = 2;
             label3.Text = "Bayar              :";
             // 
-            // label4
+            // lblKembali
             // 
-            label4.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.Location = new Point(35, 564);
-            label4.Name = "label4";
-            label4.Size = new Size(487, 23);
-            label4.TabIndex = 3;
-            label4.Text = "Kembali          :";
+            lblKembali.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblKembali.Location = new Point(32, 558);
+            lblKembali.Name = "lblKembali";
+            lblKembali.Size = new Size(472, 23);
+            lblKembali.TabIndex = 3;
+            lblKembali.Text = "Kembali          :";
             // 
             // btnSelesai
             // 
             btnSelesai.BackgroundImage = (Image)resources.GetObject("btnSelesai.BackgroundImage");
             btnSelesai.BackgroundImageLayout = ImageLayout.Zoom;
+            btnSelesai.Cursor = Cursors.Hand;
             btnSelesai.FlatStyle = FlatStyle.Flat;
             btnSelesai.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnSelesai.ForeColor = Color.Green;
-            btnSelesai.Location = new Point(207, 643);
+            btnSelesai.Location = new Point(204, 641);
             btnSelesai.Name = "btnSelesai";
             btnSelesai.Size = new Size(136, 48);
             btnSelesai.TabIndex = 4;
             btnSelesai.Text = "  ";
             btnSelesai.UseVisualStyleBackColor = true;
+            btnSelesai.Click += btnSelesai_Click;
             // 
             // flyProduk
             // 
+            flyProduk.AutoScroll = true;
             flyProduk.AutoSize = true;
             flyProduk.Controls.Add(panel1);
             flyProduk.FlowDirection = FlowDirection.TopDown;
             flyProduk.Location = new Point(32, 299);
             flyProduk.Name = "flyProduk";
-            flyProduk.Size = new Size(490, 182);
+            flyProduk.Size = new Size(490, 200);
             flyProduk.TabIndex = 8;
             // 
             // panel1
@@ -142,6 +146,7 @@
             label8.Size = new Size(97, 20);
             label8.TabIndex = 2;
             label8.Text = "Rp100.000,00";
+            label8.TextAlign = ContentAlignment.MiddleRight;
             // 
             // label7
             // 
@@ -169,7 +174,7 @@
             label9.AutoSize = true;
             label9.Font = new Font("Mongolian Baiti", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label9.ForeColor = Color.FromArgb(0, 64, 0);
-            label9.Location = new Point(188, 716);
+            label9.Location = new Point(188, 715);
             label9.Name = "label9";
             label9.Size = new Size(190, 24);
             label9.TabIndex = 9;
@@ -178,7 +183,7 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(375, 12);
+            pictureBox1.Location = new Point(207, 12);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(147, 141);
             pictureBox1.SizeMode = PictureBoxSizeMode.AutoSize;
@@ -195,50 +200,50 @@
             label10.TabIndex = 15;
             label10.Text = "ADMIN:";
             // 
-            // label11
+            // lblNamaAdm
             // 
-            label11.AutoSize = true;
-            label11.Location = new Point(57, 195);
-            label11.Name = "label11";
-            label11.Size = new Size(109, 20);
-            label11.TabIndex = 16;
-            label11.Text = "Najwa Maulida";
+            lblNamaAdm.AutoSize = true;
+            lblNamaAdm.Location = new Point(57, 195);
+            lblNamaAdm.Name = "lblNamaAdm";
+            lblNamaAdm.Size = new Size(109, 20);
+            lblNamaAdm.TabIndex = 16;
+            lblNamaAdm.Text = "Najwa Maulida";
             // 
-            // label12
+            // lblUsnAdm
             // 
-            label12.AutoSize = true;
-            label12.Location = new Point(57, 215);
-            label12.Name = "label12";
-            label12.Size = new Size(87, 20);
-            label12.TabIndex = 17;
-            label12.Text = "@username";
+            lblUsnAdm.AutoSize = true;
+            lblUsnAdm.Location = new Point(57, 215);
+            lblUsnAdm.Name = "lblUsnAdm";
+            lblUsnAdm.Size = new Size(87, 20);
+            lblUsnAdm.TabIndex = 17;
+            lblUsnAdm.Text = "@username";
             // 
-            // label13
+            // lblIdAdm
             // 
-            label13.AutoSize = true;
-            label13.Location = new Point(57, 235);
-            label13.Name = "label13";
-            label13.Size = new Size(17, 20);
-            label13.TabIndex = 18;
-            label13.Text = "3";
+            lblIdAdm.AutoSize = true;
+            lblIdAdm.Location = new Point(57, 235);
+            lblIdAdm.Name = "lblIdAdm";
+            lblIdAdm.Size = new Size(17, 20);
+            lblIdAdm.TabIndex = 18;
+            lblIdAdm.Text = "3";
             // 
-            // label14
+            // lblTgltransaksi
             // 
-            label14.AutoSize = true;
-            label14.Location = new Point(411, 235);
-            label14.Name = "label14";
-            label14.Size = new Size(85, 20);
-            label14.TabIndex = 21;
-            label14.Text = "23/12/2024";
+            lblTgltransaksi.Location = new Point(316, 235);
+            lblTgltransaksi.Name = "lblTgltransaksi";
+            lblTgltransaksi.Size = new Size(180, 20);
+            lblTgltransaksi.TabIndex = 21;
+            lblTgltransaksi.Text = "23/12/2024";
+            lblTgltransaksi.TextAlign = ContentAlignment.MiddleRight;
             // 
-            // label15
+            // lblIdTransaksi
             // 
-            label15.Location = new Point(386, 202);
-            label15.Name = "label15";
-            label15.Size = new Size(109, 20);
-            label15.TabIndex = 20;
-            label15.Text = "#34";
-            label15.TextAlign = ContentAlignment.MiddleRight;
+            lblIdTransaksi.Location = new Point(386, 202);
+            lblIdTransaksi.Name = "lblIdTransaksi";
+            lblIdTransaksi.Size = new Size(109, 20);
+            lblIdTransaksi.TabIndex = 20;
+            lblIdTransaksi.Text = "#34";
+            lblIdTransaksi.TextAlign = ContentAlignment.MiddleRight;
             // 
             // label16
             // 
@@ -314,6 +319,15 @@
             btnBack.TabStop = false;
             btnBack.Click += btnBack_Click;
             // 
+            // tbBayar
+            // 
+            tbBayar.Cursor = Cursors.IBeam;
+            tbBayar.Location = new Point(174, 528);
+            tbBayar.Name = "tbBayar";
+            tbBayar.Size = new Size(125, 27);
+            tbBayar.TabIndex = 23;
+            tbBayar.TextChanged += tbBayar_TextChanged;
+            // 
             // Pembayaran
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -321,23 +335,24 @@
             AutoScroll = true;
             AutoSize = true;
             BackColor = Color.FromArgb(255, 255, 235);
-            ClientSize = new Size(552, 757);
+            ClientSize = new Size(553, 757);
+            Controls.Add(lblKembali);
+            Controls.Add(tbBayar);
+            Controls.Add(lblTotalHarga);
+            Controls.Add(label3);
             Controls.Add(btnBack);
             Controls.Add(panel2);
-            Controls.Add(label14);
-            Controls.Add(label15);
+            Controls.Add(lblTgltransaksi);
+            Controls.Add(lblIdTransaksi);
             Controls.Add(label16);
-            Controls.Add(label13);
-            Controls.Add(label12);
-            Controls.Add(label11);
+            Controls.Add(lblIdAdm);
+            Controls.Add(lblUsnAdm);
+            Controls.Add(lblNamaAdm);
             Controls.Add(label10);
             Controls.Add(pictureBox1);
             Controls.Add(label9);
             Controls.Add(flyProduk);
             Controls.Add(btnSelesai);
-            Controls.Add(label4);
-            Controls.Add(label3);
-            Controls.Add(label2);
             Name = "Pembayaran";
             Text = "Pembayaran";
             flyProduk.ResumeLayout(false);
@@ -352,9 +367,9 @@
         }
 
         #endregion
-        private Label label2;
+        private Label lblTotalHarga;
         private Label label3;
-        private Label label4;
+        private Label lblKembali;
         private Button btnSelesai;
         private FlowLayoutPanel flyProduk;
         private Panel panel1;
@@ -364,11 +379,11 @@
         private Label label9;
         private PictureBox pictureBox1;
         private Label label10;
-        private Label label11;
-        private Label label12;
-        private Label label13;
-        private Label label14;
-        private Label label15;
+        private Label lblNamaAdm;
+        private Label lblUsnAdm;
+        private Label lblIdAdm;
+        private Label lblTgltransaksi;
+        private Label lblIdTransaksi;
         private Label label16;
         private Panel panel2;
         private Label label1;
@@ -377,5 +392,6 @@
         private Label label19;
         private Label label5;
         private PictureBox btnBack;
+        private TextBox tbBayar;
     }
 }

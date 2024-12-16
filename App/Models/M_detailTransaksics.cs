@@ -15,10 +15,10 @@ namespace TeaSMart_App.App.Models
         [Required]
         public int qty { get; set; }
         [Required]
-        public Decimal total_harga { get; set; }
+        public Decimal harga { get; set; }
         [ForeignKey("M_Produk")]
         public int id_produk { get; set; }
         [ForeignKey("M_transaski")]
-        public int id_tramsaksi { get; set; }
+        public int id_transaksi { get; set; }
     }
 }

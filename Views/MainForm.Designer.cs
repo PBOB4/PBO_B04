@@ -72,6 +72,7 @@
             // button1
             // 
             button1.BackColor = Color.FromArgb(8, 51, 0);
+            button1.Cursor = Cursors.Hand;
             button1.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button1.ForeColor = Color.White;
             button1.Location = new Point(595, 496);

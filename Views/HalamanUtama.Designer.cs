@@ -38,16 +38,16 @@
             panel2 = new Panel();
             buttonHalamanUtama = new Button();
             panel3 = new Panel();
-            button2 = new Button();
+            btnHInventaris = new Button();
             panel4 = new Panel();
-            button3 = new Button();
+            btnRiwayatTransaksi = new Button();
             panel5 = new Panel();
-            button4 = new Button();
+            btnPengaturan = new Button();
             panel6 = new Panel();
-            button5 = new Button();
+            btnLogout = new Button();
             sidebarTimer = new System.Windows.Forms.Timer(components);
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            flowLayoutPanel1 = new FlowLayoutPanel();
+            flyRank = new FlowLayoutPanel();
             panel7 = new Panel();
             label2 = new Label();
             label1 = new Label();
@@ -58,7 +58,7 @@
             label4 = new Label();
             panel10 = new Panel();
             lblQuotes = new Label();
-            label3 = new Label();
+            lblHeaderQuote = new Label();
             btnRefresh = new PictureBox();
             lblWelcome = new Label();
             sidebar.SuspendLayout();
@@ -71,7 +71,7 @@
             panel4.SuspendLayout();
             panel5.SuspendLayout();
             panel6.SuspendLayout();
-            flowLayoutPanel1.SuspendLayout();
+            flyRank.SuspendLayout();
             panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
@@ -96,7 +96,6 @@
             sidebar.Name = "sidebar";
             sidebar.Size = new Size(267, 721);
             sidebar.TabIndex = 0;
-            sidebar.Paint += sidebar_Paint;
             // 
             // panel1
             // 
@@ -149,10 +148,10 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(267, 65);
             panel2.TabIndex = 1;
-            panel2.Paint += panel2_Paint;
             // 
             // buttonHalamanUtama
             // 
+            buttonHalamanUtama.Cursor = Cursors.Hand;
             buttonHalamanUtama.FlatStyle = FlatStyle.Flat;
             buttonHalamanUtama.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             buttonHalamanUtama.ForeColor = Color.FromArgb(0, 64, 0);
@@ -166,122 +165,126 @@
             buttonHalamanUtama.Text = "              Halaman Utama";
             buttonHalamanUtama.TextAlign = ContentAlignment.MiddleLeft;
             buttonHalamanUtama.UseVisualStyleBackColor = true;
-            buttonHalamanUtama.Click += button1_Click;
+            buttonHalamanUtama.Click += buttonHalamanUtama_Click;
             // 
             // panel3
             // 
-            panel3.Controls.Add(button2);
+            panel3.Controls.Add(btnHInventaris);
             panel3.Location = new Point(3, 158);
             panel3.Name = "panel3";
             panel3.Size = new Size(267, 65);
             panel3.TabIndex = 2;
             // 
-            // button2
+            // btnHInventaris
             // 
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button2.ForeColor = Color.FromArgb(0, 64, 0);
-            button2.Image = (Image)resources.GetObject("button2.Image");
-            button2.ImageAlign = ContentAlignment.MiddleLeft;
-            button2.Location = new Point(-3, 0);
-            button2.Name = "button2";
-            button2.Padding = new Padding(30, 0, 0, 0);
-            button2.Size = new Size(270, 65);
-            button2.TabIndex = 1;
-            button2.Text = "              Inventaris Produk";
-            button2.TextAlign = ContentAlignment.MiddleLeft;
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
+            btnHInventaris.Cursor = Cursors.Hand;
+            btnHInventaris.FlatStyle = FlatStyle.Flat;
+            btnHInventaris.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnHInventaris.ForeColor = Color.FromArgb(0, 64, 0);
+            btnHInventaris.Image = (Image)resources.GetObject("btnHInventaris.Image");
+            btnHInventaris.ImageAlign = ContentAlignment.MiddleLeft;
+            btnHInventaris.Location = new Point(-3, 0);
+            btnHInventaris.Name = "btnHInventaris";
+            btnHInventaris.Padding = new Padding(30, 0, 0, 0);
+            btnHInventaris.Size = new Size(270, 65);
+            btnHInventaris.TabIndex = 1;
+            btnHInventaris.Text = "              Inventaris Produk";
+            btnHInventaris.TextAlign = ContentAlignment.MiddleLeft;
+            btnHInventaris.UseVisualStyleBackColor = true;
+            btnHInventaris.Click += btnHInventaris_Click;
             // 
             // panel4
             // 
-            panel4.Controls.Add(button3);
+            panel4.Controls.Add(btnRiwayatTransaksi);
             panel4.Location = new Point(3, 229);
             panel4.Name = "panel4";
             panel4.Size = new Size(267, 65);
             panel4.TabIndex = 3;
             // 
-            // button3
+            // btnRiwayatTransaksi
             // 
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button3.ForeColor = Color.FromArgb(0, 64, 0);
-            button3.Image = (Image)resources.GetObject("button3.Image");
-            button3.ImageAlign = ContentAlignment.MiddleLeft;
-            button3.Location = new Point(-3, 0);
-            button3.Name = "button3";
-            button3.Padding = new Padding(30, 0, 0, 0);
-            button3.Size = new Size(270, 65);
-            button3.TabIndex = 1;
-            button3.Text = "              Transaksi";
-            button3.TextAlign = ContentAlignment.MiddleLeft;
-            button3.UseVisualStyleBackColor = true;
-            button3.Click += button3_Click;
+            btnRiwayatTransaksi.Cursor = Cursors.Hand;
+            btnRiwayatTransaksi.FlatStyle = FlatStyle.Flat;
+            btnRiwayatTransaksi.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnRiwayatTransaksi.ForeColor = Color.FromArgb(0, 64, 0);
+            btnRiwayatTransaksi.Image = (Image)resources.GetObject("btnRiwayatTransaksi.Image");
+            btnRiwayatTransaksi.ImageAlign = ContentAlignment.MiddleLeft;
+            btnRiwayatTransaksi.Location = new Point(-3, 0);
+            btnRiwayatTransaksi.Name = "btnRiwayatTransaksi";
+            btnRiwayatTransaksi.Padding = new Padding(30, 0, 0, 0);
+            btnRiwayatTransaksi.Size = new Size(270, 65);
+            btnRiwayatTransaksi.TabIndex = 1;
+            btnRiwayatTransaksi.Text = "              Riwayat Transaksi";
+            btnRiwayatTransaksi.TextAlign = ContentAlignment.MiddleLeft;
+            btnRiwayatTransaksi.UseVisualStyleBackColor = true;
+            btnRiwayatTransaksi.Click += btnRiwayatTransaksi_Click;
             // 
             // panel5
             // 
-            panel5.Controls.Add(button4);
+            panel5.Controls.Add(btnPengaturan);
             panel5.Location = new Point(3, 300);
             panel5.Name = "panel5";
             panel5.Size = new Size(267, 65);
             panel5.TabIndex = 4;
             // 
-            // button4
+            // btnPengaturan
             // 
-            button4.FlatStyle = FlatStyle.Flat;
-            button4.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button4.ForeColor = Color.FromArgb(0, 64, 0);
-            button4.Image = (Image)resources.GetObject("button4.Image");
-            button4.ImageAlign = ContentAlignment.MiddleLeft;
-            button4.Location = new Point(-3, 0);
-            button4.Name = "button4";
-            button4.Padding = new Padding(30, 0, 0, 0);
-            button4.Size = new Size(270, 65);
-            button4.TabIndex = 1;
-            button4.Text = "              Pengaturan";
-            button4.TextAlign = ContentAlignment.MiddleLeft;
-            button4.UseVisualStyleBackColor = true;
-            button4.Click += button4_Click;
+            btnPengaturan.Cursor = Cursors.Hand;
+            btnPengaturan.FlatStyle = FlatStyle.Flat;
+            btnPengaturan.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnPengaturan.ForeColor = Color.FromArgb(0, 64, 0);
+            btnPengaturan.Image = (Image)resources.GetObject("btnPengaturan.Image");
+            btnPengaturan.ImageAlign = ContentAlignment.MiddleLeft;
+            btnPengaturan.Location = new Point(-3, 0);
+            btnPengaturan.Name = "btnPengaturan";
+            btnPengaturan.Padding = new Padding(30, 0, 0, 0);
+            btnPengaturan.Size = new Size(270, 65);
+            btnPengaturan.TabIndex = 1;
+            btnPengaturan.Text = "              Pengaturan";
+            btnPengaturan.TextAlign = ContentAlignment.MiddleLeft;
+            btnPengaturan.UseVisualStyleBackColor = true;
+            btnPengaturan.Click += btnPengaturan_Click;
             // 
             // panel6
             // 
-            panel6.Controls.Add(button5);
+            panel6.Controls.Add(btnLogout);
             panel6.Location = new Point(3, 371);
             panel6.Name = "panel6";
             panel6.Size = new Size(267, 65);
             panel6.TabIndex = 5;
             // 
-            // button5
+            // btnLogout
             // 
-            button5.FlatStyle = FlatStyle.Flat;
-            button5.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button5.ForeColor = Color.FromArgb(0, 64, 0);
-            button5.Image = (Image)resources.GetObject("button5.Image");
-            button5.ImageAlign = ContentAlignment.MiddleLeft;
-            button5.Location = new Point(-3, 0);
-            button5.Name = "button5";
-            button5.Padding = new Padding(30, 0, 0, 0);
-            button5.Size = new Size(270, 65);
-            button5.TabIndex = 1;
-            button5.Text = "              Log Out";
-            button5.TextAlign = ContentAlignment.MiddleLeft;
-            button5.UseVisualStyleBackColor = true;
-            button5.Click += button5_Click;
+            btnLogout.Cursor = Cursors.Hand;
+            btnLogout.FlatStyle = FlatStyle.Flat;
+            btnLogout.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnLogout.ForeColor = Color.FromArgb(0, 64, 0);
+            btnLogout.Image = (Image)resources.GetObject("btnLogout.Image");
+            btnLogout.ImageAlign = ContentAlignment.MiddleLeft;
+            btnLogout.Location = new Point(-3, 0);
+            btnLogout.Name = "btnLogout";
+            btnLogout.Padding = new Padding(30, 0, 0, 0);
+            btnLogout.Size = new Size(270, 65);
+            btnLogout.TabIndex = 1;
+            btnLogout.Text = "              Log Out";
+            btnLogout.TextAlign = ContentAlignment.MiddleLeft;
+            btnLogout.UseVisualStyleBackColor = true;
+            btnLogout.Click += btnLogout_Click;
             // 
             // sidebarTimer
             // 
             sidebarTimer.Interval = 10;
             sidebarTimer.Tick += sidebarTimer_Tick;
             // 
-            // flowLayoutPanel1
+            // flyRank
             // 
-            flowLayoutPanel1.AutoScroll = true;
-            flowLayoutPanel1.BackColor = Color.FromArgb(255, 255, 236);
-            flowLayoutPanel1.Controls.Add(panel7);
-            flowLayoutPanel1.Location = new Point(539, 68);
-            flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(410, 510);
-            flowLayoutPanel1.TabIndex = 3;
+            flyRank.AutoScroll = true;
+            flyRank.BackColor = Color.FromArgb(255, 255, 236);
+            flyRank.Controls.Add(panel7);
+            flyRank.Location = new Point(539, 68);
+            flyRank.Name = "flyRank";
+            flyRank.Size = new Size(410, 510);
+            flyRank.TabIndex = 3;
             // 
             // panel7
             // 
@@ -295,7 +298,6 @@
             panel7.Name = "panel7";
             panel7.Size = new Size(322, 124);
             panel7.TabIndex = 0;
-            panel7.Paint += panel7_Paint_1;
             // 
             // label2
             // 
@@ -318,7 +320,6 @@
             label1.Size = new Size(173, 17);
             label1.TabIndex = 2;
             label1.Text = "Teh Kurma Limited Edition";
-            label1.Click += label1_Click;
             // 
             // panel8
             // 
@@ -341,9 +342,9 @@
             // pictureBox5
             // 
             pictureBox5.Image = (Image)resources.GetObject("pictureBox5.Image");
-            pictureBox5.Location = new Point(37, 68);
+            pictureBox5.Location = new Point(37, 30);
             pictureBox5.Name = "pictureBox5";
-            pictureBox5.Size = new Size(467, 291);
+            pictureBox5.Size = new Size(467, 329);
             pictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox5.TabIndex = 4;
             pictureBox5.TabStop = false;
@@ -354,7 +355,7 @@
             panel9.Controls.Add(label4);
             panel9.Controls.Add(panel10);
             panel9.Controls.Add(pictureBox5);
-            panel9.Controls.Add(flowLayoutPanel1);
+            panel9.Controls.Add(flyRank);
             panel9.Location = new Point(314, 87);
             panel9.Name = "panel9";
             panel9.Size = new Size(983, 618);
@@ -363,11 +364,11 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 12F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point, 0);
+            label4.Font = new Font("Segoe UI", 12F, FontStyle.Bold | FontStyle.Italic | FontStyle.Underline, GraphicsUnit.Point, 0);
             label4.ForeColor = Color.FromArgb(0, 64, 0);
             label4.Location = new Point(667, 30);
             label4.Name = "label4";
-            label4.Size = new Size(186, 28);
+            label4.Size = new Size(185, 28);
             label4.TabIndex = 6;
             label4.Text = "Customers' Choice";
             // 
@@ -375,7 +376,7 @@
             // 
             panel10.BackColor = Color.FromArgb(255, 255, 235);
             panel10.Controls.Add(lblQuotes);
-            panel10.Controls.Add(label3);
+            panel10.Controls.Add(lblHeaderQuote);
             panel10.Controls.Add(btnRefresh);
             panel10.ForeColor = Color.FromArgb(255, 192, 192);
             panel10.Location = new Point(37, 378);
@@ -394,16 +395,16 @@
             lblQuotes.TabIndex = 2;
             lblQuotes.Text = "Quotes";
             // 
-            // label3
+            // lblHeaderQuote
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 12F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point, 0);
-            label3.ForeColor = Color.FromArgb(0, 64, 0);
-            label3.Location = new Point(22, 12);
-            label3.Name = "label3";
-            label3.Size = new Size(133, 28);
-            label3.TabIndex = 1;
-            label3.Text = "T'day Quote:";
+            lblHeaderQuote.AutoSize = true;
+            lblHeaderQuote.Font = new Font("Segoe UI", 12F, FontStyle.Bold | FontStyle.Italic | FontStyle.Underline, GraphicsUnit.Point, 0);
+            lblHeaderQuote.ForeColor = Color.FromArgb(0, 64, 0);
+            lblHeaderQuote.Location = new Point(22, 12);
+            lblHeaderQuote.Name = "lblHeaderQuote";
+            lblHeaderQuote.Size = new Size(133, 28);
+            lblHeaderQuote.TabIndex = 1;
+            lblHeaderQuote.Text = "T'day Quote:";
             // 
             // btnRefresh
             // 
@@ -457,7 +458,7 @@
             panel4.ResumeLayout(false);
             panel5.ResumeLayout(false);
             panel6.ResumeLayout(false);
-            flowLayoutPanel1.ResumeLayout(false);
+            flyRank.ResumeLayout(false);
             panel7.ResumeLayout(false);
             panel7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
@@ -478,19 +479,19 @@
         private Panel panel2;
         private Button buttonHalamanUtama;
         private Panel panel3;
-        private Button button2;
+        private Button btnHInventaris;
         private Panel panel4;
-        private Button button3;
+        private Button btnRiwayatTransaksi;
         private Panel panel5;
-        private Button button4;
+        private Button btnPengaturan;
         private Panel panel6;
-        private Button button5;
+        private Button btnLogout;
         private PictureBox menuButton;
         private System.Windows.Forms.Timer sidebarTimer;
         private PictureBox pictureBox1;
         private PictureBox pictureBox2;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
-        private FlowLayoutPanel flowLayoutPanel1;
+        private FlowLayoutPanel flyRank;
         private Panel panel7;
         private PictureBox pictureBox3;
         private Panel panel8;
@@ -500,7 +501,7 @@
         private Panel panel9;
         private Panel panel10;
         private PictureBox btnRefresh;
-        private Label label3;
+        private Label lblHeaderQuote;
         private Label lblQuotes;
         private Label label4;
         private Label lblWelcome;

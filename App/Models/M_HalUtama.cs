@@ -12,7 +12,6 @@ namespace TeaSMart_App.App.Models
 
         public M_HalUtama()
         {
-            // Inisialisasi daftar kutipan langsung
             MotivationalQuotes = new List<string>
             {
                 "Hidup itu seperti secangkir teh, bagaimana rasanya, tergantung bagaimana kamu meraciknya.",

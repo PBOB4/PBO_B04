@@ -16,48 +16,50 @@ namespace TeaSMart_App.Views
     public partial class AddProduk : Form
     {
         private C_Produk _CProduk;
-        private bool _isEditMode; // Menyimpan informasi apakah dalam mode edit
-        private M_Produk _produkToEdit; // Menyimpan produk yang akan diedit
+        private bool _isEditMode; 
+        private M_Produk _produkToEdit; 
+
+        private readonly M_Users loggedUser;
 
         // Constructor untuk mode tambah
-        public AddProduk()
+        public AddProduk(M_Users loggedUser)
         {
             InitializeComponent();
             _CProduk = new C_Produk();
-            _isEditMode = false; // Default ke mode tambah
+            _isEditMode = false; 
             LoadCBJenis();
+            this.loggedUser = loggedUser;
         }
 
         // Constructor untuk mode edit
-        public AddProduk(M_Produk produk)
+        public AddProduk(M_Produk produk, M_Users loggedUser)
         {
             InitializeComponent();
             _CProduk = new C_Produk();
-            _isEditMode = true; // Aktifkan mode edit
-            _produkToEdit = produk; // Simpan produk yang akan diedit
+            _isEditMode = true; 
+            _produkToEdit = produk; 
+
+            this.loggedUser = loggedUser;
             LoadCBJenis();
 
-            // Isi form dengan data produk yang akan diedit
             FillFormWithData(produk);
         }
 
-        // Fungsi untuk mengisi form dengan data produk
         private void FillFormWithData(M_Produk produk)
         {
             tbNama.Text = produk.namaProduk;
             tbHarga.Text = produk.hargaProduk.ToString();
             tbStok.Text = produk.Stok.ToString();
-            dtPDiperbarui.Value = DateTime.Now; // Nilai default
+            dtPDiperbarui.Value = DateTime.Now; 
             tbFileName.Text = produk.gambar;
             cbJenis.SelectedValue = produk.id_jenis;
 
-            // Jika ada gambar, tampilkan
             if (!string.IsNullOrEmpty(produk.gambar))
             {
                 string imgPath = Path.Combine(Application.StartupPath, "Images", produk.gambar);
                 if (File.Exists(imgPath))
                 {
-                    pictureBox1.Image = Image.FromFile(imgPath);
+                    picProduk.Image = Image.FromFile(imgPath);
                 }
             }
         }
@@ -75,27 +77,25 @@ namespace TeaSMart_App.Views
             {
                 try
                 {
-                    // Memuat gambar ke PictureBox
-                    pictureBox1.Image = Image.FromFile(openFileDialog.FileName);
+                    picProduk.Image = Image.FromFile(openFileDialog.FileName);
 
                     string resourcesPath = @"D:\Kuliah semester 3\PBO\PROJECT besar\TeaSMart App\Resources";
                     if (!Directory.Exists(resourcesPath))
                     {
                         Directory.CreateDirectory(resourcesPath);
                     }
-
-                    // Simpan gambar dengan nama file asli
+                    
                     string fileName = Path.GetFileName(openFileDialog.FileName);
                     string destinationPath = Path.Combine(resourcesPath, fileName);
 
-                    // Salin file ke folder Resources
                     File.Copy(openFileDialog.FileName, destinationPath, overwrite: true);
+                    tbFileName.Text = fileName;
+
 
                     tbFileName.Text = fileName;
                 }
                 catch (Exception ex)
                 {
-                    // Menangani kesalahan
                     MessageBox.Show($"Terjadi kesalahan: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
@@ -104,15 +104,13 @@ namespace TeaSMart_App.Views
             openFileDialog.FileName.EndsWith(".png") ||
             openFileDialog.FileName.EndsWith(".bmp"))
             {
-                pictureBox1.Image = Image.FromFile(openFileDialog.FileName);
+                picProduk.Image = Image.FromFile(openFileDialog.FileName);
             }
             else
             {
                 MessageBox.Show("File yang dipilih bukan gambar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
-
-
 
         private void AddProduk_Load(object sender, EventArgs e)
         {
@@ -123,11 +121,9 @@ namespace TeaSMart_App.Views
             try
             {
                 List<M_jenis> jenisTehList = _CProduk.GetAllJenis();
-
-                // Mengisi ComboBox dengan data jenis teh
                 cbJenis.DataSource = jenisTehList;
-                cbJenis.DisplayMember = "jenis"; // Menampilkan nama jenis teh
-                cbJenis.ValueMember = "id_jenis";     // Menyimpan ID jenis teh di dalam nilai combo box
+                cbJenis.DisplayMember = "jenis";
+                cbJenis.ValueMember = "id_jenis";
                 cbJenis.SelectedIndex = -1;
 
 
@@ -152,7 +148,7 @@ namespace TeaSMart_App.Views
                 int id_jenis = Convert.ToInt32(cbJenis.SelectedValue);
 
 
-                if (_isEditMode) // Mode edit
+                if (_isEditMode) 
                 {
                     _produkToEdit.namaProduk = tbNama.Text.Trim();
                     _produkToEdit.hargaProduk = Convert.ToDecimal(tbHarga.Text.Trim());
@@ -161,10 +157,10 @@ namespace TeaSMart_App.Views
                     _produkToEdit.gambar = tbFileName.Text.Trim();
                     _produkToEdit.id_jenis = id_jenis;
 
-                    C_Produk.UpdateProduk(_produkToEdit); // Panggil metode untuk mengupdate produk
+                    C_Produk.UpdateProduk(_produkToEdit); 
                     MessageBox.Show("Produk berhasil diperbarui!", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                else // Mode tambah
+                else 
                 {
                     M_Produk produkBaru = new M_Produk
                     {
@@ -176,10 +172,10 @@ namespace TeaSMart_App.Views
                         isActive = true,
                         id_jenis = id_jenis
                     };
-                    C_Produk.AddProduk(produkBaru); // Panggil metode untuk menambah produk baru
+                    C_Produk.AddProduk(produkBaru); 
                     MessageBox.Show("Produk baru berhasil ditambahkan!", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                InventarisOwner invtOwner = new InventarisOwner();
+                InventarisOwner invtOwner = new InventarisOwner(loggedUser);
                 invtOwner.Show();
                 this.Close();
             }
@@ -189,22 +185,9 @@ namespace TeaSMart_App.Views
             }
         }
 
-        private void Form_Load(object sender, EventArgs e)
-        {
-            if (_isEditMode)
-            {
-                tbNama.ReadOnly = true; // Tidak dapat mengedit nama produk
-                tbNama.Text = _produkToEdit.namaProduk; 
-            }
-            else
-            {
-                tbNama.ReadOnly = false; 
-            }
-        }
-
         private void btnBack_Click(object sender, EventArgs e)
         {
-            InventarisOwner inventarisOwner = new InventarisOwner();
+            InventarisOwner inventarisOwner = new InventarisOwner(loggedUser);
             inventarisOwner.Show();
             this.Close();
         }

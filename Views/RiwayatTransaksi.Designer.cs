@@ -1,6 +1,6 @@
 ﻿namespace TeaSMart_App.Views
 {
-    partial class Settings
+    partial class RiwayatTransaksi
     {
         /// <summary>
         /// Required designer variable.
@@ -29,12 +29,15 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Settings));
-            sidebar = new FlowLayoutPanel();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RiwayatTransaksi));
             panel1 = new Panel();
-            pictureBox3 = new PictureBox();
-            pictureBox2 = new PictureBox();
+            dataGridRiwayat = new DataGridView();
+            label1 = new Label();
+            sidebar = new FlowLayoutPanel();
+            panel2 = new Panel();
             btnMenu = new PictureBox();
+            pictureBox5 = new PictureBox();
+            pictureBox4 = new PictureBox();
             panel3 = new Panel();
             buttonHalamanUtama = new Button();
             panel4 = new Panel();
@@ -43,85 +46,118 @@
             btnRiwayatTransaksi = new Button();
             panel6 = new Panel();
             btnPengaturan = new Button();
-            panel2 = new Panel();
-            btnLogout = new Button();
             panel7 = new Panel();
-            linkUbahPw = new Label();
-            lblUsnUser = new Label();
-            lblNamaUser = new Label();
-            lblHeader = new Label();
-            panel8 = new Panel();
+            btnLogout = new Button();
             sidebarTimer = new System.Windows.Forms.Timer(components);
-            sidebar.SuspendLayout();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridRiwayat).BeginInit();
+            sidebar.SuspendLayout();
+            panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)btnMenu).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             panel3.SuspendLayout();
             panel4.SuspendLayout();
             panel5.SuspendLayout();
             panel6.SuspendLayout();
-            panel2.SuspendLayout();
             panel7.SuspendLayout();
-            panel8.SuspendLayout();
             SuspendLayout();
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.FromArgb(255, 255, 235);
+            panel1.BackgroundImage = (Image)resources.GetObject("panel1.BackgroundImage");
+            panel1.Controls.Add(dataGridRiwayat);
+            panel1.Controls.Add(label1);
+            panel1.Controls.Add(sidebar);
+            panel1.Dock = DockStyle.Fill;
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1348, 721);
+            panel1.TabIndex = 0;
+            // 
+            // dataGridRiwayat
+            // 
+            dataGridRiwayat.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dataGridRiwayat.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dataGridRiwayat.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            dataGridRiwayat.BackgroundColor = Color.FromArgb(153, 178, 127);
+            dataGridRiwayat.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridRiwayat.GridColor = Color.FromArgb(255, 255, 235);
+            dataGridRiwayat.Location = new Point(314, 50);
+            dataGridRiwayat.Name = "dataGridRiwayat";
+            dataGridRiwayat.ReadOnly = true;
+            dataGridRiwayat.RowHeadersWidth = 50;
+            dataGridRiwayat.Size = new Size(988, 646);
+            dataGridRiwayat.TabIndex = 3;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(314, 17);
+            label1.Name = "label1";
+            label1.Size = new Size(203, 31);
+            label1.TabIndex = 2;
+            label1.Text = "Riwayat Transaksi";
             // 
             // sidebar
             // 
             sidebar.BackColor = Color.FromArgb(153, 178, 127);
-            sidebar.Controls.Add(panel1);
+            sidebar.Controls.Add(panel2);
             sidebar.Controls.Add(panel3);
             sidebar.Controls.Add(panel4);
             sidebar.Controls.Add(panel5);
             sidebar.Controls.Add(panel6);
-            sidebar.Controls.Add(panel2);
+            sidebar.Controls.Add(panel7);
             sidebar.Dock = DockStyle.Left;
             sidebar.Location = new Point(0, 0);
             sidebar.Name = "sidebar";
-            sidebar.Size = new Size(267, 721);
+            sidebar.Size = new Size(275, 721);
             sidebar.TabIndex = 1;
             // 
-            // panel1
+            // panel2
             // 
-            panel1.Controls.Add(pictureBox3);
-            panel1.Controls.Add(pictureBox2);
-            panel1.Controls.Add(btnMenu);
-            panel1.Location = new Point(3, 3);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(264, 78);
-            panel1.TabIndex = 0;
-            // 
-            // pictureBox3
-            // 
-            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(206, 18);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(42, 42);
-            pictureBox3.SizeMode = PictureBoxSizeMode.AutoSize;
-            pictureBox3.TabIndex = 2;
-            pictureBox3.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(67, 26);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(118, 19);
-            pictureBox2.SizeMode = PictureBoxSizeMode.AutoSize;
-            pictureBox2.TabIndex = 1;
-            pictureBox2.TabStop = false;
+            panel2.BackColor = Color.FromArgb(153, 178, 127);
+            panel2.Controls.Add(btnMenu);
+            panel2.Controls.Add(pictureBox5);
+            panel2.Controls.Add(pictureBox4);
+            panel2.Location = new Point(3, 3);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(273, 78);
+            panel2.TabIndex = 0;
             // 
             // btnMenu
             // 
             btnMenu.Cursor = Cursors.Hand;
             btnMenu.Image = (Image)resources.GetObject("btnMenu.Image");
-            btnMenu.Location = new Point(18, 18);
+            btnMenu.Location = new Point(23, 25);
             btnMenu.Name = "btnMenu";
             btnMenu.Size = new Size(33, 33);
             btnMenu.SizeMode = PictureBoxSizeMode.AutoSize;
             btnMenu.TabIndex = 0;
             btnMenu.TabStop = false;
             btnMenu.Click += btnMenu_Click;
+            // 
+            // pictureBox5
+            // 
+            pictureBox5.Image = (Image)resources.GetObject("pictureBox5.Image");
+            pictureBox5.Location = new Point(77, 37);
+            pictureBox5.Name = "pictureBox5";
+            pictureBox5.Size = new Size(118, 19);
+            pictureBox5.SizeMode = PictureBoxSizeMode.AutoSize;
+            pictureBox5.TabIndex = 1;
+            pictureBox5.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
+            pictureBox4.Location = new Point(208, 17);
+            pictureBox4.Name = "pictureBox4";
+            pictureBox4.Size = new Size(42, 42);
+            pictureBox4.SizeMode = PictureBoxSizeMode.AutoSize;
+            pictureBox4.TabIndex = 2;
+            pictureBox4.TabStop = false;
             // 
             // panel3
             // 
@@ -130,7 +166,7 @@
             panel3.Location = new Point(3, 87);
             panel3.Name = "panel3";
             panel3.Size = new Size(267, 65);
-            panel3.TabIndex = 16;
+            panel3.TabIndex = 11;
             // 
             // buttonHalamanUtama
             // 
@@ -157,7 +193,7 @@
             panel4.Location = new Point(3, 158);
             panel4.Name = "panel4";
             panel4.Size = new Size(267, 65);
-            panel4.TabIndex = 17;
+            panel4.TabIndex = 12;
             // 
             // btnHInventaris
             // 
@@ -183,7 +219,7 @@
             panel5.Location = new Point(3, 229);
             panel5.Name = "panel5";
             panel5.Size = new Size(267, 65);
-            panel5.TabIndex = 18;
+            panel5.TabIndex = 13;
             // 
             // btnRiwayatTransaksi
             // 
@@ -210,7 +246,7 @@
             panel6.Location = new Point(3, 300);
             panel6.Name = "panel6";
             panel6.Size = new Size(267, 65);
-            panel6.TabIndex = 19;
+            panel6.TabIndex = 14;
             // 
             // btnPengaturan
             // 
@@ -230,13 +266,13 @@
             btnPengaturan.UseVisualStyleBackColor = true;
             btnPengaturan.Click += btnPengaturan_Click;
             // 
-            // panel2
+            // panel7
             // 
-            panel2.Controls.Add(btnLogout);
-            panel2.Location = new Point(3, 371);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(267, 65);
-            panel2.TabIndex = 20;
+            panel7.Controls.Add(btnLogout);
+            panel7.Location = new Point(3, 371);
+            panel7.Name = "panel7";
+            panel7.Size = new Size(267, 65);
+            panel7.TabIndex = 15;
             // 
             // btnLogout
             // 
@@ -256,114 +292,41 @@
             btnLogout.UseVisualStyleBackColor = true;
             btnLogout.Click += btnLogout_Click;
             // 
-            // panel7
-            // 
-            panel7.BackColor = Color.FromArgb(255, 255, 235);
-            panel7.Controls.Add(linkUbahPw);
-            panel7.Controls.Add(lblUsnUser);
-            panel7.Controls.Add(lblNamaUser);
-            panel7.Location = new Point(553, 105);
-            panel7.Name = "panel7";
-            panel7.Size = new Size(531, 296);
-            panel7.TabIndex = 2;
-            // 
-            // linkUbahPw
-            // 
-            linkUbahPw.AutoSize = true;
-            linkUbahPw.Cursor = Cursors.Hand;
-            linkUbahPw.ForeColor = SystemColors.HotTrack;
-            linkUbahPw.Location = new Point(37, 212);
-            linkUbahPw.Name = "linkUbahPw";
-            linkUbahPw.Size = new Size(122, 20);
-            linkUbahPw.TabIndex = 3;
-            linkUbahPw.Text = "Ubah Password ...";
-            linkUbahPw.Click += linkUbahPw_Click;
-            // 
-            // lblUsnUser
-            // 
-            lblUsnUser.AutoSize = true;
-            lblUsnUser.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblUsnUser.Location = new Point(37, 162);
-            lblUsnUser.Name = "lblUsnUser";
-            lblUsnUser.Size = new Size(106, 20);
-            lblUsnUser.TabIndex = 2;
-            lblUsnUser.Text = "Username      :";
-            // 
-            // lblNamaUser
-            // 
-            lblNamaUser.AutoSize = true;
-            lblNamaUser.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblNamaUser.Location = new Point(37, 118);
-            lblNamaUser.Name = "lblNamaUser";
-            lblNamaUser.Size = new Size(106, 20);
-            lblNamaUser.TabIndex = 1;
-            lblNamaUser.Text = "Nama             :";
-            // 
-            // lblHeader
-            // 
-            lblHeader.Font = new Font("Palatino Linotype", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblHeader.Location = new Point(16, 13);
-            lblHeader.Name = "lblHeader";
-            lblHeader.Size = new Size(500, 41);
-            lblHeader.TabIndex = 0;
-            lblHeader.Text = "Informasi Akun @username";
-            lblHeader.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // panel8
-            // 
-            panel8.BackColor = Color.FromArgb(153, 178, 127);
-            panel8.Controls.Add(lblHeader);
-            panel8.Location = new Point(553, 105);
-            panel8.Name = "panel8";
-            panel8.Size = new Size(531, 72);
-            panel8.TabIndex = 6;
-            // 
             // sidebarTimer
             // 
             sidebarTimer.Tick += sidebarTimer_Tick;
             // 
-            // Settings
+            // RiwayatTransaksi
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(1348, 721);
-            Controls.Add(panel8);
-            Controls.Add(panel7);
-            Controls.Add(sidebar);
-            Name = "Settings";
-            Text = "Settings";
-            Load += Settings_Load;
-            sidebar.ResumeLayout(false);
+            Controls.Add(panel1);
+            Name = "RiwayatTransaksi";
+            Text = "TransaksiOwner";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridRiwayat).EndInit();
+            sidebar.ResumeLayout(false);
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)btnMenu).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             panel3.ResumeLayout(false);
             panel4.ResumeLayout(false);
             panel5.ResumeLayout(false);
             panel6.ResumeLayout(false);
-            panel2.ResumeLayout(false);
             panel7.ResumeLayout(false);
-            panel7.PerformLayout();
-            panel8.ResumeLayout(false);
             ResumeLayout(false);
         }
 
         #endregion
 
-        private FlowLayoutPanel sidebar;
         private Panel panel1;
-        private PictureBox pictureBox3;
-        private PictureBox pictureBox2;
-        private PictureBox btnMenu;
-        private Panel panel7;
-        private Label linkUbahPw;
-        private Label lblUsnUser;
-        private Label lblNamaUser;
-        private Label lblHeader;
-        private Panel panel8;
+        private FlowLayoutPanel sidebar;
+        private DataGridView dataGridRiwayat;
+        private Label label1;
         private Panel panel3;
         private Button buttonHalamanUtama;
         private Panel panel4;
@@ -372,8 +335,12 @@
         private Button btnRiwayatTransaksi;
         private Panel panel6;
         private Button btnPengaturan;
-        private Panel panel2;
+        private Panel panel7;
         private Button btnLogout;
+        private Panel panel2;
+        private PictureBox btnMenu;
+        private PictureBox pictureBox5;
+        private PictureBox pictureBox4;
         private System.Windows.Forms.Timer sidebarTimer;
     }
 }

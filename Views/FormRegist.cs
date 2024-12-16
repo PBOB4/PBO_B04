@@ -24,17 +24,8 @@ namespace TeaSMart_App
         {
             InitializeComponent();
 
-            textBox4.PasswordChar = '*';
-            textBox5.PasswordChar = '*';
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void pictureBox5_Click(object sender, EventArgs e)
-        {
+            tbPassword.PasswordChar = '*';
+            tbKonfirmasiPw.PasswordChar = '*';
         }
 
         private void btnDaftar_Click(object sender, EventArgs e)
@@ -43,10 +34,10 @@ namespace TeaSMart_App
             {
                 M_Users userBaru = new M_Users
                 {
-                    nama = textBox1.Text.Trim(),
-                    username = textBox2.Text.Trim(),
-                    password = textBox4.Text.Trim(),
-                    konfirmasiPassword = textBox5.Text.Trim(),
+                    nama = tbNama.Text.Trim(),
+                    username = tbUsername.Text.Trim(),
+                    password = tbPassword.Text.Trim(),
+                    konfirmasiPassword = tbKonfirmasiPw.Text.Trim(),
                     role = "Admin"
                 };
 
@@ -65,19 +56,18 @@ namespace TeaSMart_App
             }
         }
 
-        private void FormRegist_Load(object sender, EventArgs e)
+        private void showPass_CheckedChanged(object sender, EventArgs e)
         {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox6_Click(object sender, EventArgs e)
-        {
-
+            if (showPass.Checked)
+            {
+                tbPassword.PasswordChar = '\0';
+                tbKonfirmasiPw.PasswordChar = '\0';
+            }
+            else
+            {
+                tbPassword.PasswordChar = '*';
+                tbKonfirmasiPw.PasswordChar = '*';
+            }
         }
     }
 }

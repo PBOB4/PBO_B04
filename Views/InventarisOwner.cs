@@ -21,10 +21,11 @@ namespace TeaSMart_App.Views
     public partial class InventarisOwner : Form
     {
         bool sidebarExpand = true;
-        private readonly M_Users loggedInUser;
-        public InventarisOwner()
+        private M_Users loggedUser;
+        public InventarisOwner(M_Users user)
         {
             InitializeComponent();
+            loggedUser = user ?? throw new ArgumentNullException(nameof(user), "User tidak boleh null");
             ProdukOwner_Load();
         }
 
@@ -55,26 +56,9 @@ namespace TeaSMart_App.Views
             sidebarTimer.Start();
         }
 
-        private void btnHalUtama_Click(object sender, EventArgs e)
-        {
-            HalamanUtama halamanUtama = new HalamanUtama(loggedInUser);
-            halamanUtama.Show();
-            this.Hide();
-        }
-
-        private void pictureBox9_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void InventarisOwner_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnAddProduk_Click(object sender, EventArgs e)
         {
-            AddProduk produkBaru = new AddProduk();
+            AddProduk produkBaru = new AddProduk(loggedUser);
             produkBaru.Show();
             this.Close();
         }
@@ -91,15 +75,18 @@ namespace TeaSMart_App.Views
                     BackColor = Color.FromArgb(181, 199, 156),
                     Margin = new Padding(6),
                 };
-                string imgName = produk.gambar;
+
+                string resourcesPath = Path.Combine(@"D:\Kuliah semester 3\PBO\PROJECT besar\TeaSMart App\Resources");
+                string imgName = Path.Combine(resourcesPath, produk.gambar);
 
                 var imageResource = Properties.Resources.ResourceManager.GetObject(imgName);
-                if (imageResource != null)
+                if (File.Exists(imgName))
                 {
+                    // MessageBox.Show($"Gambar ditemukan di: {imgName}");
                     var pictureBox = new PictureBox
                     {
                         Size = new Size(110, 126),
-                        Image = imageResource as System.Drawing.Image,
+                        Image = Image.FromFile(imgName),
                         SizeMode = PictureBoxSizeMode.Zoom,
                         Location = new Point(18, 18)
                     };
@@ -107,10 +94,11 @@ namespace TeaSMart_App.Views
                 }
                 else
                 {
+                    // MessageBox.Show($"Gambar tidak ditemukan di: {imgName}");
                     var pictureBox = new PictureBox
                     {
                         Size = new Size(110, 124),
-                        Image = Properties.Resources.Teh_Jasmine_Premium,
+                        Image = Properties.Resources.default_image,
                         SizeMode = PictureBoxSizeMode.Zoom,
                         Location = new Point(18, 18)
                     };
@@ -143,22 +131,23 @@ namespace TeaSMart_App.Views
                 {
                     Text = "Edit",
                     Size = new Size(60, 30),
-                    Location = new Point(246, 120)
+                    Location = new Point(246, 120),
+                    Cursor = Cursors.Hand
                 };
-
                 btnPanelEdit.Click += (s, e) =>
                 {
-                    AddProduk editProdukForm = new AddProduk(produk); // Kirim produk ke form AddProduk
+                    AddProduk editProdukForm = new AddProduk(produk, loggedUser); // Kirim produk ke form AddProduk
                     editProdukForm.ShowDialog();
+                    this.Hide();
                     ProdukOwner_Load(); // Refresh daftar produk setelah selesai
                 };
-
                 Button btnPanelHapus = new Button
                 {
                     Text = "Hapus",
                     Size = new Size(60, 30),
                     Location = new Point(176, 120),
-                    Tag = produk.id_produk
+                    Tag = produk.id_produk,
+                    Cursor = Cursors.Hand
                 };
                 btnPanelHapus.Click += BtnDelete_Click;
 
@@ -203,46 +192,6 @@ namespace TeaSMart_App.Views
             {
                 MessageBox.Show($"Terjadi kesalahan: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-
-
-        private void flykatalogProduk_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            Settings settings = new Settings();
-            settings.Show();
-            this.Hide();
-        }
-
-        private void panel4_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void btnTransaksi_Click(object sender, EventArgs e)
-        {
-            //Settings settings = new Settings();
-            //settings.Show();
-            //this.Hide();
-        }
-
-        private void btnLogout_Click(object sender, EventArgs e)
-        {
-            // ngapain kak
-        }
-
-        private void button9_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel8_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -312,12 +261,13 @@ namespace TeaSMart_App.Views
                 {
                     Text = "Edit",
                     Size = new Size(60, 30),
-                    Location = new Point(246, 120)
+                    Location = new Point(246, 120),
+                    Cursor = Cursors.Hand
                 };
 
                 btnPanelEdit.Click += (s, e) =>
                 {
-                    AddProduk editProdukForm = new AddProduk(produk); // Kirim produk ke form AddProduk
+                    AddProduk editProdukForm = new AddProduk(produk, loggedUser); // Kirim produk ke form AddProduk
                     editProdukForm.ShowDialog();
                     ProdukOwner_Load(); // Refresh daftar produk setelah selesai
                 };
@@ -326,7 +276,8 @@ namespace TeaSMart_App.Views
                 {
                     Text = "Hapus",
                     Size = new Size(60, 30),
-                    Location = new Point(176, 120)
+                    Location = new Point(176, 120),
+                    Cursor = Cursors.Hand
                 };
                 btnPanelHapus.Click += BtnDelete_Click;
 
@@ -338,6 +289,55 @@ namespace TeaSMart_App.Views
 
                 flykatalogProduk.Controls.Add(produkPanel);
             }
+        }
+
+        private void buttonHalamanUtama_Click(object sender, EventArgs e)
+        {
+            HalamanUtama halUtama = new HalamanUtama(loggedUser);
+            halUtama.Show();
+            this.Hide();
+        }
+
+        private void btnRiwayatTransaksi_Click(object sender, EventArgs e)
+        {
+            if (loggedUser.role == "owner")
+            {
+                RiwayatTransaksi riwayatTransaksi = new RiwayatTransaksi("owner", loggedUser);
+                riwayatTransaksi.Show();
+                this.Hide();
+            }
+            else if (loggedUser.role == "admin")
+            {
+                RiwayatTransaksi riwayatTransaksiAdmin = new RiwayatTransaksi("admin", loggedUser);
+                riwayatTransaksiAdmin.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("User not found", e.ToString());
+            }
+        }
+
+        private void btnPengaturan_Click(object sender, EventArgs e)
+        {
+            Settings settings = new Settings(loggedUser);
+            settings.Show();
+            this.Hide();
+        }
+
+        private void btnLogout_Click_1(object sender, EventArgs e)
+        {
+            loggedUser = null;
+            MessageBox.Show("Anda telah berhasil logout.", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            this.Close();
+            MainForm main = new MainForm();
+            main.Show();
+        }
+
+        private void btnHInventaris_Click(object sender, EventArgs e)
+        {
+            sidebarTimer.Start();
         }
     }
 }

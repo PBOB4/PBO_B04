@@ -25,9 +25,6 @@ namespace TeaSMart_App.App.Models
         public string konfirmasiPassword { get; set; }
         [Required]
         public string role { get; set; }
-        [NotMapped]
-        public int loggedUser { get; set; }
-
 
         public void Validate()
         {

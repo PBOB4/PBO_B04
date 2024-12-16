@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddProduk));
-            pictureBox1 = new PictureBox();
+            picProduk = new PictureBox();
             label1 = new Label();
             tbNama = new TextBox();
             tbHarga = new TextBox();
@@ -46,18 +46,18 @@
             btnAddImage = new Button();
             btnSubmit = new Button();
             btnBack = new PictureBox();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)picProduk).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)btnBack).BeginInit();
             SuspendLayout();
             // 
-            // pictureBox1
+            // picProduk
             // 
-            pictureBox1.Location = new Point(198, 21);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(111, 119);
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
+            picProduk.Location = new Point(198, 21);
+            picProduk.Name = "picProduk";
+            picProduk.Size = new Size(111, 119);
+            picProduk.TabIndex = 0;
+            picProduk.TabStop = false;
             // 
             // label1
             // 
@@ -237,12 +237,12 @@
             Controls.Add(btnSubmit);
             Controls.Add(btnAddImage);
             Controls.Add(panel1);
-            Controls.Add(pictureBox1);
+            Controls.Add(picProduk);
             Name = "AddProduk";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "MelihatDetProduk";
             Load += AddProduk_Load;
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)picProduk).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)btnBack).EndInit();
@@ -252,7 +252,7 @@
 
         #endregion
 
-        private PictureBox pictureBox1;
+        private PictureBox picProduk;
         private Label label1;
         private TextBox tbNama;
         private TextBox tbHarga;

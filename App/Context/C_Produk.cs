@@ -15,6 +15,7 @@ namespace TeaSMart_App.App.Context
 {
     internal class C_Produk : DatabaseWrapper
     {
+        private static string table = "produk";
         public List<M_jenis> GetAllJenis()
         {
             return M_jenis.GetJenisTeh();
@@ -33,7 +34,6 @@ namespace TeaSMart_App.App.Context
                 new NpgsqlParameter("@searchTerm", $"%{searchTerm}%")
             };
 
-            // Menggunakan ExecuteQuery untuk hanya mengembalikan data yang diperlukan
             DataTable dataTable = DatabaseWrapper.queryExecutor(query, parameters);
             foreach (DataRow row in dataTable.Rows)
             {
@@ -49,8 +49,6 @@ namespace TeaSMart_App.App.Context
             }
             return filteredProducts;
         }
-
-        private static string table = "produk";
 
         public static void AddProduk(M_Produk produkBaru)
         {
@@ -79,8 +77,8 @@ namespace TeaSMart_App.App.Context
             string query = $@"SELECT id_produk, namaproduk, hargaproduk, stok, gambar from produk
                 WHERE isactive=true";
 
-            DataTable dataTable = DatabaseWrapper.queryExecutor(query);
-            foreach(DataRow row in dataTable.Rows)
+            DataTable dataTable = queryExecutor(query);
+            foreach (DataRow row in dataTable.Rows)
             {
                 M_Produk produk = new M_Produk
                 {
@@ -99,7 +97,8 @@ namespace TeaSMart_App.App.Context
         {
             string query = $@"
             UPDATE {table}
-            SET hargaproduk = @hargaProduk,
+            SET namaproduk = @namaproduk,
+                hargaproduk = @hargaProduk,
                 id_jenis = @id_jenis,
                 stok = @stok,
                 gambar = @gambar,
@@ -109,6 +108,7 @@ namespace TeaSMart_App.App.Context
             NpgsqlParameter[] parameters =
             {
                 new NpgsqlParameter("@id_produk", produkUpdate.id_produk),
+                new NpgsqlParameter("@namaProduk", produkUpdate.namaProduk),
                 new NpgsqlParameter("@hargaProduk", produkUpdate.hargaProduk),
                 new NpgsqlParameter("@id_jenis", produkUpdate.id_jenis),
                 new NpgsqlParameter("@stok", produkUpdate.Stok),
@@ -143,14 +143,13 @@ namespace TeaSMart_App.App.Context
                 var produk = allProducts.FirstOrDefault(p => p.namaProduk == item.namaProduk);
                 if (produk != null)
                 {
-                    produk.SelectedQty = item.qty;  // Mengatur jumlah produk yang dipilih
+                    produk.SelectedQty = item.qty;  
                     selectedProducts.Add(produk);
                 }
             }
 
             return selectedProducts;
         }
-
 
         public static List<M_Produk> GetProdukTerlaris()
         {
@@ -176,15 +175,34 @@ namespace TeaSMart_App.App.Context
             {
                 M_Produk produk = new M_Produk
                 {
-                    namaProduk = row["namaproduk"].ToString(),   // Ambil nama produk
-                    hargaProduk = Convert.ToDecimal(row["hargaproduk"]),  // Ambil harga produk
+                    namaProduk = row["namaproduk"].ToString(),   
+                    hargaProduk = Convert.ToDecimal(row["hargaproduk"]),  
                     gambar= row["gambar"].ToString()
                 };
 
-                // Tambahkan produk ke dalam list
                 products.Add(produk);
             }
             return products;
+        }
+
+        public static void UpdateStokProduk (int id_produk, int newStok)
+        {
+            try
+            {
+                string query = "UPDATE produk SET stok = @newStock WHERE id_produk =@id_produk";
+
+                NpgsqlParameter[] parameters =
+                {
+                    new NpgsqlParameter("@newStock", newStok),
+                    new NpgsqlParameter("@id_produk", id_produk)
+                };
+
+                commandExecutor(query, parameters);
+            }
+            catch
+            {
+
+            }
         }
     }
 }

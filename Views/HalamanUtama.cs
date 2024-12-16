@@ -1,5 +1,6 @@
 using Npgsql;
 using System.Data;
+using System.Globalization;
 using TeaSMart_App.App.Context;
 using TeaSMart_App.App.Core;
 using TeaSMart_App.App.Models;
@@ -13,8 +14,7 @@ namespace TeaSMart_App.Views
     {
         bool sidebarExpand = true;
         private M_Users loggedUser;
-        private readonly C_HalUtama _controller;
-        private readonly M_Users _loggedUser; // Data pengguna yang login
+        private readonly C_HalUtama _controller; // Data pengguna yang login
 
         public HalamanUtama(M_Users loggedUser)
         {
@@ -27,7 +27,7 @@ namespace TeaSMart_App.Views
 
         private void RankProduk()
         {
-            flowLayoutPanel1.Controls.Clear();
+            flyRank.Controls.Clear();
             List<M_Produk> rank = C_Produk.GetProdukTerlaris();
             foreach (var produk in rank)
             {
@@ -35,19 +35,21 @@ namespace TeaSMart_App.Views
                 {
                     BackColor = Color.FromArgb(181, 199, 156),
                     Location = new Point(70, 62),
-                    Margin = new Padding(20),
+                    Margin = new Padding(15),
                     Size = new Size(340, 159),
                     TabIndex = 0
                 };
-                string imgName = produk.gambar;
+                string resourcesPath = Path.Combine(@"D:\Kuliah semester 3\PBO\PROJECT besar\TeaSMart App\Resources");
+                string imgName = Path.Combine(resourcesPath, produk.gambar);
 
                 var imageResource = Properties.Resources.ResourceManager.GetObject(imgName);
-                if (imageResource != null)
+                if (File.Exists(imgName))
                 {
+                    // MessageBox.Show($"Gambar ditemukan di: {imgName}");
                     var pictureBox = new PictureBox
                     {
-                        Size = new Size(115, 126),
-                        Image = imageResource as System.Drawing.Image,
+                        Size = new Size(110, 126),
+                        Image = Image.FromFile(imgName),
                         SizeMode = PictureBoxSizeMode.Zoom,
                         Location = new Point(18, 18)
                     };
@@ -55,10 +57,11 @@ namespace TeaSMart_App.Views
                 }
                 else
                 {
+                    // MessageBox.Show($"Gambar tidak ditemukan di: {imgName}");
                     var pictureBox = new PictureBox
                     {
-                        Size = new Size(115, 126),
-                        Image = Properties.Resources.Teh_Jasmine_Premium,
+                        Size = new Size(110, 124),
+                        Image = Properties.Resources.default_image,
                         SizeMode = PictureBoxSizeMode.Zoom,
                         Location = new Point(18, 18)
                     };
@@ -83,20 +86,9 @@ namespace TeaSMart_App.Views
                 };
                 panel.Controls.Add(lblPanelNama);
                 panel.Controls.Add(lblPanelHarga);
-                flowLayoutPanel1.Controls.Add(panel);
+                flyRank.Controls.Add(panel);
             }
         }
-
-        public void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        public void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
@@ -107,9 +99,8 @@ namespace TeaSMart_App.Views
         {
             if (sidebarExpand)
             {
-                //if sidebar is expand, minimize
                 sidebar.Width -= 10;
-                if (sidebar.Width == sidebar.MinimumSize.Width)
+                if (sidebar.Width <= 71)
                 {
                     sidebarExpand = false;
                     sidebarTimer.Stop();
@@ -118,58 +109,12 @@ namespace TeaSMart_App.Views
             else
             {
                 sidebar.Width += 10;
-                if (sidebar.Width == sidebar.MaximumSize.Width)
+                if (sidebar.Width >= 267)
                 {
                     sidebarExpand = true;
                     sidebarTimer.Stop();
                 }
             }
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            
-            if (loggedUser.role == "owner")
-            {
-                InventarisOwner inventaris_Owner = new InventarisOwner();
-                inventaris_Owner.Show();
-                this.Hide();
-            } else if (loggedUser.role == "admin")
-            {
-                InventarisAdmin inventaris_Admin = new InventarisAdmin();
-                inventaris_Admin.Show();
-                this.Hide();
-            } else
-            {
-                MessageBox.Show("User not found", e.ToString());
-            }
-            
-        }
-
-        private void sidebar_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-
-        private void panel7_Paint_1(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void LoadRandomQuote()
@@ -182,22 +127,74 @@ namespace TeaSMart_App.Views
             LoadRandomQuote();
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            //transaksi
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            Settings setting = new Settings();
-            setting.Show();
-
-            this.Close();
-        }
-
         private void HalamanUtama_Load(object sender, EventArgs e)
         {
-            
+            lblWelcome.Text = $"Have a Joyful Tea Time, {loggedUser.nama}";
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            loggedUser = null;
+            MessageBox.Show("Anda telah berhasil logout.", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            this.Close();
+            MainForm main = new MainForm();
+            main.Show();
+        }
+
+        private void btnHInventaris_Click(object sender, EventArgs e)
+        {
+            if (loggedUser.role == "owner")
+            {
+                InventarisOwner ownerForm = new InventarisOwner(loggedUser);
+                ownerForm.Show();
+                this.Hide();
+            }
+            else if (loggedUser.role == "admin")
+            {
+                InventarisAdmin inventarisAdmin = new InventarisAdmin(loggedUser);
+                inventarisAdmin.Show();
+                this.Hide();
+
+            }
+            else
+            {
+                MessageBox.Show("User not found", e.ToString());
+            }
+        }
+
+        private void btnRiwayatTransaksi_Click(object sender, EventArgs e)
+        {
+            if (loggedUser.role == "owner")
+            {
+                RiwayatTransaksi riwayatTransaksi = new RiwayatTransaksi("owner", loggedUser);
+                riwayatTransaksi.Show();
+                this.Hide();
+            }
+            else if (loggedUser.role == "admin")
+            {
+                RiwayatTransaksi riwayatTransaksiAdmin = new RiwayatTransaksi("admin", loggedUser);
+                riwayatTransaksiAdmin.Show();
+                this.Hide();
+
+            }
+            else
+            {
+                MessageBox.Show("User not found", e.ToString());
+            }
+        }
+
+        private void btnPengaturan_Click(object sender, EventArgs e)
+        {
+            Settings setting = new Settings(loggedUser);
+            setting.Show();
+
+            this.Hide();
+        }
+
+        private void buttonHalamanUtama_Click(object sender, EventArgs e)
+        {
+            sidebarTimer.Start();
         }
     }
 }

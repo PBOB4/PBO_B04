@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TeaSMart_App.App.Context;
 using TeaSMart_App.App.Models;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace TeaSMart_App.Views
 {
@@ -17,33 +18,29 @@ namespace TeaSMart_App.Views
         public FormLogin()
         {
             InitializeComponent();
-            textBox4.PasswordChar = '*';
+            tbPassword.PasswordChar = '*';
         }
 
         private void btnKeDaftar_Click(object sender, EventArgs e)
         {
             FormRegist formRegist = new FormRegist();
             formRegist.Show();
-
             this.Hide();
         }
-
-        // Contoh handler login
+        private M_Users loggedUser;
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            string username = textBox2.Text;
-            string password = textBox4.Text;
+            string username = tbUsername.Text;
+            string password = tbPassword.Text;
 
             try
             {
-                // Validasi login dan simpan data pengguna
-                M_Users loggedUser = C_User.Login(username, password);
+                loggedUser = C_User.Login(username, password);
 
                 if (loggedUser != null)
                 {
-                    // MessageBox.Show(loggedUser.role.ToString());
-                    // Login berhasil, buka halaman utama
-                    HalamanUtama halamanUtama = new HalamanUtama(loggedUser); // Kirim data pengguna
+                    MessageBox.Show(loggedUser.nama.ToString());
+                    HalamanUtama halamanUtama = new HalamanUtama(loggedUser);
                     halamanUtama.Show();
                     this.Hide();
                 }
@@ -54,5 +51,19 @@ namespace TeaSMart_App.Views
             }
         }
 
+        private void showPass_CheckedChanged(object sender, EventArgs e)
+        {
+            if (showPass.Checked)
+            {
+                // Tampilkan password sebagai teks biasa
+                tbPassword.PasswordChar = '\0'; // '\0' adalah karakter null untuk menonaktifkan masking
+            }
+            else
+            {
+                // Sembunyikan password kembali dengan karakter '*'
+                tbPassword.PasswordChar = '*';
+            }
+
+        }
     }
 }

@@ -15,16 +15,23 @@ namespace TeaSMart_App.Views
     public partial class InventarisAdmin : Form
     {
         bool sidebarExpand = true;
-        private readonly M_Users loggedUser;
-        public InventarisAdmin()
+        private M_Users loggedUser;
+
+        // Constructor dengan parameter
+        public InventarisAdmin(M_Users user)
         {
             InitializeComponent();
+            loggedUser = user ?? throw new ArgumentNullException(nameof(user), "User tidak boleh null");
+
+            // Inisialisasi label dengan ID pengguna yang sedang login
+            label1.Text = $"ID: {loggedUser.id_user}";
+
             ProdukAdmin_Load();
         }
 
         private void ProdukAdmin_Load()
         {
-            flowLayoutPanel2.Controls.Clear();
+            flyDisplayProduct.Controls.Clear();
             List<M_Produk> produkList = C_Produk.GetAllProduct();
             foreach (var produk in produkList)
             {
@@ -34,15 +41,17 @@ namespace TeaSMart_App.Views
                     BackColor = Color.FromArgb(181, 199, 156),
                     Margin = new Padding(6),
                 };
-                string imgName = produk.gambar;
+                string resourcesPath = Path.Combine(@"D:\Kuliah semester 3\PBO\PROJECT besar\TeaSMart App\Resources");
+                string imgName = Path.Combine(resourcesPath, produk.gambar);
 
                 var imageResource = Properties.Resources.ResourceManager.GetObject(imgName);
-                if (imageResource != null)
+                if (File.Exists(imgName))
                 {
+                    // MessageBox.Show($"Gambar ditemukan di: {imgName}");
                     var pictureBox = new PictureBox
                     {
                         Size = new Size(110, 126),
-                        Image = imageResource as System.Drawing.Image,
+                        Image = Image.FromFile(imgName),
                         SizeMode = PictureBoxSizeMode.Zoom,
                         Location = new Point(18, 18)
                     };
@@ -50,16 +59,16 @@ namespace TeaSMart_App.Views
                 }
                 else
                 {
+                    // MessageBox.Show($"Gambar tidak ditemukan di: {imgName}");
                     var pictureBox = new PictureBox
                     {
                         Size = new Size(110, 124),
-                        Image = Properties.Resources.Teh_Jasmine_Premium,
+                        Image = Properties.Resources.pbo_background_2__1_,
                         SizeMode = PictureBoxSizeMode.Zoom,
                         Location = new Point(18, 18)
                     };
                     produkPanel.Controls.Add(pictureBox);
                 }
-
                 Label lblPanelNama = new Label
                 {
                     Name = "lblPanelNama",
@@ -95,12 +104,12 @@ namespace TeaSMart_App.Views
                     TabIndex = 5,
                     Text = "0"
                 };
-
                 Button btnTambah = new Button
                 {
                     Text = "+",
                     Size = new Size(35, 29),
-                    Location = new Point(287, 120)
+                    Location = new Point(287, 120),
+                    Cursor = Cursors.Hand
 
                 };
                 btnTambah.Click += (s, e) =>
@@ -114,16 +123,14 @@ namespace TeaSMart_App.Views
                     {
                         MessageBox.Show("Stok tidak mencukupi!", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
-
                 };
-
                 Button btnKurang = new Button()
                 {
                     Text = "-",
                     Size = new Size(35, 29),
-                    Location = new Point(222, 120)
+                    Location = new Point(222, 120),
+                    Cursor = Cursors.Hand
                 };
-
                 btnKurang.Click += (s, e) =>
                 {
                     if (qty > 0) // Pastikan qty tidak kurang dari nol
@@ -145,8 +152,7 @@ namespace TeaSMart_App.Views
                 produkPanel.Controls.Add(btnTambah);
                 produkPanel.Controls.Add(btnKurang);
 
-
-                flowLayoutPanel2.Controls.Add(produkPanel);
+                flyDisplayProduct.Controls.Add(produkPanel);
             }
         }
 
@@ -177,36 +183,12 @@ namespace TeaSMart_App.Views
             sidebartimer.Start();
         }
 
-        private void btnHalUtama_Click(object sender, EventArgs e)
-        {
-            HalamanUtama halUtama = new HalamanUtama(loggedUser);
-            halUtama.Show();
-            this.Hide();
-        }
-
-        private void btnTransaksi_Click(object sender, EventArgs e)
-        {
-            //transaksi
-        }
-
-        private void btnSetting_Click(object sender, EventArgs e)
-        {
-            Settings settings = new Settings();
-            settings.Show();
-            this.Hide();
-        }
-
-        private void btnLogout_Click(object sender, EventArgs e)
-        {
-            //logout
-        }
-
         private void btnSearch_Click(object sender, EventArgs e)
         {
             string searchTerm = txtSearch.Text;
 
             // Bersihkan panel sebelum menambahkan data baru
-            flowLayoutPanel2.Controls.Clear();
+            flyDisplayProduct.Controls.Clear();
             List<M_Produk> produkList = C_Produk.SearchProducts(searchTerm);
             foreach (var produk in produkList)
             {
@@ -216,15 +198,17 @@ namespace TeaSMart_App.Views
                     BackColor = Color.FromArgb(181, 199, 156),
                     Margin = new Padding(6),
                 };
-                string imgName = produk.gambar;
+                string resourcesPath = Path.Combine(@"D:\Kuliah semester 3\PBO\PROJECT besar\TeaSMart App\Resources");
+                string imgName = Path.Combine(resourcesPath, produk.gambar);
 
                 var imageResource = Properties.Resources.ResourceManager.GetObject(imgName);
-                if (imageResource != null)
+                if (File.Exists(imgName))
                 {
+                    // MessageBox.Show($"Gambar ditemukan di: {imgName}");
                     var pictureBox = new PictureBox
                     {
                         Size = new Size(110, 126),
-                        Image = imageResource as System.Drawing.Image,
+                        Image = Image.FromFile(imgName),
                         SizeMode = PictureBoxSizeMode.Zoom,
                         Location = new Point(18, 18)
                     };
@@ -232,18 +216,19 @@ namespace TeaSMart_App.Views
                 }
                 else
                 {
+                    // MessageBox.Show($"Gambar tidak ditemukan di: {imgName}");
                     var pictureBox = new PictureBox
                     {
                         Size = new Size(110, 124),
-                        Image = Properties.Resources.Teh_Jasmine_Premium,
+                        Image = Properties.Resources.pbo_background_2__1_,
                         SizeMode = PictureBoxSizeMode.Zoom,
                         Location = new Point(18, 18)
                     };
                     produkPanel.Controls.Add(pictureBox);
                 }
-
                 Label lblPanelNama = new Label
                 {
+                    Name = "lblPanelNama",
                     Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0),
                     Text = produk.namaProduk.ToString(),
                     Size = new Size(59, 23),
@@ -264,24 +249,67 @@ namespace TeaSMart_App.Views
                     AutoSize = true,
                     Location = new Point(130, 66)
                 };
-                Button btnPanelCO = new Button
+                int qty = 0;
+                Label lblPanelQty = new Label
                 {
-                    Text = "Check Out",
-                    Size = new Size(60, 30),
+                    Name = "lblPanelQty",
                     AutoSize = true,
-                    Location = new Point(210, 120)
+                    Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0),
+                    ForeColor = Color.Black,
+                    Location = new Point(260, 124),
+                    Size = new Size(25, 20),
+                    TabIndex = 5,
+                    Text = "0"
                 };
-                btnPanelCO.Click += (s, e) =>
+                Button btnTambah = new Button
                 {
-                    // halaman check out
+                    Text = "+",
+                    Size = new Size(35, 29),
+                    Location = new Point(287, 120),
+                    Cursor = Cursors.Hand
+
+                };
+                btnTambah.Click += (s, e) =>
+                {
+                    if (qty < produk.Stok) // Pastikan qty tidak melebihi stok
+                    {
+                        qty++; // Tambah qty
+                        lblPanelQty.Text = qty.ToString(); // Update label qty
+                    }
+                    else
+                    {
+                        MessageBox.Show("Stok tidak mencukupi!", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                };
+                Button btnKurang = new Button()
+                {
+                    Text = "-",
+                    Size = new Size(35, 29),
+                    Location = new Point(222, 120),
+                    Cursor = Cursors.Hand
+                };
+                btnKurang.Click += (s, e) =>
+                {
+                    if (qty > 0) // Pastikan qty tidak kurang dari nol
+                    {
+                        qty--; // Kurangi qty
+                        lblPanelQty.Text = qty.ToString(); // Update label qty
+                    }
+                    else
+                    {
+                        MessageBox.Show("Qty tidak boleh kurang dari nol!", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
                 };
 
                 produkPanel.Controls.Add(lblPanelNama);
                 produkPanel.Controls.Add(lblPanelHarga);
                 produkPanel.Controls.Add(lblPanelStok);
-                produkPanel.Controls.Add(btnPanelCO);
+                produkPanel.Controls.Add(btnTambah);
+                produkPanel.Controls.Add(lblPanelQty);
+                produkPanel.Controls.Add(btnTambah);
+                produkPanel.Controls.Add(btnKurang);
 
-                flowLayoutPanel2.Controls.Add(produkPanel);
+                flyDisplayProduct.Controls.Add(produkPanel);
             }
         }
 
@@ -290,7 +318,7 @@ namespace TeaSMart_App.Views
             List<(string namaProduk, int qty)> selectedItems = new List<(string namaProduk, int qty)>();
 
             // Iterasi setiap produk panel untuk mengumpulkan data produk yang dipilih
-            foreach (Panel produkPanel in flowLayoutPanel2.Controls)
+            foreach (Panel produkPanel in flyDisplayProduct.Controls)
             {
                 // Cari kontrol Label qty dan nama produk dalam panel
                 Label lblQty = produkPanel.Controls.OfType<Label>().FirstOrDefault(lbl => lbl.Name == "lblPanelQty");
@@ -313,9 +341,17 @@ namespace TeaSMart_App.Views
 
                 if (selectedProducts.Count > 0)
                 {
+                    M_transaksi transaksiBaru = new M_transaksi
+                    {
+                        id_user = loggedUser.id_user,
+                        tanggalTransaksi = DateTime.Now.AddSeconds(-DateTime.Now.Second).AddMilliseconds(-DateTime.Now.Millisecond), // Truncate to minute
+                        totalHarga = selectedProducts.Sum(p => p.hargaProduk * selectedItems.First(i => i.namaProduk == p.namaProduk).qty)
+                    };
+                    C_Transaksi.insertDataTransaksi(transaksiBaru);
                     // Kirim data ke halaman checkout Pembayaran
-                    Pembayaran pembayaran = new Pembayaran(selectedProducts);
+                    Pembayaran pembayaran = new Pembayaran(loggedUser, selectedProducts);
                     pembayaran.Show();
+                    this.Hide();
                 }
                 else
                 {
@@ -328,9 +364,53 @@ namespace TeaSMart_App.Views
             }
         }
 
-        private void InventarisAdmin_Load(object sender, EventArgs e)
+        private void buttonHalamanUtama_Click(object sender, EventArgs e)
         {
+            HalamanUtama halUtama = new HalamanUtama(loggedUser);
+            halUtama.Show();
+            this.Hide();
+        }
 
+        private void btnRiwayatTransaksi_Click(object sender, EventArgs e)
+        {
+            if (loggedUser.role == "owner")
+            {
+                RiwayatTransaksi riwayatTransaksi = new RiwayatTransaksi("owner", loggedUser);
+                riwayatTransaksi.Show();
+                this.Hide();
+            }
+            else if (loggedUser.role == "admin")
+            {
+                RiwayatTransaksi riwayatTransaksiAdmin = new RiwayatTransaksi("admin", loggedUser);
+                riwayatTransaksiAdmin.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("User not found", e.ToString());
+            }
+        }
+
+        private void btnPengaturan_Click(object sender, EventArgs e)
+        {
+            Settings settings = new Settings(loggedUser);
+            settings.Show();
+            this.Hide();
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            loggedUser = null;
+            MessageBox.Show("Anda telah berhasil logout.", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            this.Close();
+            MainForm main = new MainForm();
+            main.Show();
+        }
+
+        private void btnHInventaris_Click(object sender, EventArgs e)
+        {
+            sidebartimer.Start();
         }
     }
 }

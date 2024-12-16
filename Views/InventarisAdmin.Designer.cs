@@ -36,26 +36,22 @@
             pictureBox2 = new PictureBox();
             btnMenu = new PictureBox();
             panel2 = new Panel();
-            pictureBox4 = new PictureBox();
-            btnHalUtama = new Button();
+            buttonHalamanUtama = new Button();
             panel3 = new Panel();
-            pictureBox5 = new PictureBox();
-            btnInvt = new Button();
+            btnHInventaris = new Button();
             panel4 = new Panel();
-            pictureBox6 = new PictureBox();
-            btnTransaksi = new Button();
+            btnRiwayatTransaksi = new Button();
             panel5 = new Panel();
-            pictureBox7 = new PictureBox();
-            btnSetting = new Button();
+            btnPengaturan = new Button();
             panel6 = new Panel();
-            pictureBox8 = new PictureBox();
             btnLogout = new Button();
             panel7 = new Panel();
             btnSearch = new Button();
             txtSearch = new TextBox();
             pictureBox9 = new PictureBox();
-            flowLayoutPanel2 = new FlowLayoutPanel();
+            flyDisplayProduct = new FlowLayoutPanel();
             panel8 = new Panel();
+            label1 = new Label();
             btnCO = new Button();
             sidebartimer = new System.Windows.Forms.Timer(components);
             sidebar.SuspendLayout();
@@ -64,15 +60,10 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnMenu).BeginInit();
             panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
             panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
             panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
             panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox9).BeginInit();
             panel8.SuspendLayout();
@@ -137,163 +128,130 @@
             // 
             // panel2
             // 
-            panel2.Controls.Add(pictureBox4);
-            panel2.Controls.Add(btnHalUtama);
+            panel2.BackColor = Color.FromArgb(255, 255, 236);
+            panel2.Controls.Add(buttonHalamanUtama);
             panel2.Location = new Point(3, 87);
             panel2.Name = "panel2";
-            panel2.Size = new Size(267, 62);
-            panel2.TabIndex = 1;
+            panel2.Size = new Size(267, 65);
+            panel2.TabIndex = 6;
             // 
-            // pictureBox4
+            // buttonHalamanUtama
             // 
-            pictureBox4.BackColor = Color.Transparent;
-            pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
-            pictureBox4.Location = new Point(20, 18);
-            pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(25, 25);
-            pictureBox4.SizeMode = PictureBoxSizeMode.AutoSize;
-            pictureBox4.TabIndex = 1;
-            pictureBox4.TabStop = false;
-            // 
-            // btnHalUtama
-            // 
-            btnHalUtama.FlatStyle = FlatStyle.Flat;
-            btnHalUtama.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnHalUtama.Location = new Point(-4, 0);
-            btnHalUtama.Name = "btnHalUtama";
-            btnHalUtama.Size = new Size(270, 62);
-            btnHalUtama.TabIndex = 0;
-            btnHalUtama.Text = "              Halaman Utama";
-            btnHalUtama.TextAlign = ContentAlignment.MiddleLeft;
-            btnHalUtama.UseVisualStyleBackColor = true;
-            btnHalUtama.Click += btnHalUtama_Click;
+            buttonHalamanUtama.Cursor = Cursors.Hand;
+            buttonHalamanUtama.FlatStyle = FlatStyle.Flat;
+            buttonHalamanUtama.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            buttonHalamanUtama.ForeColor = Color.FromArgb(0, 64, 0);
+            buttonHalamanUtama.Image = (Image)resources.GetObject("buttonHalamanUtama.Image");
+            buttonHalamanUtama.ImageAlign = ContentAlignment.MiddleLeft;
+            buttonHalamanUtama.Location = new Point(-3, 0);
+            buttonHalamanUtama.Name = "buttonHalamanUtama";
+            buttonHalamanUtama.Padding = new Padding(30, 0, 0, 0);
+            buttonHalamanUtama.Size = new Size(270, 65);
+            buttonHalamanUtama.TabIndex = 1;
+            buttonHalamanUtama.Text = "              Halaman Utama";
+            buttonHalamanUtama.TextAlign = ContentAlignment.MiddleLeft;
+            buttonHalamanUtama.UseVisualStyleBackColor = true;
+            buttonHalamanUtama.Click += buttonHalamanUtama_Click;
             // 
             // panel3
             // 
-            panel3.Controls.Add(pictureBox5);
-            panel3.Controls.Add(btnInvt);
-            panel3.Location = new Point(3, 155);
+            panel3.Controls.Add(btnHInventaris);
+            panel3.Location = new Point(3, 158);
             panel3.Name = "panel3";
-            panel3.Size = new Size(267, 62);
-            panel3.TabIndex = 2;
+            panel3.Size = new Size(267, 65);
+            panel3.TabIndex = 7;
             // 
-            // pictureBox5
+            // btnHInventaris
             // 
-            pictureBox5.BackColor = Color.Transparent;
-            pictureBox5.Image = (Image)resources.GetObject("pictureBox5.Image");
-            pictureBox5.Location = new Point(20, 18);
-            pictureBox5.Name = "pictureBox5";
-            pictureBox5.Size = new Size(24, 24);
-            pictureBox5.SizeMode = PictureBoxSizeMode.AutoSize;
-            pictureBox5.TabIndex = 1;
-            pictureBox5.TabStop = false;
-            // 
-            // btnInvt
-            // 
-            btnInvt.FlatStyle = FlatStyle.Flat;
-            btnInvt.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnInvt.Location = new Point(-3, 0);
-            btnInvt.Name = "btnInvt";
-            btnInvt.Size = new Size(270, 62);
-            btnInvt.TabIndex = 0;
-            btnInvt.Text = "              Inventaris Produk";
-            btnInvt.TextAlign = ContentAlignment.MiddleLeft;
-            btnInvt.UseVisualStyleBackColor = true;
+            btnHInventaris.Cursor = Cursors.Hand;
+            btnHInventaris.FlatStyle = FlatStyle.Flat;
+            btnHInventaris.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnHInventaris.ForeColor = Color.FromArgb(0, 64, 0);
+            btnHInventaris.Image = (Image)resources.GetObject("btnHInventaris.Image");
+            btnHInventaris.ImageAlign = ContentAlignment.MiddleLeft;
+            btnHInventaris.Location = new Point(-3, 0);
+            btnHInventaris.Name = "btnHInventaris";
+            btnHInventaris.Padding = new Padding(30, 0, 0, 0);
+            btnHInventaris.Size = new Size(270, 65);
+            btnHInventaris.TabIndex = 1;
+            btnHInventaris.Text = "              Inventaris Produk";
+            btnHInventaris.TextAlign = ContentAlignment.MiddleLeft;
+            btnHInventaris.UseVisualStyleBackColor = true;
+            btnHInventaris.Click += btnHInventaris_Click;
             // 
             // panel4
             // 
-            panel4.Controls.Add(pictureBox6);
-            panel4.Controls.Add(btnTransaksi);
-            panel4.Location = new Point(3, 223);
+            panel4.Controls.Add(btnRiwayatTransaksi);
+            panel4.Location = new Point(3, 229);
             panel4.Name = "panel4";
-            panel4.Size = new Size(267, 62);
-            panel4.TabIndex = 2;
+            panel4.Size = new Size(267, 65);
+            panel4.TabIndex = 8;
             // 
-            // pictureBox6
+            // btnRiwayatTransaksi
             // 
-            pictureBox6.BackColor = Color.Transparent;
-            pictureBox6.Image = (Image)resources.GetObject("pictureBox6.Image");
-            pictureBox6.Location = new Point(20, 18);
-            pictureBox6.Name = "pictureBox6";
-            pictureBox6.Size = new Size(24, 24);
-            pictureBox6.SizeMode = PictureBoxSizeMode.AutoSize;
-            pictureBox6.TabIndex = 1;
-            pictureBox6.TabStop = false;
-            // 
-            // btnTransaksi
-            // 
-            btnTransaksi.FlatStyle = FlatStyle.Flat;
-            btnTransaksi.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnTransaksi.Location = new Point(-2, 0);
-            btnTransaksi.Name = "btnTransaksi";
-            btnTransaksi.Size = new Size(267, 62);
-            btnTransaksi.TabIndex = 0;
-            btnTransaksi.Text = "              Transaksi";
-            btnTransaksi.TextAlign = ContentAlignment.MiddleLeft;
-            btnTransaksi.UseVisualStyleBackColor = true;
-            btnTransaksi.Click += btnTransaksi_Click;
+            btnRiwayatTransaksi.Cursor = Cursors.Hand;
+            btnRiwayatTransaksi.FlatStyle = FlatStyle.Flat;
+            btnRiwayatTransaksi.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnRiwayatTransaksi.ForeColor = Color.FromArgb(0, 64, 0);
+            btnRiwayatTransaksi.Image = (Image)resources.GetObject("btnRiwayatTransaksi.Image");
+            btnRiwayatTransaksi.ImageAlign = ContentAlignment.MiddleLeft;
+            btnRiwayatTransaksi.Location = new Point(-3, 0);
+            btnRiwayatTransaksi.Name = "btnRiwayatTransaksi";
+            btnRiwayatTransaksi.Padding = new Padding(30, 0, 0, 0);
+            btnRiwayatTransaksi.Size = new Size(270, 65);
+            btnRiwayatTransaksi.TabIndex = 1;
+            btnRiwayatTransaksi.Text = "              Riwayat Transaksi";
+            btnRiwayatTransaksi.TextAlign = ContentAlignment.MiddleLeft;
+            btnRiwayatTransaksi.UseVisualStyleBackColor = true;
+            btnRiwayatTransaksi.Click += btnRiwayatTransaksi_Click;
             // 
             // panel5
             // 
-            panel5.Controls.Add(pictureBox7);
-            panel5.Controls.Add(btnSetting);
-            panel5.Location = new Point(3, 291);
+            panel5.Controls.Add(btnPengaturan);
+            panel5.Location = new Point(3, 300);
             panel5.Name = "panel5";
-            panel5.Size = new Size(267, 62);
-            panel5.TabIndex = 3;
+            panel5.Size = new Size(267, 65);
+            panel5.TabIndex = 9;
             // 
-            // pictureBox7
+            // btnPengaturan
             // 
-            pictureBox7.BackColor = Color.Transparent;
-            pictureBox7.Image = (Image)resources.GetObject("pictureBox7.Image");
-            pictureBox7.Location = new Point(20, 18);
-            pictureBox7.Name = "pictureBox7";
-            pictureBox7.Size = new Size(24, 24);
-            pictureBox7.SizeMode = PictureBoxSizeMode.AutoSize;
-            pictureBox7.TabIndex = 1;
-            pictureBox7.TabStop = false;
-            // 
-            // btnSetting
-            // 
-            btnSetting.FlatStyle = FlatStyle.Flat;
-            btnSetting.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnSetting.Location = new Point(-3, 0);
-            btnSetting.Name = "btnSetting";
-            btnSetting.Size = new Size(270, 62);
-            btnSetting.TabIndex = 0;
-            btnSetting.Text = "              Settings";
-            btnSetting.TextAlign = ContentAlignment.MiddleLeft;
-            btnSetting.UseVisualStyleBackColor = true;
-            btnSetting.Click += btnSetting_Click;
+            btnPengaturan.Cursor = Cursors.Hand;
+            btnPengaturan.FlatStyle = FlatStyle.Flat;
+            btnPengaturan.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnPengaturan.ForeColor = Color.FromArgb(0, 64, 0);
+            btnPengaturan.Image = (Image)resources.GetObject("btnPengaturan.Image");
+            btnPengaturan.ImageAlign = ContentAlignment.MiddleLeft;
+            btnPengaturan.Location = new Point(-3, 0);
+            btnPengaturan.Name = "btnPengaturan";
+            btnPengaturan.Padding = new Padding(30, 0, 0, 0);
+            btnPengaturan.Size = new Size(270, 65);
+            btnPengaturan.TabIndex = 1;
+            btnPengaturan.Text = "              Pengaturan";
+            btnPengaturan.TextAlign = ContentAlignment.MiddleLeft;
+            btnPengaturan.UseVisualStyleBackColor = true;
+            btnPengaturan.Click += btnPengaturan_Click;
             // 
             // panel6
             // 
-            panel6.Controls.Add(pictureBox8);
             panel6.Controls.Add(btnLogout);
-            panel6.Location = new Point(3, 359);
+            panel6.Location = new Point(3, 371);
             panel6.Name = "panel6";
-            panel6.Size = new Size(267, 62);
-            panel6.TabIndex = 2;
-            // 
-            // pictureBox8
-            // 
-            pictureBox8.BackColor = Color.Transparent;
-            pictureBox8.Image = (Image)resources.GetObject("pictureBox8.Image");
-            pictureBox8.Location = new Point(20, 18);
-            pictureBox8.Name = "pictureBox8";
-            pictureBox8.Size = new Size(24, 24);
-            pictureBox8.SizeMode = PictureBoxSizeMode.AutoSize;
-            pictureBox8.TabIndex = 1;
-            pictureBox8.TabStop = false;
+            panel6.Size = new Size(267, 65);
+            panel6.TabIndex = 10;
             // 
             // btnLogout
             // 
+            btnLogout.Cursor = Cursors.Hand;
             btnLogout.FlatStyle = FlatStyle.Flat;
             btnLogout.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnLogout.ForeColor = Color.FromArgb(0, 64, 0);
+            btnLogout.Image = (Image)resources.GetObject("btnLogout.Image");
+            btnLogout.ImageAlign = ContentAlignment.MiddleLeft;
             btnLogout.Location = new Point(-3, 0);
             btnLogout.Name = "btnLogout";
-            btnLogout.Size = new Size(270, 62);
-            btnLogout.TabIndex = 0;
+            btnLogout.Padding = new Padding(30, 0, 0, 0);
+            btnLogout.Size = new Size(270, 65);
+            btnLogout.TabIndex = 1;
             btnLogout.Text = "              Log Out";
             btnLogout.TextAlign = ContentAlignment.MiddleLeft;
             btnLogout.UseVisualStyleBackColor = true;
@@ -308,17 +266,18 @@
             panel7.Controls.Add(pictureBox9);
             panel7.Location = new Point(15, 21);
             panel7.Name = "panel7";
-            panel7.Size = new Size(1049, 63);
+            panel7.Size = new Size(883, 63);
             panel7.TabIndex = 6;
             // 
             // btnSearch
             // 
             btnSearch.BackColor = Color.FromArgb(157, 181, 132);
+            btnSearch.Cursor = Cursors.Hand;
             btnSearch.FlatAppearance.BorderSize = 0;
             btnSearch.FlatStyle = FlatStyle.Flat;
             btnSearch.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnSearch.ForeColor = Color.FromArgb(7, 43, 0);
-            btnSearch.Location = new Point(939, 12);
+            btnSearch.Location = new Point(773, 12);
             btnSearch.Name = "btnSearch";
             btnSearch.Size = new Size(94, 36);
             btnSearch.TabIndex = 5;
@@ -330,10 +289,11 @@
             // 
             txtSearch.BackColor = Color.FromArgb(157, 181, 132);
             txtSearch.BorderStyle = BorderStyle.None;
+            txtSearch.Cursor = Cursors.IBeam;
             txtSearch.Font = new Font("Segoe UI Semibold", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             txtSearch.Location = new Point(55, 12);
             txtSearch.Name = "txtSearch";
-            txtSearch.Size = new Size(885, 36);
+            txtSearch.Size = new Size(727, 36);
             txtSearch.TabIndex = 4;
             // 
             // pictureBox9
@@ -346,39 +306,52 @@
             pictureBox9.TabIndex = 1;
             pictureBox9.TabStop = false;
             // 
-            // flowLayoutPanel2
+            // flyDisplayProduct
             // 
-            flowLayoutPanel2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            flowLayoutPanel2.AutoScroll = true;
-            flowLayoutPanel2.AutoSize = true;
-            flowLayoutPanel2.BackColor = Color.Transparent;
-            flowLayoutPanel2.Location = new Point(3, 110);
-            flowLayoutPanel2.Name = "flowLayoutPanel2";
-            flowLayoutPanel2.Size = new Size(1069, 529);
-            flowLayoutPanel2.TabIndex = 7;
+            flyDisplayProduct.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            flyDisplayProduct.AutoScroll = true;
+            flyDisplayProduct.BackColor = Color.Transparent;
+            flyDisplayProduct.Location = new Point(3, 110);
+            flyDisplayProduct.Name = "flyDisplayProduct";
+            flyDisplayProduct.Size = new Size(1069, 518);
+            flyDisplayProduct.TabIndex = 7;
             // 
             // panel8
             // 
             panel8.AutoScroll = true;
             panel8.AutoSize = true;
             panel8.BackgroundImage = Properties.Resources.pbo_background_2__1_;
+            panel8.Controls.Add(label1);
             panel8.Controls.Add(btnCO);
             panel8.Controls.Add(panel7);
-            panel8.Controls.Add(flowLayoutPanel2);
+            panel8.Controls.Add(flyDisplayProduct);
             panel8.Dock = DockStyle.Fill;
             panel8.Location = new Point(267, 0);
             panel8.Name = "panel8";
             panel8.Size = new Size(1081, 721);
             panel8.TabIndex = 8;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(909, 64);
+            label1.Name = "label1";
+            label1.Size = new Size(50, 20);
+            label1.TabIndex = 9;
+            label1.Text = "label1";
+            // 
             // btnCO
             // 
+            btnCO.BackColor = Color.FromArgb(8, 51, 0);
+            btnCO.Cursor = Cursors.Hand;
+            btnCO.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnCO.ForeColor = Color.White;
             btnCO.Location = new Point(909, 663);
             btnCO.Name = "btnCO";
-            btnCO.Size = new Size(94, 29);
+            btnCO.Size = new Size(145, 46);
             btnCO.TabIndex = 8;
             btnCO.Text = "Check Out";
-            btnCO.UseVisualStyleBackColor = true;
+            btnCO.UseVisualStyleBackColor = false;
             btnCO.Click += btnCO_Click;
             // 
             // sidebartimer
@@ -395,7 +368,6 @@
             ForeColor = Color.FromArgb(7, 43, 0);
             Name = "InventarisAdmin";
             Text = "InventarisAdmin";
-            Load += InventarisAdmin_Load;
             sidebar.ResumeLayout(false);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
@@ -403,20 +375,10 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)btnMenu).EndInit();
             panel2.ResumeLayout(false);
-            panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             panel3.ResumeLayout(false);
-            panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             panel4.ResumeLayout(false);
-            panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
             panel5.ResumeLayout(false);
-            panel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
             panel6.ResumeLayout(false);
-            panel6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
             panel7.ResumeLayout(false);
             panel7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox9).EndInit();
@@ -433,28 +395,24 @@
         private PictureBox pictureBox2;
         private PictureBox btnMenu;
         private PictureBox pictureBox3;
-        private Panel panel2;
-        private Button btnHalUtama;
-        private PictureBox pictureBox4;
-        private Panel panel3;
-        private PictureBox pictureBox5;
-        private Button btnInvt;
-        private Panel panel4;
-        private PictureBox pictureBox6;
-        private Button btnTransaksi;
-        private Panel panel5;
-        private PictureBox pictureBox7;
-        private Button btnSetting;
-        private Panel panel6;
-        private PictureBox pictureBox8;
-        private Button btnLogout;
         private Panel panel7;
         private PictureBox pictureBox9;
-        private FlowLayoutPanel flowLayoutPanel2;
+        private FlowLayoutPanel flyDisplayProduct;
         private Panel panel8;
         private System.Windows.Forms.Timer sidebartimer;
         private Button btnSearch;
         private TextBox txtSearch;
         private Button btnCO;
+        private Label label1;
+        private Panel panel2;
+        private Button buttonHalamanUtama;
+        private Panel panel3;
+        private Button btnHInventaris;
+        private Panel panel4;
+        private Button btnRiwayatTransaksi;
+        private Panel panel5;
+        private Button btnPengaturan;
+        private Panel panel6;
+        private Button btnLogout;
     }
 }

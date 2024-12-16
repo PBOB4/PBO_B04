@@ -30,9 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLogin));
             pictureBox6 = new PictureBox();
-            textBox2 = new TextBox();
+            tbUsername = new TextBox();
             pictureBox8 = new PictureBox();
-            textBox4 = new TextBox();
+            tbPassword = new TextBox();
             label4 = new Label();
             label2 = new Label();
             btnLogin = new Button();
@@ -46,7 +46,7 @@
             panel3 = new Panel();
             panel1 = new Panel();
             pictureBox5 = new PictureBox();
-            dateTimePicker1 = new DateTimePicker();
+            showPass = new CheckBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -72,13 +72,13 @@
             pictureBox6.TabIndex = 1;
             pictureBox6.TabStop = false;
             // 
-            // textBox2
+            // tbUsername
             // 
-            textBox2.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox2.Location = new Point(60, 2);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(271, 43);
-            textBox2.TabIndex = 0;
+            tbUsername.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tbUsername.Location = new Point(60, 2);
+            tbUsername.Name = "tbUsername";
+            tbUsername.Size = new Size(271, 43);
+            tbUsername.TabIndex = 0;
             // 
             // pictureBox8
             // 
@@ -91,13 +91,13 @@
             pictureBox8.TabIndex = 3;
             pictureBox8.TabStop = false;
             // 
-            // textBox4
+            // tbPassword
             // 
-            textBox4.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox4.Location = new Point(60, 1);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(271, 43);
-            textBox4.TabIndex = 0;
+            tbPassword.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tbPassword.Location = new Point(60, 1);
+            tbPassword.Name = "tbPassword";
+            tbPassword.Size = new Size(271, 43);
+            tbPassword.TabIndex = 0;
             // 
             // label4
             // 
@@ -151,6 +151,7 @@
             // 
             panel2.BackgroundImage = (Image)resources.GetObject("panel2.BackgroundImage");
             panel2.BackgroundImageLayout = ImageLayout.Stretch;
+            panel2.Controls.Add(showPass);
             panel2.Controls.Add(label4);
             panel2.Controls.Add(label2);
             panel2.Controls.Add(btnLogin);
@@ -165,7 +166,7 @@
             // 
             panel7.BackColor = Color.White;
             panel7.Controls.Add(pictureBox8);
-            panel7.Controls.Add(textBox4);
+            panel7.Controls.Add(tbPassword);
             panel7.Location = new Point(32, 150);
             panel7.Name = "panel7";
             panel7.Size = new Size(331, 47);
@@ -175,7 +176,7 @@
             // 
             panel5.BackColor = Color.White;
             panel5.Controls.Add(pictureBox6);
-            panel5.Controls.Add(textBox2);
+            panel5.Controls.Add(tbUsername);
             panel5.Location = new Point(32, 67);
             panel5.Name = "panel5";
             panel5.Size = new Size(331, 47);
@@ -227,7 +228,6 @@
             panel1.BackgroundImage = (Image)resources.GetObject("panel1.BackgroundImage");
             panel1.BackgroundImageLayout = ImageLayout.Stretch;
             panel1.BorderStyle = BorderStyle.FixedSingle;
-            panel1.Controls.Add(dateTimePicker1);
             panel1.Controls.Add(pictureBox5);
             panel1.Controls.Add(panel3);
             panel1.Controls.Add(pictureBox1);
@@ -249,12 +249,18 @@
             pictureBox5.TabStop = false;
             pictureBox5.Click += btnKeDaftar_Click;
             // 
-            // dateTimePicker1
+            // showPass
             // 
-            dateTimePicker1.Location = new Point(1308, 634);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(250, 27);
-            dateTimePicker1.TabIndex = 6;
+            showPass.AutoSize = true;
+            showPass.BackColor = Color.Transparent;
+            showPass.ForeColor = SystemColors.ActiveCaptionText;
+            showPass.Location = new Point(35, 214);
+            showPass.Name = "showPass";
+            showPass.Size = new Size(132, 24);
+            showPass.TabIndex = 11;
+            showPass.Text = "Show Password";
+            showPass.UseVisualStyleBackColor = false;
+            showPass.CheckedChanged += showPass_CheckedChanged;
             // 
             // FormLogin
             // 
@@ -288,9 +294,9 @@
 
         private TextBox textBox1;
         private PictureBox pictureBox6;
-        private TextBox textBox2;
+        private TextBox tbUsername;
         private PictureBox pictureBox8;
-        private TextBox textBox4;
+        private TextBox tbPassword;
         private PictureBox pictureBox9;
         private TextBox textBox5;
         private Label label5;
@@ -309,7 +315,7 @@
         private PictureBox pictureBox4;
         private Panel panel3;
         private Panel panel1;
-        private DateTimePicker dateTimePicker1;
         private PictureBox pictureBox5;
+        private CheckBox showPass;
     }
 }

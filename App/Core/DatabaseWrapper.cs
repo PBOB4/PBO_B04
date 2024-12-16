@@ -96,6 +96,5 @@ namespace TeaSMart_App.App.Core
                 throw new Exception(e.Message);
             }
         }
-
     }
 }

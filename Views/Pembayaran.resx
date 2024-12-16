@@ -121,7 +121,7 @@
   <data name="btnSelesai.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAIcAAAAyCAYAAAB24MjMAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EAAACxABrSO9dQAABDtJREFUeF7tnTFPFEEUx6eQY0s6LWm8Q5BjPRJtr9FKow0FFVeArSbQ3yVYkmi0
+        DAAACwwBP0AiyAAABDtJREFUeF7tnTFPFEEUx6eQY0s6LWm8Q5BjPRJtr9FKow0FFVeArSbQ3yVYkmi0
         otJQ0KL4AVZ6ErW0gkbbNXyBNf9x3zL7dmfu8GRvLvte8ivYmdkd7v3uzcxSoFQaNxZUd+a2imaaKm40
         VSLUjzT/G+SEjkZT9RstlQiCpqn6WoyZBdXTFxYM7gi1w8x/SyVYSSBHRELMLqpkdkmoLYuXosALlZNi
         OaUt1BLk/lKSWGkx7qYNKyoJQqGuIP9aEviwqBJFFSOAGPdUEnSE2oL8QxIIsgQ5qGKQGKtCbUkF0RVk
@@ -145,7 +145,7 @@
   <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAJMAAACNCAYAAACzOUj+AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EAAACxABrSO9dQAAHa5JREFUeF7tXXmQHFd5lw0BYkwgAZJUCCGXKQIkIVzJP0koIHHZRSVFqlRQARzb
+        DAAACwwBP0AiyAAAHa5JREFUeF7tXXmQHFd5lw0BYkwgAZJUCCGXKQIkIVzJP0koIHHZRSVFqlRQARzb
         2n69kmwMvuQLZ31F2PiUL2SDJU2/3pVWt2zLknWsJdmSrGO1092zp/a+73tnz3mp31vNaubrnp17pmd3
         flW/Umn6zZvu9759/b3vfceKFXnkkUceeeSRx1JF2Ysrr64rvfWLpqfg3yxdudHg7B7Lw9YbmvK8pbGN
         JmevBmlx5RVLV5738cL1psbu83L2P8YW5bs1xewLJ0tX/i7tO48liuo9N3/sgq58xdCVG01dfdbQlLdN
@@ -278,7 +278,7 @@
   <data name="btnBack.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EAAACxABrSO9dQAAAIVJREFUWEft1FEKgCAURNH5Mtei7VF3UjtsCYVBEEOikKTBHHg/Ir4LQYCI/ICd
+        DAAACwwBP0AiyAAAAIVJREFUWEft1FEKgCAURNH5Mtei7VF3UjtsCYVBEEOikKTBHHg/Ir4LQYCI/ICd
         EYxD4PMuUszksafpHnWPOYM8Vr7zGcXkKCZHMTmjx2zGIbYY3lXEMa2H9xXZGZEfaTm8r8pDVL9PduEo
         47Hwnc8pqpaiaimq1vBRr354LaWoYWJEpOAAshi3hGagWtcAAAAASUVORK5CYII=
 </value>

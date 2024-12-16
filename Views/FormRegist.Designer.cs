@@ -43,16 +43,17 @@
             btnDaftar = new Button();
             panel8 = new Panel();
             pictureBox9 = new PictureBox();
-            textBox5 = new TextBox();
+            tbKonfirmasiPw = new TextBox();
             panel7 = new Panel();
             pictureBox8 = new PictureBox();
-            textBox4 = new TextBox();
+            tbPassword = new TextBox();
             panel5 = new Panel();
             pictureBox6 = new PictureBox();
-            textBox2 = new TextBox();
+            tbUsername = new TextBox();
             panel4 = new Panel();
             pictureBox5 = new PictureBox();
-            textBox1 = new TextBox();
+            tbNama = new TextBox();
+            showPass = new CheckBox();
             panel1.SuspendLayout();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
@@ -83,7 +84,6 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(1348, 721);
             panel1.TabIndex = 0;
-            panel1.Paint += panel1_Paint;
             // 
             // panel3
             // 
@@ -139,8 +139,10 @@
             // 
             // panel2
             // 
+            panel2.BackColor = Color.Transparent;
             panel2.BackgroundImage = (Image)resources.GetObject("panel2.BackgroundImage");
             panel2.BackgroundImageLayout = ImageLayout.Stretch;
+            panel2.Controls.Add(showPass);
             panel2.Controls.Add(label5);
             panel2.Controls.Add(label4);
             panel2.Controls.Add(label2);
@@ -152,7 +154,7 @@
             panel2.Controls.Add(panel4);
             panel2.Location = new Point(805, 155);
             panel2.Name = "panel2";
-            panel2.Size = new Size(386, 455);
+            panel2.Size = new Size(386, 475);
             panel2.TabIndex = 0;
             // 
             // label5
@@ -178,7 +180,6 @@
             label4.Size = new Size(76, 20);
             label4.TabIndex = 10;
             label4.Text = "Password";
-            label4.Click += label4_Click;
             // 
             // label2
             // 
@@ -209,7 +210,7 @@
             btnDaftar.BackColor = Color.FromArgb(103, 140, 65);
             btnDaftar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnDaftar.ForeColor = Color.White;
-            btnDaftar.Location = new Point(121, 379);
+            btnDaftar.Location = new Point(119, 410);
             btnDaftar.Name = "btnDaftar";
             btnDaftar.Size = new Size(134, 45);
             btnDaftar.TabIndex = 6;
@@ -221,7 +222,7 @@
             // 
             panel8.BackColor = Color.White;
             panel8.Controls.Add(pictureBox9);
-            panel8.Controls.Add(textBox5);
+            panel8.Controls.Add(tbKonfirmasiPw);
             panel8.Location = new Point(37, 293);
             panel8.Name = "panel8";
             panel8.Size = new Size(331, 47);
@@ -238,19 +239,19 @@
             pictureBox9.TabIndex = 5;
             pictureBox9.TabStop = false;
             // 
-            // textBox5
+            // tbKonfirmasiPw
             // 
-            textBox5.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox5.Location = new Point(60, 1);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(271, 43);
-            textBox5.TabIndex = 0;
+            tbKonfirmasiPw.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tbKonfirmasiPw.Location = new Point(60, 1);
+            tbKonfirmasiPw.Name = "tbKonfirmasiPw";
+            tbKonfirmasiPw.Size = new Size(271, 43);
+            tbKonfirmasiPw.TabIndex = 0;
             // 
             // panel7
             // 
             panel7.BackColor = Color.White;
             panel7.Controls.Add(pictureBox8);
-            panel7.Controls.Add(textBox4);
+            panel7.Controls.Add(tbPassword);
             panel7.Location = new Point(37, 208);
             panel7.Name = "panel7";
             panel7.Size = new Size(331, 47);
@@ -267,19 +268,19 @@
             pictureBox8.TabIndex = 3;
             pictureBox8.TabStop = false;
             // 
-            // textBox4
+            // tbPassword
             // 
-            textBox4.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox4.Location = new Point(60, 1);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(271, 43);
-            textBox4.TabIndex = 0;
+            tbPassword.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tbPassword.Location = new Point(60, 1);
+            tbPassword.Name = "tbPassword";
+            tbPassword.Size = new Size(271, 43);
+            tbPassword.TabIndex = 0;
             // 
             // panel5
             // 
             panel5.BackColor = Color.White;
             panel5.Controls.Add(pictureBox6);
-            panel5.Controls.Add(textBox2);
+            panel5.Controls.Add(tbUsername);
             panel5.Location = new Point(37, 125);
             panel5.Name = "panel5";
             panel5.Size = new Size(331, 47);
@@ -295,21 +296,20 @@
             pictureBox6.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox6.TabIndex = 1;
             pictureBox6.TabStop = false;
-            pictureBox6.Click += pictureBox6_Click;
             // 
-            // textBox2
+            // tbUsername
             // 
-            textBox2.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox2.Location = new Point(60, 2);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(271, 43);
-            textBox2.TabIndex = 0;
+            tbUsername.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tbUsername.Location = new Point(60, 2);
+            tbUsername.Name = "tbUsername";
+            tbUsername.Size = new Size(271, 43);
+            tbUsername.TabIndex = 0;
             // 
             // panel4
             // 
             panel4.BackColor = Color.White;
             panel4.Controls.Add(pictureBox5);
-            panel4.Controls.Add(textBox1);
+            panel4.Controls.Add(tbNama);
             panel4.Location = new Point(37, 43);
             panel4.Name = "panel4";
             panel4.Size = new Size(331, 47);
@@ -326,13 +326,24 @@
             pictureBox5.TabIndex = 2;
             pictureBox5.TabStop = false;
             // 
-            // textBox1
+            // tbNama
             // 
-            textBox1.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(60, 2);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(271, 43);
-            textBox1.TabIndex = 0;
+            tbNama.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tbNama.Location = new Point(60, 2);
+            tbNama.Name = "tbNama";
+            tbNama.Size = new Size(271, 43);
+            tbNama.TabIndex = 0;
+            // 
+            // showPass
+            // 
+            showPass.AutoSize = true;
+            showPass.Location = new Point(34, 358);
+            showPass.Name = "showPass";
+            showPass.Size = new Size(132, 24);
+            showPass.TabIndex = 12;
+            showPass.Text = "Show Password";
+            showPass.UseVisualStyleBackColor = true;
+            showPass.CheckedChanged += showPass_CheckedChanged;
             // 
             // FormRegist
             // 
@@ -345,7 +356,6 @@
             Name = "FormRegist";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Registrasi - TeaSMart";
-            Load += FormRegist_Load;
             panel1.ResumeLayout(false);
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
@@ -379,15 +389,15 @@
         private PictureBox pictureBox2;
         private PictureBox pictureBox3;
         private PictureBox pictureBox4;
-        private TextBox textBox1;
+        private TextBox tbNama;
         private Panel panel4;
         private Panel panel5;
         private PictureBox pictureBox6;
-        private TextBox textBox2;
+        private TextBox tbUsername;
         private Panel panel8;
-        private TextBox textBox5;
+        private TextBox tbKonfirmasiPw;
         private Panel panel7;
-        private TextBox textBox4;
+        private TextBox tbPassword;
         private PictureBox pictureBox8;
         private PictureBox pictureBox5;
         private Button btnDaftar;
@@ -396,5 +406,6 @@
         private Label label2;
         private Label label5;
         private Label label4;
+        private CheckBox showPass;
     }
 }

@@ -15,15 +15,15 @@ namespace TeaSMart_App.App.Context
 {
     internal class C_User : DatabaseWrapper
     {
-        private static string table = "users"; // pakai nama tabel di database
+        private static string table = "users"; 
         public static bool IsUsernameUnique(string username)
         {
             string query = "SELECT COUNT(*) FROM users WHERE username = @username";
 
             NpgsqlParameter[] parameters =
             {
-        new NpgsqlParameter("@username", NpgsqlTypes.NpgsqlDbType.Varchar) { Value = username }
-    };
+                new NpgsqlParameter("@username", NpgsqlTypes.NpgsqlDbType.Varchar) { Value = username }
+            };
 
             long count = Convert.ToInt64(DatabaseWrapper.ExecuteScalarQuery(query, parameters));
             return count == 0; // True jika username tidak ditemukan
@@ -59,31 +59,26 @@ namespace TeaSMart_App.App.Context
 
             M_Users user = null;
 
-            // Query untuk mengecek username dan password
             string query = $@"
             SELECT id_user, nama, username, password, role 
             FROM {table} 
             WHERE username = @username AND password = @password";
 
-            // Parameter untuk mencegah SQL Injection
             NpgsqlParameter[] parameters =
             {
                 new NpgsqlParameter("@username", username),
                 new NpgsqlParameter("@password", password)
             };
-
             try
             {
-                // Eksekusi query
                 DataTable result = queryExecutor(query, parameters);
 
                 if (result.Rows.Count > 0)
                 {
-                    // Jika user ditemukan, buat objek M_Users
                     DataRow row = result.Rows[0];
                     user = new M_Users
                     {
-                        id_user = Convert.ToInt32(row["id_user"]), // Sesuaikan nama kolom di sini
+                        id_user = Convert.ToInt32(row["id_user"]), 
                         nama = row["nama"].ToString(),
                         username = row["username"].ToString(),
                         password = row["password"].ToString(),
@@ -92,17 +87,56 @@ namespace TeaSMart_App.App.Context
                 }
                 else
                 {
-                    // Jika tidak ditemukan, lempar exception
                     throw new Exception("Username atau password salah.");
                 }
             }
             catch (Exception ex)
             {
-                // Tangani error (bisa log atau lempar ulang exception)
                 throw new Exception($"Terjadi kesalahan saat login: {ex.Message}");
             }
-
             return user;
+        }
+
+        public static void UpdatePassword(int userId, string oldPassword, string newPassword)
+        {
+            string checkQuery = $"SELECT password FROM {table} WHERE id_user = @id_user";
+            NpgsqlParameter[] checkParams =
+            {
+                new NpgsqlParameter("@id_user", userId)
+            };
+
+            DataTable result = queryExecutor(checkQuery, checkParams);
+
+            if (result.Rows.Count == 0)
+            {
+                MessageBox.Show("User tidak ditemukan.", "Kesalahan", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            string currentPassword = result.Rows[0]["password"].ToString();
+
+            if (currentPassword != oldPassword)
+            {
+                MessageBox.Show("Password lama tidak sesuai.", "Kesalahan", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            string updateQuery = $"UPDATE {table} SET password = @newPassword WHERE id_user = @id_user";
+            NpgsqlParameter[] updateParams =
+            {
+                new NpgsqlParameter("@newPassword", newPassword),
+                new NpgsqlParameter("@id_user", userId)
+            };
+
+            try
+            {
+                commandExecutor(updateQuery, updateParams);
+
+                MessageBox.Show("Password berhasil diperbarui.", "Berhasil", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Terjadi kesalahan saat memperbarui password: {ex.Message}", "Kesalahan", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
