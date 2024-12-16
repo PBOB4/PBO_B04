@@ -366,7 +366,9 @@
             Controls.Add(panel8);
             Controls.Add(sidebar);
             ForeColor = Color.FromArgb(7, 43, 0);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "InventarisAdmin";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "InventarisAdmin";
             sidebar.ResumeLayout(false);
             panel1.ResumeLayout(false);

@@ -30,13 +30,14 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UbahPassword));
             panel2 = new Panel();
+            showConfirmPw = new CheckBox();
             lblKonfirmasi = new Label();
             lblPassBaru = new Label();
             lblPassLama = new Label();
             btnUbahPw = new Button();
             panel8 = new Panel();
-            pictureBox9 = new PictureBox();
             tbKonfirmasiPw = new TextBox();
+            pictureBox9 = new PictureBox();
             panel7 = new Panel();
             pictureBox8 = new PictureBox();
             tbPwBaru = new TextBox();
@@ -44,7 +45,6 @@
             pictureBox1 = new PictureBox();
             tbPwLama = new TextBox();
             btnBack = new PictureBox();
-            showConfirmPw = new CheckBox();
             panel2.SuspendLayout();
             panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox9).BeginInit();
@@ -71,6 +71,18 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(434, 411);
             panel2.TabIndex = 1;
+            // 
+            // showConfirmPw
+            // 
+            showConfirmPw.AutoSize = true;
+            showConfirmPw.BackColor = Color.Transparent;
+            showConfirmPw.Location = new Point(332, 200);
+            showConfirmPw.Name = "showConfirmPw";
+            showConfirmPw.Size = new Size(68, 24);
+            showConfirmPw.TabIndex = 12;
+            showConfirmPw.Text = "Show";
+            showConfirmPw.UseVisualStyleBackColor = false;
+            showConfirmPw.CheckedChanged += showConfirmPw_CheckedChanged;
             // 
             // lblKonfirmasi
             // 
@@ -131,6 +143,15 @@
             panel8.Size = new Size(372, 47);
             panel8.TabIndex = 5;
             // 
+            // tbKonfirmasiPw
+            // 
+            tbKonfirmasiPw.Cursor = Cursors.IBeam;
+            tbKonfirmasiPw.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tbKonfirmasiPw.Location = new Point(69, 1);
+            tbKonfirmasiPw.Name = "tbKonfirmasiPw";
+            tbKonfirmasiPw.Size = new Size(304, 43);
+            tbKonfirmasiPw.TabIndex = 0;
+            // 
             // pictureBox9
             // 
             pictureBox9.BackColor = Color.White;
@@ -141,15 +162,6 @@
             pictureBox9.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox9.TabIndex = 5;
             pictureBox9.TabStop = false;
-            // 
-            // tbKonfirmasiPw
-            // 
-            tbKonfirmasiPw.Cursor = Cursors.IBeam;
-            tbKonfirmasiPw.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tbKonfirmasiPw.Location = new Point(69, 1);
-            tbKonfirmasiPw.Name = "tbKonfirmasiPw";
-            tbKonfirmasiPw.Size = new Size(304, 43);
-            tbKonfirmasiPw.TabIndex = 0;
             // 
             // panel7
             // 
@@ -222,18 +234,6 @@
             btnBack.TabStop = false;
             btnBack.Click += btnBack_Click;
             // 
-            // showConfirmPw
-            // 
-            showConfirmPw.AutoSize = true;
-            showConfirmPw.BackColor = Color.Transparent;
-            showConfirmPw.Location = new Point(332, 200);
-            showConfirmPw.Name = "showConfirmPw";
-            showConfirmPw.Size = new Size(68, 24);
-            showConfirmPw.TabIndex = 12;
-            showConfirmPw.Text = "Show";
-            showConfirmPw.UseVisualStyleBackColor = false;
-            showConfirmPw.CheckedChanged += showConfirmPw_CheckedChanged;
-            // 
             // UbahPassword
             // 
             AutoScaleDimensions = new SizeF(9F, 20F);
@@ -244,7 +244,9 @@
             Controls.Add(panel2);
             Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             ForeColor = Color.FromArgb(255, 255, 235);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "UbahPassword";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "UbahPassword";
             panel2.ResumeLayout(false);
             panel2.PerformLayout();

@@ -443,6 +443,7 @@
             Controls.Add(panel9);
             Controls.Add(sidebar);
             ForeColor = Color.DarkCyan;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "HalamanUtama";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";

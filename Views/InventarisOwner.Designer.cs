@@ -602,6 +602,7 @@
             ClientSize = new Size(1348, 721);
             Controls.Add(panelHalUtama);
             Controls.Add(sidebar);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "InventarisOwner";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Inventaris_Owner";

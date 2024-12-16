@@ -238,6 +238,7 @@
             Controls.Add(btnAddImage);
             Controls.Add(panel1);
             Controls.Add(picProduk);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "AddProduk";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "MelihatDetProduk";

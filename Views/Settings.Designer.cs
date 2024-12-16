@@ -331,7 +331,9 @@
             Controls.Add(panel8);
             Controls.Add(panel7);
             Controls.Add(sidebar);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Settings";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Settings";
             Load += Settings_Load;
             sidebar.ResumeLayout(false);

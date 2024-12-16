@@ -353,7 +353,9 @@
             Controls.Add(label9);
             Controls.Add(flyProduk);
             Controls.Add(btnSelesai);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Pembayaran";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Pembayaran";
             flyProduk.ResumeLayout(false);
             panel1.ResumeLayout(false);

@@ -302,7 +302,9 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1348, 721);
             Controls.Add(panel1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "RiwayatTransaksi";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "TransaksiOwner";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();

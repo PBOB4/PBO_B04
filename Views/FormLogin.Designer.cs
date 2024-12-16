@@ -38,6 +38,7 @@
             btnLogin = new Button();
             pictureBox1 = new PictureBox();
             panel2 = new Panel();
+            showPass = new CheckBox();
             panel7 = new Panel();
             panel5 = new Panel();
             pictureBox2 = new PictureBox();
@@ -46,7 +47,6 @@
             panel3 = new Panel();
             panel1 = new Panel();
             pictureBox5 = new PictureBox();
-            showPass = new CheckBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -162,6 +162,19 @@
             panel2.Size = new Size(386, 340);
             panel2.TabIndex = 0;
             // 
+            // showPass
+            // 
+            showPass.AutoSize = true;
+            showPass.BackColor = Color.Transparent;
+            showPass.ForeColor = SystemColors.ActiveCaptionText;
+            showPass.Location = new Point(35, 214);
+            showPass.Name = "showPass";
+            showPass.Size = new Size(132, 24);
+            showPass.TabIndex = 11;
+            showPass.Text = "Show Password";
+            showPass.UseVisualStyleBackColor = false;
+            showPass.CheckedChanged += showPass_CheckedChanged;
+            // 
             // panel7
             // 
             panel7.BackColor = Color.White;
@@ -249,25 +262,13 @@
             pictureBox5.TabStop = false;
             pictureBox5.Click += btnKeDaftar_Click;
             // 
-            // showPass
-            // 
-            showPass.AutoSize = true;
-            showPass.BackColor = Color.Transparent;
-            showPass.ForeColor = SystemColors.ActiveCaptionText;
-            showPass.Location = new Point(35, 214);
-            showPass.Name = "showPass";
-            showPass.Size = new Size(132, 24);
-            showPass.TabIndex = 11;
-            showPass.Text = "Show Password";
-            showPass.UseVisualStyleBackColor = false;
-            showPass.CheckedChanged += showPass_CheckedChanged;
-            // 
             // FormLogin
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1348, 739);
             Controls.Add(panel1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FormLogin";
             Text = "FormLogin";
             ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
