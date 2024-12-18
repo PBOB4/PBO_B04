@@ -38,15 +38,16 @@ namespace TeaSMart_App
                     username = tbUsername.Text.Trim(),
                     password = tbPassword.Text.Trim(),
                     konfirmasiPassword = tbKonfirmasiPw.Text.Trim(),
-                    role = "Admin"
+                    role = "admin"
                 };
 
                 C_User.Register(userBaru);
 
                 MessageBox.Show("Registrasi berhasil!", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                FormLogin halUtama = new FormLogin();
-                halUtama.Show();
+
+                FormLogin formLogin = new FormLogin();
+                formLogin.Show();
 
                 this.Hide();
             }

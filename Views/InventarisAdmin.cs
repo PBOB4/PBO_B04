@@ -339,6 +339,7 @@ namespace TeaSMart_App.Views
                 // Dapatkan produk yang dipilih berdasarkan namaProduk
                 List<M_Produk> selectedProducts = C_Produk.GetCheckedProduk(allProducts, selectedItems);
 
+
                 if (selectedProducts.Count > 0)
                 {
                     M_transaksi transaksiBaru = new M_transaksi

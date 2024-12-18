@@ -187,7 +187,7 @@
             // 
             // btnRiwayatTransaksi
             // 
-            btnRiwayatTransaksi.BackColor = Color.FromArgb(255, 255, 235);
+            btnRiwayatTransaksi.BackColor = Color.FromArgb(153, 178, 127);
             btnRiwayatTransaksi.Cursor = Cursors.Hand;
             btnRiwayatTransaksi.FlatStyle = FlatStyle.Flat;
             btnRiwayatTransaksi.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -214,6 +214,7 @@
             // 
             // btnPengaturan
             // 
+            btnPengaturan.BackColor = Color.FromArgb(255, 255, 235);
             btnPengaturan.Cursor = Cursors.Hand;
             btnPengaturan.FlatStyle = FlatStyle.Flat;
             btnPengaturan.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -227,7 +228,7 @@
             btnPengaturan.TabIndex = 1;
             btnPengaturan.Text = "              Pengaturan";
             btnPengaturan.TextAlign = ContentAlignment.MiddleLeft;
-            btnPengaturan.UseVisualStyleBackColor = true;
+            btnPengaturan.UseVisualStyleBackColor = false;
             btnPengaturan.Click += btnPengaturan_Click;
             // 
             // panel2
@@ -262,7 +263,7 @@
             panel7.Controls.Add(linkUbahPw);
             panel7.Controls.Add(lblUsnUser);
             panel7.Controls.Add(lblNamaUser);
-            panel7.Location = new Point(553, 105);
+            panel7.Location = new Point(523, 172);
             panel7.Name = "panel7";
             panel7.Size = new Size(531, 296);
             panel7.TabIndex = 2;
@@ -313,7 +314,7 @@
             // 
             panel8.BackColor = Color.FromArgb(153, 178, 127);
             panel8.Controls.Add(lblHeader);
-            panel8.Location = new Point(553, 105);
+            panel8.Location = new Point(523, 172);
             panel8.Name = "panel8";
             panel8.Size = new Size(531, 72);
             panel8.TabIndex = 6;

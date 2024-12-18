@@ -1,0 +1,195 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="TeaSMart_App.FormRegist">
+    <Position X="12.75" Y="0.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>QAAAIxAAQCAEEBAAAACAQAACAAAAAQAAQAAgAQBEAIA=</HashCode>
+      <FileName>Views\FormRegist.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TeaSMart_App.MainForm">
+    <Position X="12.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAACAAAAAAAACAAAACAAAIAAAAAEAAAABAAAA=</HashCode>
+      <FileName>Views\MainForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TeaSMart_App.Program">
+    <Position X="7.75" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TeaSMart_App.Properties.Resources" Collapsed="true">
+    <Position X="11" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACCAQIBgAABAAAAAAQABEQAAAQAiKAAECgGAAAgIAoA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TeaSMart_App.App.Context.C_HalUtama">
+    <Position X="9" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAIAAAAA=</HashCode>
+      <FileName>App\Context\C_HalUtama.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TeaSMart_App.App.Context.C_Produk">
+    <Position X="0.5" Y="1.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAAAABBAAIAIAAAAAAAQAQAQAAAAAAAgEA=</HashCode>
+      <FileName>App\Context\C_Produk.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TeaSMart_App.App.Context.C_Transaksi">
+    <Position X="2.75" Y="4.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAQABBAAAAAgAAgAAAAA=</HashCode>
+      <FileName>App\Context\C_Transaksi.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TeaSMart_App.App.Context.C_User">
+    <Position X="5" Y="1.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAABAAAAAAAAAAAABAAAAAAAQAAIAAAA=</HashCode>
+      <FileName>App\Context\C_User.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TeaSMart_App.App.Core.Prp">
+    <Position X="2.75" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>QAAQCAAAAAAAAAAAEAABAAAAAASQAAIAAAEAAAAAAAA=</HashCode>
+      <FileName>App\Core\DatabaseWrapper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TeaSMart_App.App.Models.M_detailTransaksi">
+    <Position X="11" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAAQAAAAAAAAAAAIAMAAAAAAAAAAAAA=</HashCode>
+      <FileName>App\Models\M_detailTransaksics.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TeaSMart_App.App.Models.M_HalUtama">
+    <Position X="9" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAA=</HashCode>
+      <FileName>App\Models\M_HalUtama.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TeaSMart_App.App.Models.M_jenis">
+    <Position X="7.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIAAAQAAAAAQAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>App\Models\M_jenis.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TeaSMart_App.App.Models.M_Produk">
+    <Position X="9.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABBAAAAAAAAAAAQBABAEAAQEAAAAAAAAAAAAI=</HashCode>
+      <FileName>App\Models\M_Produk.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TeaSMart_App.App.Models.M_transaksi">
+    <Position X="5.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAQABAAAAAAAAAAAAAAICAAAAAAAAA=</HashCode>
+      <FileName>App\Models\M_transaksi.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TeaSMart_App.App.Models.M_Users">
+    <Position X="11" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAACAAAAAAAAAABEAAEAAAAAAIAAAAgAAAAA=</HashCode>
+      <FileName>App\Models\M_Users.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TeaSMart_App.Views.AddProduk">
+    <Position X="13.5" Y="6.75" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAgAACAAAiAEABAAACCAA4gGAAAAACFCARAAAUACAAQ=</HashCode>
+      <FileName>Views\AddProduk.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TeaSMart_App.Views.FormLogin">
+    <Position X="11" Y="0.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>QAAAIxAAASAAABAAAACCQAACAAAACSAAUAAgAQBEAAA=</HashCode>
+      <FileName>Views\FormLogin.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TeaSMart_App.Views.HalamanUtama">
+    <Position X="14.5" Y="0.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>gCgAIJIQACASCJAAQICBQAADAACEUCQGBAAAAeBBEAA=</HashCode>
+      <FileName>Views\HalamanUtama.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TeaSMart_App.Views.InventarisAdmin">
+    <Position X="6.75" Y="0.5" Width="2.25" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>gAAAgBIQECAAAJAABICAAIACAQCAUCAmQAAARSACEAI=</HashCode>
+      <FileName>Views\InventarisAdmin.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TeaSMart_App.Views.InventarisOwner">
+    <Position X="7.25" Y="7.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>gKAAQGIQACAAAREBBICBAAACAAyDUCAmQAAgBaBDECI=</HashCode>
+      <FileName>Views\InventarisOwner.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TeaSMart_App.Views.Pembayaran">
+    <Position X="9.25" Y="7.25" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>PAUAABQAEiAIQRAAAADAEIgTGAAAACBkAAAAAQBAADA=</HashCode>
+      <FileName>Views\Pembayaran.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TeaSMart_App.Views.RiwayatTransaksi">
+    <Position X="5.25" Y="7" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>gAAAAgIQACAAAJAABICBQAACAASAUCgGAAAEAaAAEAA=</HashCode>
+      <FileName>Views\RiwayatTransaksi.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TeaSMart_App.Views.Settings">
+    <Position X="16.5" Y="3" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>gAAAABIQACAAAYAABIKBAAACAAGEUCAGAAREAaAAEAA=</HashCode>
+      <FileName>Views\Settings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TeaSMart_App.Views.UbahPassword">
+    <Position X="16.75" Y="0.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>CQAAAAACACAEAIAAAACAAIACAAAAACBgQAAgCRBgAIA=</HashCode>
+      <FileName>Views\UbahPassword.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

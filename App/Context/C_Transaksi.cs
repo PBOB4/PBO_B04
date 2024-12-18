@@ -137,5 +137,16 @@ namespace TeaSMart_App.App.Context
             };
             commandExecutor(query, parameters);
         }
+
+        public static void DropTransaksi (int idTransaksi)
+        {
+            string query = $@"DELETE FROM transaksi WHERE id_transaksi = @id_transaksi";
+
+            NpgsqlParameter[] parameters =
+            {
+                new NpgsqlParameter("@id_transaksi", idTransaksi)
+            };
+            commandExecutor(query, parameters);
+        }
     }
 }

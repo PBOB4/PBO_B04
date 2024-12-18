@@ -14,7 +14,7 @@ namespace TeaSMart_App.Views
     {
         bool sidebarExpand = true;
         private M_Users loggedUser;
-        private readonly C_HalUtama _controller; // Data pengguna yang login
+        private readonly C_HalUtama _controller; 
 
         public HalamanUtama(M_Users loggedUser)
         {

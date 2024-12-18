@@ -137,6 +137,7 @@
             // 
             // buttonHalamanUtama
             // 
+            buttonHalamanUtama.BackColor = Color.FromArgb(153, 178, 127);
             buttonHalamanUtama.Cursor = Cursors.Hand;
             buttonHalamanUtama.FlatStyle = FlatStyle.Flat;
             buttonHalamanUtama.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -150,7 +151,7 @@
             buttonHalamanUtama.TabIndex = 1;
             buttonHalamanUtama.Text = "              Halaman Utama";
             buttonHalamanUtama.TextAlign = ContentAlignment.MiddleLeft;
-            buttonHalamanUtama.UseVisualStyleBackColor = true;
+            buttonHalamanUtama.UseVisualStyleBackColor = false;
             buttonHalamanUtama.Click += buttonHalamanUtama_Click;
             // 
             // panel3
@@ -163,6 +164,7 @@
             // 
             // btnHInventaris
             // 
+            btnHInventaris.BackColor = Color.FromArgb(255, 255, 235);
             btnHInventaris.Cursor = Cursors.Hand;
             btnHInventaris.FlatStyle = FlatStyle.Flat;
             btnHInventaris.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -176,7 +178,7 @@
             btnHInventaris.TabIndex = 1;
             btnHInventaris.Text = "              Inventaris Produk";
             btnHInventaris.TextAlign = ContentAlignment.MiddleLeft;
-            btnHInventaris.UseVisualStyleBackColor = true;
+            btnHInventaris.UseVisualStyleBackColor = false;
             btnHInventaris.Click += btnHInventaris_Click;
             // 
             // panel4

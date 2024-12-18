@@ -110,7 +110,7 @@ namespace TeaSMart_App.Views
 
                 // Set tanggal transaksi saat ini
                 lblTgltransaksi.Text = maxTransaksi.Rows[0]["tanggalTransaksi"].ToString();
-                lblTotalHarga.Text = $"Total Harga     : {maxTransaksi.Rows[0]["totalHarga"]}";
+                lblTotalHarga.Text = $"Total Harga     : {maxTransaksi.Rows[0]["totalHarga"]:n0}";
             }
             catch (Exception ex)
             {
@@ -145,9 +145,24 @@ namespace TeaSMart_App.Views
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            InventarisAdmin inventarisAdmin = new InventarisAdmin(loggedUser);
-            inventarisAdmin.Show();
-            this.Close();
+            try
+            {
+                if (currentTransactionId > 0)
+                {
+                    // Batalkan transaksi yang sedang berjalan
+                    C_Transaksi.DropTransaksi(currentTransactionId);
+                    MessageBox.Show($"Transaksi #{currentTransactionId} telah dibatalkan.", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
+                // Kembali ke form inventaris
+                InventarisAdmin inventarisAdmin = new InventarisAdmin(loggedUser);
+                inventarisAdmin.Show();
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Terjadi kesalahan: {ex.Message}", "Kesalahan", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void SimpanDetailTransaksi()
@@ -192,6 +207,21 @@ namespace TeaSMart_App.Views
         {
             try
             {
+                // Mengambil nilai pembayaran dari TextBox
+                if (!decimal.TryParse(tbBayar.Text, out decimal bayar) ||
+                    !decimal.TryParse(lblTotalHarga.Text.Replace("Total Harga     : ", "").Replace("Rp", "").Replace(",", ""), out decimal totalHarga))
+                {
+                    MessageBox.Show("Harap masukkan jumlah pembayaran yang valid.", "Kesalahan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                // Validasi apakah jumlah bayar >= total harga
+                if (bayar < totalHarga)
+                {
+                    MessageBox.Show("Jumlah uang yang dibayarkan kurang dari total harga. Harap periksa kembali.", "Kesalahan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
                 // Simpan detail transaksi
                 SimpanDetailTransaksi();
 

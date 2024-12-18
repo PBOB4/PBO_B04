@@ -39,7 +39,7 @@ namespace TeaSMart_App.Views
 
                 if (loggedUser != null)
                 {
-                    MessageBox.Show(loggedUser.nama.ToString());
+                    MessageBox.Show($"Selamat Datang, {loggedUser.nama.ToString()}");
                     HalamanUtama halamanUtama = new HalamanUtama(loggedUser);
                     halamanUtama.Show();
                     this.Hide();
@@ -55,12 +55,10 @@ namespace TeaSMart_App.Views
         {
             if (showPass.Checked)
             {
-                // Tampilkan password sebagai teks biasa
-                tbPassword.PasswordChar = '\0'; // '\0' adalah karakter null untuk menonaktifkan masking
+                tbPassword.PasswordChar = '\0'; 
             }
             else
             {
-                // Sembunyikan password kembali dengan karakter '*'
                 tbPassword.PasswordChar = '*';
             }
 
